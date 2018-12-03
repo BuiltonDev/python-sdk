@@ -49,7 +49,7 @@ class Components():
                     json=False,
                     ):
         if _id is None:
-            raise ValueError('Needs an ID to call this method')
+            raise ValueError('This method requires an ID')
         if self._id_ and _id is not '':
             local_id = '/%s' % self._id_
         elif _id:
@@ -64,6 +64,20 @@ class Components():
             url_params=url_params,
             body=body,
             resource=local_api_path+local_id+local_resource
+        )
+        if not 200 >= res.status_code < 400:
+            raise Exception('Bad response: %s' % res.status_code)
+
+        return self.parse_json(res, res_constructor, raw_json=json)
+
+    def build_query(self, _type='get', resource='', url_params=None, body=None, headers=None, endpoint=None, res_constructor=None, json=False):
+        res = self.request.query(
+            _type=_type,
+            url_params=url_params,
+            body=body,
+            resource=resource,
+            headers=headers,
+            endpoint=endpoint
         )
         if not 200 >= res.status_code < 400:
             raise Exception('Bad response: %s' % res.status_code)
