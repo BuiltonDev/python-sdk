@@ -20,7 +20,7 @@ class Kvass:
 
     def _construct_headers(self):
         headers = {
-            'X-Share-API-Key': self.api_key,
+            'X-Kvass-API-Key': self.api_key,
         }
         if self.bearer_token is not None:
             headers['Authorization'] = "Bearer %s" % self.bearer_token
