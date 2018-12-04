@@ -6,7 +6,7 @@ class Kvass:
         if endpoint is None:
             raise ValueError('You need to define an endpoint')
         if api_key is None:
-            raise ValueError('You need to define an endpoint')
+            raise ValueError('You need to define an api_key')
         self.api_key = api_key
         self.bearer_token = bearer_token
         self.endpoint = endpoint
