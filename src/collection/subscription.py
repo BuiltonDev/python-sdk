@@ -9,9 +9,9 @@ class Subscription(Components):
         self.api_path = 'subscriptions'
 
     def start(self, body, url_params=None, json=False):
-        return self.simple_query(_type='post', _id=self._id_, resource='start', url_params=url_params, body=body,
+        return self.simple_query(_type='post', _id=self._id, resource='start', url_params=url_params, body=body,
                                  json=json)
 
     def stop(self, body, url_params=None, json=False):
-        return self.simple_query(_type='post', _id=self._id_, resource='stop', url_params=url_params, body=body,
+        return self.simple_query(_type='post', _id=self._id, resource='stop', url_params=url_params, body=body,
                                  json=json)

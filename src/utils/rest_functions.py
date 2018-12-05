@@ -7,10 +7,10 @@ def rest_decorator(*fns):
 
 
 def get(self, url_params=None, json=False):
-    return self.simple_query(_id=self._id_, url_params=url_params, json=json)
+    return self.simple_query(_id=self._id, url_params=url_params, json=json)
 
 
-def get_all(self, url_params=None, json=False):
+def get_all(self, url_params=None, json=False, size=10, page=0):
     return self.simple_query(url_params=url_params, json=json)
 
 
@@ -19,11 +19,11 @@ def refresh(self, url_params=None, json=False):
 
 
 def update(self, body=None, url_params=None, json=False):
-    return self.simple_query(_type='put', _id=self._id_, body=body, url_params=url_params, json=json)
+    return self.simple_query(_type='put', _id=self._id, body=body, url_params=url_params, json=json)
 
 
 def delete(self, url_params=None, json=False):
-    return self.simple_query(_type='del', _id=self._id_, url_params=url_params, json=json)
+    return self.simple_query(_type='del', _id=self._id, url_params=url_params, json=json)
 
 
 def create(self, body=None, url_params=None, json=False):
