@@ -19,15 +19,12 @@ class Components():
             self._id = props['_id']['$oid']
 
     def parse_json(self, res, res_constructor, raw_json=False):
-        res_data = res.json()
         data = {}
+        res_data = res.json() if not isinstance(res, (dict, list)) else res
         if raw_json:
             data = res_data
-        if isinstance(res_data, list):
-            obj_array = []
-            for element in res_data:
-                obj_array.append(self.parse_json(element, res_constructor))
-            data = obj_array
+        elif isinstance(res_data, list):
+            data = [self.parse_json(element, res_constructor) for element in res_data]
         elif isinstance(res_data, dict):
             if res_constructor:
                 data = res_constructor(self.request)
