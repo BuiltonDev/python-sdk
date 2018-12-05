@@ -6,7 +6,7 @@ k = Kvass(endpoint=ENDPOINT, api_key=API_KEY, bearer_token=BEARER_TOKEN)
 users = k.user().get_all()
 print(users)
 user = users[0]
-user_id = user._id
+user_id = user._id_
 print(user)
 print(user_id)
 user = k.user(user_id).get()

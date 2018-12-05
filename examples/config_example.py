@@ -1,3 +1,3 @@
-API_KEY = ''
-BEARER_TOKEN = ''
+API_KEY = 'YOUR_API_KEY'
+BEARER_TOKEN = 'YOUR_BEARER_TOKEN'
 ENDPOINT = 'https://qa.kvass.ai/'

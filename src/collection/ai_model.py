@@ -9,11 +9,11 @@ class AIModel(Components):
         self.api_path = 'ai/models'
 
     def train(self, url_params=None, json=False):
-        return self.simple_query(_type='post', _id=self._id, resource='train', url_params=url_params, json=json)
+        return self.simple_query(_type='post', _id=self._id_, resource='train', url_params=url_params, json=json)
 
     def get_recommendations(self, body, url_params=None):
-        _id = self._id if self._id is not None else ''
+        _id = self._id_ if self._id_ is not None else ''
         return self.simple_query(_type='post', _id=_id, resource='invoke', url_params=url_params, body=body, json=True)
 
     def create(self, body, url_params=None, json=False):
-        return self.simple_query(_type='post', _id=self._id, body=body, url_params=url_params, json=json)
+        return self.simple_query(_type='post', _id=self._id_, body=body, url_params=url_params, json=json)
