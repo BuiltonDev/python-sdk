@@ -9,8 +9,8 @@ class User(Components):
     def __init__(self, request, props):
         super(User, self).__init__(request, props)
         self.api_path = 'users'
-        if self._id_ is None:
-            self._id_ = 'me'
+        if self.id is None:
+            self.id = 'me'
 
     def create(self, body, url_params=None, json=False):
         return self.simple_query(_type='post', api_path='v2/users', url_params=url_params, body=body, json=json)

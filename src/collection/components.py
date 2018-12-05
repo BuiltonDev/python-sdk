@@ -1,13 +1,13 @@
 class Components():
-    def __init__(self, request, props, api_path=None):
+    def __init__(self, request, props):
         # raise Exception('Cannot construct Abstract instances')
         self.identifier = None
         self.request = request
-        self.api_path = api_path
-        self._id_ = None
+        self.id = None
+        self.api_path = None
 
         if isinstance(props, str):
-            self._id_ = props
+            self.id = props
         elif props is not None:
             self.build_instance(props)
 
@@ -16,7 +16,7 @@ class Components():
             self.__setattr__(key, value)
 
         if props and '_id' in props and '$oid' in props['_id']:
-            self._id_ = props['_id']['$oid']
+            self.id = props['_id']['$oid']
 
     def parse_json(self, res, res_constructor, raw_json=False):
         data = {}
@@ -46,8 +46,8 @@ class Components():
     ):
         if _id is None:
             raise ValueError('This method requires an ID')
-        if self._id_ and _id is not '':
-            local_id = '/%s' % self._id_
+        if self.id and _id is not '':
+            local_id = '/%s' % self.id
         elif _id:
             local_id = _id if _id[0] is '/' else '/%s' % _id
         else:
