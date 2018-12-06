@@ -27,10 +27,8 @@ class Kvass:
         }
         if self.bearer_token is not None:
             if "bearer" in self.bearer_token.lower():
-                # Remove 'Bearer' if it's in the beginning of the bearer_token. Add it under
-                self.bearer_token = re.sub('bearer', '', self.bearer_token, flags=re.IGNORECASE)
-                while self.bearer_token.startswith(' '):
-                    self.bearer_token = self.bearer_token[1:]
+                # Remove 'Bearer ' if it's in the beginning of the bearer_token. Add it under
+                self.bearer_token = re.sub('bearer ', '', self.bearer_token, flags=re.IGNORECASE)
 
             headers['Authorization'] = "Bearer %s" % self.bearer_token
         return headers
