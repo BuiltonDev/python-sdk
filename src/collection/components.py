@@ -1,6 +1,8 @@
 class Components():
     def __init__(self, request, props):
-        # raise Exception('Cannot construct Abstract instances')
+        if self.__class__.__name__ == 'Components':
+            raise Exception('Cannot construct Abstract instances')
+
         self.identifier = None
         self.request = request
         self.id = None
@@ -64,12 +66,14 @@ class Components():
             resource=resource
         )
         if not 200 >= res.status_code < 400:
-            error = None
+            error = {'Bad response': '%s' % res.status_code}
             try:
-                error = res.json()
+                error_message = res.json()
+                if isinstance(error_message, dict):
+                    error = error_message
             except Exception:
                 pass
-            raise Exception('Bad response: %s | %s' % (res.status_code, error))
+            raise Exception(error)
 
         return self.parse_json(res, res_constructor, raw_json=json)
 

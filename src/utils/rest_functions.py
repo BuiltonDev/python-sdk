@@ -7,7 +7,7 @@ def rest_decorator(*fns):
 
 
 def get(cls, url_params=None, json=False):
-    return cls.simple_query(_id=cls._id, url_params=url_params, json=json)
+    return cls.simple_query(_id=cls.id, url_params=url_params, json=json)
 
 
 def get_all(cls, url_params=None, json=False):
@@ -19,11 +19,11 @@ def refresh(cls, url_params=None, json=False):
 
 
 def update(cls, body=None, url_params=None, json=False):
-    return cls.simple_query(_type='put', _id=cls._id, body=body, url_params=url_params, json=json)
+    return cls.simple_query(_type='put', _id=cls.id, body=body, url_params=url_params, json=json)
 
 
 def delete(cls, url_params=None, json=False):
-    return cls.simple_query(_type='del', _id=cls._id, url_params=url_params, json=json)
+    return cls.simple_query(_type='del', _id=cls.id, url_params=url_params, json=json)
 
 
 def create(cls, body=None, url_params=None, json=False):
