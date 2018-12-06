@@ -6,15 +6,26 @@ from src.utils.request import Request
 
 class Kvass:
     def __init__(self, endpoint, api_key, bearer_token=None):
-        if endpoint is None:
-            raise ValueError('You need to define an endpoint')
-        if api_key is None:
-            raise ValueError('You need to define an api_key')
+        self.validate_input(endpoint, api_key, bearer_token)
+        
         self.api_key = api_key
         self.bearer_token = bearer_token
         self.endpoint = endpoint
         headers = self._construct_headers()
         self.request = Request(endpoint, headers)
+
+    @staticmethod
+    def validate_input(endpoint, api_key, bearer_token):
+        if endpoint is None:
+            raise ValueError('You need to define an endpoint')
+        if not isinstance(endpoint, str):
+            raise ValueError('endpoint not a string')
+        if api_key is None:
+            raise ValueError('You need to define an api_key')
+        if not isinstance(api_key, str):
+            raise ValueError('api_key not a string')
+        if bearer_token and not isinstance(bearer_token, str):
+            raise ValueError('Bearer token not a string')
 
     def refresh_bearer_token(self, new_bearer_token):
         self.bearer_token = new_bearer_token
