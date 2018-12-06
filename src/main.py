@@ -1,3 +1,5 @@
+import re
+
 from src.collection.all import *
 from src.utils.request import Request
 
@@ -24,6 +26,12 @@ class Kvass:
             'X-Kvass-API-Key': self.api_key,
         }
         if self.bearer_token is not None:
+            if "bearer" in self.bearer_token.lower():
+                # Remove 'Bearer' if it's in the beginning of the bearer_token. Add it under
+                self.bearer_token = re.sub('bearer', '', self.bearer_token, flags=re.IGNORECASE)
+                while self.bearer_token.startswith(' '):
+                    self.bearer_token = self.bearer_token[1:]
+
             headers['Authorization'] = "Bearer %s" % self.bearer_token
         return headers
 
