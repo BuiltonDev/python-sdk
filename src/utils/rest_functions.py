@@ -1,36 +1,36 @@
 def rest_decorator(*fns):
-    def wrapper(self):
+    def wrapper(cls):
         for fn in fns:
-            setattr(self, fn.__name__, fn)
-        return self
+            setattr(cls, fn.__name__, fn)
+        return cls
     return wrapper
 
 
-def get(self, url_params=None, json=False):
-    return self.simple_query(_id=self._id_, url_params=url_params, json=json)
+def get(cls, url_params=None, json=False):
+    return cls.simple_query(_id=cls.id, url_params=url_params, json=json)
 
 
-def get_all(self, url_params=None, json=False):
-    return self.simple_query(url_params=url_params, json=json)
+def get_all(cls, url_params=None, json=False):
+    return cls.simple_query(url_params=url_params, json=json)
 
 
-def refresh(self, url_params=None, json=False):
-    return get(self, url_params=url_params, json=json)
+def refresh(cls, url_params=None, json=False):
+    return get(cls, url_params=url_params, json=json)
 
 
-def update(self, body=None, url_params=None, json=False):
-    return self.simple_query(_type='put', _id=self._id_, body=body, url_params=url_params, json=json)
+def update(cls, body=None, url_params=None, json=False):
+    return cls.simple_query(_type='put', _id=cls.id, body=body, url_params=url_params, json=json)
 
 
-def delete(self, url_params=None, json=False):
-    return self.simple_query(_type='del', _id=self._id_, url_params=url_params, json=json)
+def delete(cls, url_params=None, json=False):
+    return cls.simple_query(_type='del', _id=cls.id, url_params=url_params, json=json)
 
 
-def create(self, body=None, url_params=None, json=False):
-    return self.simple_query(_type='post', body=body, url_params=url_params, json=json)
+def create(cls, body=None, url_params=None, json=False):
+    return cls.simple_query(_type='post', body=body, url_params=url_params, json=json)
 
 
-def search(self, query, url_params=None, json=False):
+def search(cls, query, url_params=None, json=False):
     params = url_params.copy()
     params.update(query)
-    return self.simple_query(url_params=params, json=json)
+    return cls.simple_query(url_params=params, json=json)

@@ -9,8 +9,8 @@ class User(Components):
     def __init__(self, request, props):
         super(User, self).__init__(request, props)
         self.api_path = 'users'
-        if self._id_ is None:
-            self._id_ = 'me'
+        if self.id is None:
+            self.id = 'me'
 
     def create(self, body, url_params=None, json=False):
         return self.simple_query(_type='post', api_path='v2/users', url_params=url_params, body=body, json=json)
@@ -19,20 +19,20 @@ class User(Components):
         return self.create(body=body, url_params=url_params, json=json)
 
     def get_orders(self, url_params=None, json=False):
-        return self.simple_query(resource='orders', _id=self._id_, url_params=url_params, json=json,
+        return self.simple_query(resource='orders', _id=self.id, url_params=url_params, json=json,
                                  res_constructor=Order)
 
     def get_rating(self, url_params=None):
-        return self.simple_query(resource='ratings', _id=self._id_, url_params=url_params, json=True)
+        return self.simple_query(resource='ratings', _id=self.id, url_params=url_params, json=True)
 
     def rate(self, body, url_params=None):
-        return self.simple_query(_type='put', _id=self._id_, resource='ratings', body=body, url_params=url_params,
+        return self.simple_query(_type='put', _id=self.id, resource='ratings', body=body, url_params=url_params,
                                  json=True)
 
     def update_addresses(self, body, url_params=None):
-        return self.simple_query(_type='put', _id=self._id_, resource='addresses', body=body, url_params=url_params,
+        return self.simple_query(_type='put', _id=self.id, resource='addresses', body=body, url_params=url_params,
                                  json=True)
 
     def get_subscriptions(self, body, url_params=None):
-        return self.simple_query(_type='put', _id=self._id_, resource='subscriptions', body=body, url_params=url_params,
+        return self.simple_query(_type='put', _id=self.id, resource='subscriptions', body=body, url_params=url_params,
                                  res_constructor=Subscription)

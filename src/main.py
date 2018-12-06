@@ -1,6 +1,7 @@
 from src.collection.all import *
 from src.utils.request import Request
 
+
 class Kvass:
     def __init__(self, endpoint, api_key, bearer_token=None):
         if endpoint is None:

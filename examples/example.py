@@ -1,12 +1,12 @@
 from random import randint
-from src.main import Kvass
 from examples.config import ENDPOINT, API_KEY, BEARER_TOKEN
+from src.main import Kvass
 
 k = Kvass(endpoint=ENDPOINT, api_key=API_KEY, bearer_token=BEARER_TOKEN)
 users = k.user().get_all()
 print(users)
 user = users[0]
-user_id = user._id_
+user_id = user.id
 print(user)
 print(user_id)
 user = k.user(user_id).get()
