@@ -20,9 +20,8 @@ class Components():
         if props and '_id' in props and '$oid' in props['_id']:
             self.id = props['_id']['$oid']
 
-    def parse_json(self, res, res_constructor, raw_json=False):
+    def parse_json(self, res_data, res_constructor, raw_json=False):
         data = {}
-        res_data = res.json() if not isinstance(res, (dict, list)) else res
         if raw_json:
             data = res_data
         elif isinstance(res_data, list):
@@ -33,6 +32,8 @@ class Components():
             else:
                 self.build_instance(res_data)
                 data = self
+        elif isinstance(res_data, (int, str, float)):
+            data = res_data
         return data
 
     def simple_query(
@@ -59,6 +60,7 @@ class Components():
         local_api_path = api_path if api_path else self.api_path
         resource = self.build_resource_path(local_api_path, local_id, local_resource)
         # TODO: add pagination
+        # TODO: add object expand
         res = self.request.query(
             _type=_type,
             url_params=url_params,
@@ -75,7 +77,8 @@ class Components():
                 pass
             raise Exception(error)
 
-        return self.parse_json(res, res_constructor, raw_json=json)
+        res_data = res.json()
+        return self.parse_json(res_data, res_constructor, raw_json=json)
 
     def build_query(self, _type='get', resource='', url_params=None, body=None, headers=None,
                     endpoint=None, res_constructor=None, json=False):
@@ -90,7 +93,8 @@ class Components():
         if not 200 >= res.status_code < 400:
             raise Exception('Bad response: %s' % res.status_code)
 
-        return self.parse_json(res, res_constructor, raw_json=json)
+        res_data = res.json()
+        return self.parse_json(res_data, res_constructor, raw_json=json)
 
     @staticmethod
     def build_resource_path(*args):
