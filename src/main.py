@@ -7,7 +7,6 @@ from src.utils.request import Request
 class Kvass:
     def __init__(self, endpoint, api_key, bearer_token=None):
         self.validate_input(endpoint, api_key, bearer_token)
-        
         self.api_key = api_key
         self.bearer_token = bearer_token
         self.endpoint = endpoint
@@ -37,10 +36,8 @@ class Kvass:
             'X-Kvass-API-Key': self.api_key,
         }
         if self.bearer_token is not None:
-            if "bearer" in self.bearer_token.lower():
-                # Remove 'Bearer ' if it's in the beginning of the bearer_token. Add it under
-                self.bearer_token = re.sub('bearer ', '', self.bearer_token, flags=re.IGNORECASE)
-
+            # Remove 'Bearer ' if it's in the beginning of the bearer_token. Add it under
+            self.bearer_token = re.sub('^bearer ', '', self.bearer_token, flags=re.IGNORECASE)
             headers['Authorization'] = "Bearer %s" % self.bearer_token
         return headers
 
