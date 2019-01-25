@@ -29,7 +29,7 @@ class Kvass:
     def refresh_bearer_token(self, new_bearer_token):
         self.bearer_token = new_bearer_token
         headers = self._construct_headers()
-        self.request.updateHeaders(headers)
+        self.request.update_headers(headers)
 
     def _construct_headers(self):
         headers = {

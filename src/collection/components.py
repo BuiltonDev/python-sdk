@@ -10,7 +10,7 @@ class Components():
 
         if isinstance(props, str):
             self.id = props
-        elif props is not None:
+        elif isinstance(props, dict):
             self.build_instance(props)
 
     def build_instance(self, props):
@@ -58,9 +58,11 @@ class Components():
 
         local_resource = resource if not resource or resource[0] is '/' else '/%s' % resource
         local_api_path = api_path if api_path else self.api_path
-        resource = self.build_resource_path(local_api_path, local_id, local_resource)
+        resource = ''.join([local_api_path, local_id, local_resource])
+
         # TODO: add pagination
         # TODO: add object expand
+
         res = self.request.query(
             _type=_type,
             url_params=url_params,
@@ -95,10 +97,3 @@ class Components():
 
         res_data = res.json()
         return self.parse_json(res_data, res_constructor, raw_json=json)
-
-    @staticmethod
-    def build_resource_path(*args):
-        resource = ""
-        for arg in args:
-            resource += arg
-        return resource
