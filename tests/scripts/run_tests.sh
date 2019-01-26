@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
-BASEDIR=`dirname "$0"`
-ROOTDIR="$BASEDIR/../.."
 
-cd $ROOTDIR
+PYTHONPATH=$(dirname "$0")../../ python -m pytest --cov=src
 
-python -m pytest --cov=src
-
-cd -
 
