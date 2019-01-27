@@ -1,21 +1,10 @@
 import pytest
 
 from src.main import Kvass
-from src.collection.ai_model import AIModel
-from src.collection.company import Company
-from src.collection.event import Event
-from src.collection.order import Order
-from src.collection.payment import Payment
-from src.collection.payment_method import PaymentMethod
-from src.collection.plan import Plan
-from src.collection.product import Product
-from src.collection.provider import Provider
-from src.collection.resource import Resource
-from src.collection.subscription import Subscription
-from src.collection.tag import Tag
-from src.collection.user import User
-from src.collection.webhook import Webhook
 from src.utils.request import Request
+from src.collection.all import AIModel, Company, Event, Order, Payment, \
+                               PaymentMethod, Plan, Product, Provider, \
+                               Resource, Subscription, Tag, User, Webhook
 
 
 #__init__
