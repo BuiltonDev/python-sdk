@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "index.js": "0.0.3",
+    "node": "^11.6.0",
+    "talkback": "^1.8.0"
+  }
+}
