@@ -13,7 +13,7 @@ def test_cannot_construct_abstract_instances():
 
 
 def test_init_sets_parameters():
-    component = Component("request", None)
+    component = Component("request", {})
     assert component.identifier == None
     assert component.request == "request"
     assert component.id == None
@@ -32,6 +32,11 @@ def test_dict_props_calls_build_instance(mocker):
     Components.build_instance.assert_called_once_with(props)
 
 
+def test_invalid_props_type_raises_exception():
+    with pytest.raises(ValueError):
+        Component("request", 42)
+
+
 # build_instance
 def test_dict_props_turns_into_instance_props():
     props = {'foo' : 'bar', 'monty' : 42}
@@ -40,7 +45,7 @@ def test_dict_props_turns_into_instance_props():
     assert component.monty == 42
 
 
-def test_id_oid_from_props_turns_into_instance_prop():
+def test_id_oid_from_props_turns_into_instance_id():
     props = {'_id' : {'$oid' : 42}}
     component = Component(None, props)
     assert component.id == 42
@@ -51,4 +56,3 @@ def test_simple_query_without_id_raises_exception():
     component = Component(None, None)
     with pytest.raises(ValueError):
         component.simple_query(_id=None)
-
