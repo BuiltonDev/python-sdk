@@ -1,7 +1,7 @@
 import pytest
+
 from src.main import Kvass
 from src.collection.order import Order
-
 from tests.integration.config import ENDPOINT, API_KEY, BEARER_TOKEN
 
 
@@ -12,7 +12,7 @@ def kvass():
                  bearer_token=BEARER_TOKEN)
 
 
-def test_get_users_has_attributes_with_right_types(kvass):
+def test_get_orders_has_attributes_with_right_types(kvass):
     orders = kvass.order().get_all()
 
     assert isinstance(orders, list)

@@ -1,7 +1,7 @@
 import pytest
+
 from src.main import Kvass
 from src.collection.user import User
-
 from tests.integration.config import ENDPOINT, API_KEY, BEARER_TOKEN
 
 
