@@ -52,6 +52,17 @@ class Components():
         local_api_path = api_path if api_path else self.api_path
         return ''.join([local_api_path, local_id, local_resource])
 
+    def handle_error(self, response):
+        if not 200 >= response.status_code < 400:
+            error = {'Bad response': '%s' % response.status_code}
+            try:
+                error_message = response.json()
+                if isinstance(error_message, dict):
+                    error = error_message
+            except Exception:
+                pass
+            raise Exception(error)
+
     def simple_query(self,
                      _type='get',
                      _id='',
@@ -67,25 +78,16 @@ class Components():
 
         resource = self.build_resource(_id, resource, api_path)
 
-        res = self.request.query(
+        response = self.request.query(
             _type=_type,
             url_params=url_params,
             body=body,
             resource=resource
         )
+        self.handle_error(response)
 
-        if not 200 >= res.status_code < 400:
-            error = {'Bad response': '%s' % res.status_code}
-            try:
-                error_message = res.json()
-                if isinstance(error_message, dict):
-                    error = error_message
-            except Exception:
-                pass
-            raise Exception(error)
-
-        res_data = res.json()
-        return self.parse_json(res_data, res_constructor, raw_json=json)
+        response_data = response.json()
+        return self.parse_json(response_data, res_constructor, raw_json=json)
 
     def build_query(self,
                     _type='get',
