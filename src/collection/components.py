@@ -86,8 +86,12 @@ class Components():
         )
         self.handle_error(response)
 
-        response_data = response.json()
-        return self.parse_json(response_data, res_constructor, raw_json=json)
+        try:
+            response_data = response.json()
+            response = self.parse_json(response_data, res_constructor, raw_json=json)
+        except Exception:
+            raise Exception("Error parsing JSON")
+        return response
 
     def build_query(self,
                     _type='get',
