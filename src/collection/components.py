@@ -38,16 +38,7 @@ class Components():
             data = res_data
         return data
 
-    def simple_query(self,
-                     _type='get',
-                     _id='',
-                     resource='',
-                     url_params=None,
-                     body=None,
-                     api_path=None,
-                     res_constructor=None,
-                     json=False):
-
+    def build_resource(self, _id, resource, api_path):
         if _id is None:
             raise ValueError('This method requires an ID')
         if self.id and _id is not '':
@@ -59,10 +50,22 @@ class Components():
 
         local_resource = resource if not resource or resource[0] is '/' else '/%s' % resource
         local_api_path = api_path if api_path else self.api_path
-        resource = ''.join([local_api_path, local_id, local_resource])
+        return ''.join([local_api_path, local_id, local_resource])
+
+    def simple_query(self,
+                     _type='get',
+                     _id='',
+                     resource='',
+                     url_params=None,
+                     body=None,
+                     api_path=None,
+                     res_constructor=None,
+                     json=False):
 
         # TODO: add pagination
         # TODO: add object expand
+
+        resource = self.build_resource(_id, resource, api_path)
 
         res = self.request.query(
             _type=_type,
