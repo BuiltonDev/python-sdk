@@ -30,7 +30,7 @@ def test_get_orders_has_attributes_with_right_types(kvass):
         assert isinstance(order.resources, list)
         assert isinstance(order.top_up_amount, int)
         assert isinstance(order.top_up_vat, float)
-        assert isinstance(order.total_amount, int)
+        assert isinstance(order.total_amount, (int, float))
         assert isinstance(order.total_quantity, int)
         assert isinstance(order.units, int)
         assert isinstance(order.stripe_charge_id, str)
