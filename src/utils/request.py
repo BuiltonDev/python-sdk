@@ -6,7 +6,7 @@ class Request:
         self.endpoint = endpoint
         self.headers = headers
 
-    def updateHeaders(self, headers):
+    def update_headers(self, headers):
         self.headers = headers
 
     def query(self, _type='get', resource='', url_params=None, body=None, headers=None, endpoint=None):
