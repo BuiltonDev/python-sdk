@@ -2,7 +2,7 @@ import pytest
 
 from src.main import Kvass
 from src.collection.order import Order
-from tests.integration.config import ENDPOINT, API_KEY, BEARER_TOKEN
+from tests.integration.config_example import ENDPOINT, API_KEY, BEARER_TOKEN
 
 
 @pytest.fixture
