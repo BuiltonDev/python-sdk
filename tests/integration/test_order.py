@@ -1,7 +1,7 @@
 import pytest
 
-from src.main import Kvass
 from src.collection.order import Order
+from src.main import Kvass
 from tests.integration.config_example import ENDPOINT, API_KEY, BEARER_TOKEN
 
 
@@ -35,3 +35,11 @@ def test_get_orders_has_attributes_with_right_types(kvass):
         assert isinstance(order.units, int)
         assert isinstance(order.stripe_charge_id, str)
         assert isinstance(order.stripe_refund_id, str)
+
+
+def test_get_specific_order(kvass):
+    orders = kvass.order().get_all()
+    order_id = orders[0].id
+
+    order = kvass.order(order_id).get()
+    assert isinstance(order, Order)
