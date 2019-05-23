@@ -22,9 +22,11 @@ def test_get_users_has_attributes_with_right_types(kvass):
         assert isinstance(user.id, str)
         assert isinstance(user.first_name, str)
         assert isinstance(user.last_name, str)
-        assert isinstance(user.email, str)
+        if hasattr(user, "email"):
+            assert isinstance(user.email, str)
         assert isinstance(user.roles, list)
-        assert isinstance(user.mobile_phone_number, str)
+        if hasattr(user, "mobile_phone_number"):
+            assert isinstance(user.mobile_phone_number, str)
         assert isinstance(user.addresses, list)
         assert isinstance(user.bio, str)
         assert isinstance(user.tags, list)
