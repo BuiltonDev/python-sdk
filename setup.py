@@ -7,5 +7,4 @@ setup(name='builton-sdk',
       author='BuiltOn',
       author_email='hello@builton.dev',
       license='MIT',
-      # packages=['builton-sdk'],
       zip_safe=False)

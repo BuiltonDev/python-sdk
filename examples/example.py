@@ -1,7 +1,7 @@
 from random import randint
 
 from builton_sdk import Builton
-from config import ENDPOINT, API_KEY, BEARER_TOKEN
+from config import *
 
 k = Builton(endpoint=ENDPOINT, api_key=API_KEY, bearer_token=BEARER_TOKEN)
 users = k.user().get_all()

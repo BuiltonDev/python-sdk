@@ -39,10 +39,9 @@ python setup.py install
 ## Usage
 
 ```python
-from builton import Builton
-sdk = Builton(endpoint="ENDPOINT", api_key="API_KEY", bearer_token="BEARER_TOKEN") 
-
-sdk.product().get_all({"size": 1})
+from builton_sdk import Builton
+builton = Builton(endpoint="ENDPOINT", api_key="API_KEY", bearer_token="BEARER_TOKEN")
+builton.product().get_all({"size": 1})
 ``` 
 
 The `API_KEY` and the `BEARER_TOKEN` are both in the [Settings](https://dashboard.builton.dev/settings) 
@@ -50,8 +49,8 @@ section of your BuiltOn dashboard. The `API_KEY` will be under **API Keys** and 
 yet, please go ahead and create it. The `BEARER_TOKEN` you can fetch from the **Service Accounts** 
 section, from an existing Service Account or by creating a new one.
 
-The `ENDPOINT` will, by default, point to our QA environment: **https://qa.builton.dev**. If you 
-want  to use the Production environment, please use this endpoint instead: **https://api.builton.dev**.
+The `ENDPOINT` will, by default, point to our QA environment: **https://qa.builton.dev/**. If you 
+want  to use the Production environment, please use this endpoint instead: **https://api.builton.dev/**.
 
 ## Contributing
 
