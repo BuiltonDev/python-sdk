@@ -39,10 +39,10 @@ python setup.py install
 ## Usage
 
 ```python
-import builton import Builton
-builton = Builton(endpoint="ENDPOINT", api_key="API_KEY", bearer_token="BEARER_TOKEN") 
+from builton import Builton
+sdk = Builton(endpoint="ENDPOINT", api_key="API_KEY", bearer_token="BEARER_TOKEN") 
 
-builton.product().get_all({"size": 1})
+sdk.product().get_all({"size": 1})
 ``` 
 
 The `API_KEY` and the `BEARER_TOKEN` are both in the [Settings](https://dashboard.builton.dev/settings) 
