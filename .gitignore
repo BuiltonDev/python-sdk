@@ -9,3 +9,6 @@ venv
 # npm files
 npm-debug.log
 node_modules/
+
+# Don't push your local config by mistake
+config.py

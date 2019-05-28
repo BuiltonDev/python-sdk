@@ -1,0 +1,6 @@
+API_KEY = 'REPLACE_WITH_API_KEY'
+BEARER_TOKEN = 'REPLACE_WITH_SERVICE_ACCOUNT_TOKEN'
+ENDPOINT = 'https://qa.kvass.ai/'
+
+# replace the endpoint or uncomment the following line to use the Production environment.
+# ENDPOINT = 'https://api.kvass.ai/'
