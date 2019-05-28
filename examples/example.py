@@ -1,7 +1,9 @@
 from random import randint
-from examples.config_example import ENDPOINT, API_KEY, BEARER_TOKEN
 
-k = Kvass(endpoint=ENDPOINT, api_key=API_KEY, bearer_token=BEARER_TOKEN)
+from builton_sdk import Builton
+from config import ENDPOINT, API_KEY, BEARER_TOKEN
+
+k = Builton(endpoint=ENDPOINT, api_key=API_KEY, bearer_token=BEARER_TOKEN)
 users = k.user().get_all()
 print(users)
 user = users[0]
