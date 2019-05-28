@@ -1,4 +1,4 @@
-from src.collection.user import User
+from builton_sdk.api_models import User
 
 
 def test_rest_decorators():

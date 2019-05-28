@@ -1,4 +1,4 @@
-from src.collection.event import Event
+from builton_sdk.api_models import Event
 
 
 def test_rest_decorators():

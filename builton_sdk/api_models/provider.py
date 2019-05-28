@@ -1,4 +1,4 @@
-from src.collection.user import User
+from builton_sdk.api_models.user import User
 
 
 class Provider(User):
@@ -7,7 +7,8 @@ class Provider(User):
         self.api_path = 'providers'
 
     def create(self, body, url_params=None, json=False):
-        return self.simple_query(_type='post', api_path='v2/providers', url_params=url_params, body=body, json=json)
+        return self.simple_query(_type='post', api_path='v2/providers', url_params=url_params,
+                                 body=body, json=json)
 
     def find(self, url_params=None, json=False):
         return self.simple_query(resource='find', url_params=url_params, json=json)
@@ -19,25 +20,30 @@ class Provider(User):
         return self.simple_query(resource='reports-count', url_params=url_params, json=True)
 
     def get_reports(self, url_params=None):
-        return self.simple_query(_id=self.id, resource='reports-count', url_params=url_params, json=True)
+        return self.simple_query(_id=self.id, resource='reports-count', url_params=url_params,
+                                 json=True)
 
     def get_available_overview(self, url_params=None):
-        return self.simple_query(_id=self.id, resource='available-overview', url_params=url_params, json=True)
+        return self.simple_query(_id=self.id, resource='available-overview', url_params=url_params,
+                                 json=True)
 
     def get_schedule(self, url_params=None):
         return self.simple_query(_id=self.id, resource='schedule', url_params=url_params, json=True)
 
     def get_availability(self, url_params=None):
-        return self.simple_query(_id=self.id, resource='availability', url_params=url_params, json=True)
+        return self.simple_query(_id=self.id, resource='availability', url_params=url_params,
+                                 json=True)
 
     def get_available_at(self, url_params=None):
-        return self.simple_query(_id=self.id, resource='available-at', url_params=url_params, json=True)
+        return self.simple_query(_id=self.id, resource='available-at', url_params=url_params,
+                                 json=True)
 
     def get_products(self, url_params=None):
         return self.simple_query(_id=self.id, resource='products', url_params=url_params, json=True)
 
     def post_products(self, body, url_params=None):
-        return self.simple_query(_type='post', _id=self.id, resource='products', body=body, url_params=url_params,
+        return self.simple_query(_type='post', _id=self.id, resource='products', body=body,
+                                 url_params=url_params,
                                  json=True)
 
     def update_addresses(self, body, url_params=None):

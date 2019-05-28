@@ -1,4 +1,4 @@
-from src.collection.provider import Provider
+from builton_sdk.api_models import Provider
 
 
 def test_init_sets_api_path():

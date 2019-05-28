@@ -1,4 +1,4 @@
-from src.collection.webhook import Webhook
+from builton_sdk.api_models import Webhook
 
 
 def test_rest_decorators():

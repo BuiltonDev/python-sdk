@@ -1,19 +1,8 @@
-import pytest
-
-from src.main import Kvass
-from src.collection.user import User
-from tests.integration.config_example import ENDPOINT, API_KEY, BEARER_TOKEN
+from builton_sdk.api_models import User
 
 
-@pytest.fixture
-def kvass():
-    return Kvass(endpoint=ENDPOINT,
-                 api_key=API_KEY,
-                 bearer_token=BEARER_TOKEN)
-
-
-def test_get_users_has_attributes_with_right_types(kvass):
-    users = kvass.user().get_all()
+def test_get_users_has_attributes_with_right_types(builton):
+    users = builton.user().get_all()
 
     assert isinstance(users, list)
 

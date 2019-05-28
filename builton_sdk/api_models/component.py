@@ -1,6 +1,6 @@
-class Components():
+class Component:
     def __init__(self, request, props):
-        if self.__class__.__name__ == 'Components':
+        if self.__class__.__name__ == 'Component':
             raise Exception('Cannot construct Abstract instances')
 
         self.identifier = None
@@ -115,3 +115,7 @@ class Components():
 
         res_data = res.json()
         return self.parse_json(res_data, res_constructor, raw_json=json)
+
+    def __repr__(self):
+        if hasattr(self, 'id'):
+            return "<%s %s>" % (self.__class__.__name__, self.id)

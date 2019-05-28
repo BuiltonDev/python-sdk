@@ -3,6 +3,7 @@ def rest_decorator(*fns):
         for fn in fns:
             setattr(cls, fn.__name__, fn)
         return cls
+
     return wrapper
 
 

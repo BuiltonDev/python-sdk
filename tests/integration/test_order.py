@@ -1,19 +1,8 @@
-import pytest
-
-from src.collection.order import Order
-from src.main import Kvass
-from tests.integration.config_example import ENDPOINT, API_KEY, BEARER_TOKEN
+from builton_sdk.api_models import Order
 
 
-@pytest.fixture
-def kvass():
-    return Kvass(endpoint=ENDPOINT,
-                 api_key=API_KEY,
-                 bearer_token=BEARER_TOKEN)
-
-
-def test_get_orders_has_attributes_with_right_types(kvass):
-    orders = kvass.order().get_all()
+def test_get_orders_has_attributes_with_right_types(builton):
+    orders = builton.order().get_all()
 
     assert isinstance(orders, list)
 
@@ -37,9 +26,9 @@ def test_get_orders_has_attributes_with_right_types(kvass):
         assert isinstance(order.stripe_refund_id, str)
 
 
-def test_get_specific_order(kvass):
-    orders = kvass.order().get_all()
+def test_get_specific_order(builton):
+    orders = builton.order().get_all()
     order_id = orders[0].id
 
-    order = kvass.order(order_id).get()
+    order = builton.order(order_id).get()
     assert isinstance(order, Order)

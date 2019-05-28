@@ -1,4 +1,4 @@
-from src.collection.resource import Resource
+from builton_sdk.api_models import Resource
 
 
 def test_rest_decorators():

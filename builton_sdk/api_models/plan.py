@@ -1,9 +1,9 @@
-from src.collection.components import Components
-from src.utils.rest_functions import rest_decorator, create, delete, get, get_all, refresh, update, search
+from builton_sdk.api_models.component import Component
+from builton_sdk.utils.rest_functions import *
 
 
 @rest_decorator(create, delete, get, get_all, refresh, update, search)
-class Plan(Components):
+class Plan(Component):
     def __init__(self, request, props):
         super(Plan, self).__init__(request, props)
         self.api_path = 'plans'

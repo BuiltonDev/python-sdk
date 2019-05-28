@@ -1,10 +1,10 @@
 import re
 
-from src.collection.all import *
-from src.utils.request import Request
+from builton_sdk.api_models import *
+from builton_sdk.utils.request import Request
 
 
-class Kvass:
+class Builton:
     def __init__(self, endpoint, api_key, bearer_token=None):
         self.validate_input(endpoint, api_key, bearer_token)
         self.api_key = api_key
@@ -33,7 +33,7 @@ class Kvass:
 
     def _construct_headers(self):
         headers = {
-            'X-Kvass-API-Key': self.api_key,
+            'X-Builton-API-Key': self.api_key,
         }
         if self.bearer_token is not None:
             # Remove 'Bearer ' if it's in the beginning of the bearer_token. Add it under

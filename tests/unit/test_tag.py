@@ -1,4 +1,4 @@
-from src.collection.tag import Tag
+from builton_sdk.api_models import Tag
 
 
 def test_rest_decorators():
