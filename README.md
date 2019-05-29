@@ -83,7 +83,7 @@ Follow the steps below to open a new Pull Request into this package:
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b amazing-feature`)
-3. Commit your Changes (`git commit -m 'Add some Amazing Feature`)
+3. Commit your Changes (`git commit -m 'Add some Amazing Feature'`)
 4. Push to the Branch (`git push origin amazing-feature`)
 5. Open a Pull Request
 
