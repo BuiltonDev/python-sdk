@@ -3,9 +3,11 @@ import re
 from builton_sdk.api_models import *
 from builton_sdk.utils.request import Request
 
+DEFAULT_ENDPOINT = "https://api.builton.dev/"
+
 
 class Builton:
-    def __init__(self, endpoint, api_key, bearer_token=None):
+    def __init__(self, api_key, bearer_token, endpoint=DEFAULT_ENDPOINT):
         self.validate_input(endpoint, api_key, bearer_token)
         self.api_key = api_key
         self.bearer_token = bearer_token

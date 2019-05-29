@@ -3,15 +3,25 @@ import pytest
 from builton_sdk import Builton
 from builton_sdk.api_models import *
 from builton_sdk.utils.request import Request
+from builton_sdk.main import DEFAULT_ENDPOINT
 
 
 def test_init_sets_parameters():
-    k = Builton("endpoint", "api_key", "bearer_token")
+    k = Builton("api_key", "bearer_token", endpoint="endpoint")
     assert k.api_key == "api_key"
     assert k.bearer_token == "bearer_token"
     assert k.endpoint == "endpoint"
     assert isinstance(k.request, Request)
     assert k.request.endpoint == "endpoint"
+
+
+def test_init_sets_parameters_default_environment():
+    k = Builton(api_key="api_key", bearer_token="bearer_token")
+    assert k.api_key == "api_key"
+    assert k.bearer_token == "bearer_token"
+    assert k.endpoint == DEFAULT_ENDPOINT
+    assert isinstance(k.request, Request)
+    assert k.request.endpoint == DEFAULT_ENDPOINT
 
 
 def test_none_endpoint_raises_exception():
@@ -42,7 +52,7 @@ def test_non_string_bearer_token_raises_exception():
 # validate_input
 def test_instantiating_calls_validate_input(mocker):
     mocker.patch.object(Builton, 'validate_input')
-    k = Builton("endpoint", "api_key", "bearer_token")
+    k = Builton("api_key", "bearer_token", "endpoint")
     k.validate_input.assert_called_once_with("endpoint",
                                              "api_key",
                                              "bearer_token")
@@ -56,14 +66,14 @@ def test_instantiating_calls_construct_headers(mocker):
 
 # refresh_bearer_token
 def test_refresh_bearer_token():
-    k = Builton("endpoint", "api_key", "bearer_token")
+    k = Builton("api_key", "bearer_token", endpoint="endpoint")
     assert k.bearer_token == "bearer_token"
     k.refresh_bearer_token("new_bearer")
     assert k.bearer_token == "new_bearer"
 
 
 def test_refresh_bear_token_calls_construct_headers(mocker):
-    k = Builton("endpoint", "api_key", "bearer_token")
+    k = Builton("api_key", "bearer_token", endpoint="endpoint")
     mocker.patch.object(Builton, '_construct_headers')
     k.refresh_bearer_token("new_barer_token")
     k._construct_headers.assert_called_once
@@ -71,7 +81,7 @@ def test_refresh_bear_token_calls_construct_headers(mocker):
 
 # _construct_headers
 def test_construct_headers_adds_api_key():
-    k = Builton("endpoint", "api_key", "bearer_token")
+    k = Builton("api_key", "bearer_token", endpoint="endpoint")
     headers = k._construct_headers()
     assert 'X-Builton-API-Key' in headers
     assert headers['X-Builton-API-Key'] == "api_key"

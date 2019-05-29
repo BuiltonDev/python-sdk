@@ -1,9 +1,6 @@
 API_KEY = 'REPLACE_WITH_API_KEY'
 BEARER_TOKEN = 'REPLACE_WITH_SERVICE_ACCOUNT_TOKEN'
-ENDPOINT = 'https://qa.kvass.ai/'
-
-# replace the endpoint or uncomment the following line to use the Production environment.
-# ENDPOINT = 'https://api.kvass.ai/'
+ENDPOINT = 'https://api.builton.dev/'
 
 # Talkback endpoint for tests
 TALKBACK_ENDPOINT = 'http://localhost:5544/'
