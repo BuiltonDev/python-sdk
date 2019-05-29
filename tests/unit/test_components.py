@@ -57,3 +57,12 @@ def test_simple_query_without_id_raises_exception():
     component = RandomComponent(None, None)
     with pytest.raises(ValueError):
         component.simple_query(_id=None)
+
+
+def test_build_resource():
+    user = RandomComponent("request")
+    user.api_path = "users"
+    assert user.api_path == "users"
+    assert "users" == user.build_resource("", "")
+    assert "users/1" == user.build_resource("1", "")
+    assert "users/1/payments" == user.build_resource("1", "payments")

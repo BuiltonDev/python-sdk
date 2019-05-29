@@ -1,5 +1,5 @@
 class Component:
-    def __init__(self, request, props):
+    def __init__(self, request, props=None):
         if self.__class__.__name__ == 'Component':
             raise Exception('Cannot construct Abstract instances')
 
@@ -38,7 +38,7 @@ class Component:
             data = res_data
         return data
 
-    def build_resource(self, _id, resource, api_path):
+    def build_resource(self, _id, resource, api_path=None):
         if _id is None:
             raise ValueError('This method requires an ID')
         if self.id and _id is not '':
