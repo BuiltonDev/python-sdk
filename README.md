@@ -5,17 +5,18 @@
 ![PyPI - Status](https://img.shields.io/pypi/status/django.svg)
 ![PyPI - Downloads](https://img.shields.io/pypi/dd/django.svg)
 
-![Builton logo](https://res.cloudinary.com/dftspnwxo/image/upload/v1554131594/Builton_logo_positiv_wc3j7x.svg)
+[![Builton logo](https://res.cloudinary.com/dftspnwxo/image/upload/v1554131594/Builton_logo_positiv_wc3j7x.svg)](https://builton.dev)
 
-Builton offers a platform as a service that digitizes core business functions and optimizes 
+[BuiltOn](https://builton.dev) offers a platform as a service that digitizes core business functions and optimizes 
 resource allocation with baked-in machine learning capabilities. 
 This package gives you access to our platform's building blocks and will help you implement its API.
  Get instant access to modules like Payments, Messaging Tools, User Management, Scheduling, 
  Resource Allocation and more.
 
-## API Documentation
+## Documentation
 
-See the [BuiltOn API documentation](https://docs.builton.dev) for a full reference of the API.
+See the [BuiltOn API documentation](https://docs.builton.dev) for a full reference of the API or visit
+our website - [https://builton.dev](https://builton.dev) - if you want to create an account.
 
 ## Getting Started
 
