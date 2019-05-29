@@ -40,3 +40,16 @@ def test_get_users_params_instead_of_dict(builton):
     users = builton.user().get_all(size=1)
     assert isinstance(users, list)
     assert 1 == len(users)
+
+
+def test_get_user_by_id(builton):
+    users = builton.user().get_all(size=1)
+    user_id = users[0].id
+
+    user = builton.user().get(user_id)
+    assert isinstance(user, User)
+    assert user.id == user_id
+
+    new_user = builton.user().get(id=user_id)
+    assert isinstance(new_user, User)
+    assert new_user.id == user.id == user_id

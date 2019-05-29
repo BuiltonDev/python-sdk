@@ -67,8 +67,31 @@ class Component:
                 pass
             raise Exception(error)
 
+    @staticmethod
+    def _build_url_params(kwargs):
+        url_params = {}
+        for param in ALLOWED_URL_PARAMS:
+            if param in kwargs.keys():
+                url_params[param] = kwargs[param]
+        return url_params
+
+    def simple_get_query(self, *args, _type='get', **kwargs):
+        _id = ''
+
+        if len(args) == 2:
+            _id = args[1]
+        elif len(args) > 2:
+            raise Exception("Not expecting more than the id has an argument")
+        elif 'id' in kwargs:
+            _id = kwargs.pop('id')
+        else:
+            raise Exception("Need id to get resource")
+
+        url_params = self._build_url_params(kwargs)
+
+        return self.simple_query(_id=_id, url_params=url_params, _type=_type)
+
     def simple_query(self,
-                     *args,
                      _type='get',
                      _id='',
                      resource='',

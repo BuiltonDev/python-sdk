@@ -30,7 +30,7 @@ def test_get_specific_order(builton):
     orders = builton.order().get_all()
     order_id = orders[0].id
 
-    order = builton.order(order_id).get()
+    order = builton.order().get(order_id)
     assert isinstance(order, Order)
 
 

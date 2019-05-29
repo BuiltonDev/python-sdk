@@ -7,8 +7,8 @@ def rest_decorator(*fns):
     return wrapper
 
 
-def get(cls, url_params=None, json=False):
-    return cls.simple_query(_id=cls.id, url_params=url_params, json=json)
+def get(cls, *args, **kwargs):
+    return cls.simple_get_query(cls.id, *args, **kwargs)
 
 
 def get_all(cls, *args, **kwargs):
