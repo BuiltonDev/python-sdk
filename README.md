@@ -41,7 +41,7 @@ python setup.py install
 
 ```python
 from builton_sdk import Builton
-builton = Builton(endpoint="ENDPOINT", api_key="API_KEY", bearer_token="BEARER_TOKEN")
+builton = Builton(api_key="API_KEY", bearer_token="BEARER_TOKEN")
 builton.product().get_all({"size": 1})
 ``` 
 
@@ -50,16 +50,13 @@ section of your BuiltOn dashboard. The `API_KEY` will be under **API Keys** and 
 yet, please go ahead and create it. The `BEARER_TOKEN` you can fetch from the **Service Accounts** 
 section, from an existing Service Account or by creating a new one.
 
-The `ENDPOINT` will, by default, point to our QA environment: **https://qa.builton.dev/**. If you 
-want  to use the Production environment, please use this endpoint instead: **https://api.builton.dev/**.
-
 ## Contributing
 
 ### Configuration
 
 Before starting to use the package, please copy the `config.py.template` into 
 `config.py` and edit the configuration inside accordingly. Have a look at the [Usage](#usage) section 
-for more information on how to find the values to put inside the `config.py`
+for more information on how to find the values to put inside the `config.py`.
 
 ### Testing
 
