@@ -4,3 +4,6 @@ ENDPOINT = 'https://qa.kvass.ai/'
 
 # replace the endpoint or uncomment the following line to use the Production environment.
 # ENDPOINT = 'https://api.kvass.ai/'
+
+# Talkback endpoint for tests
+TALKBACK_ENDPOINT = 'http://localhost:5544/'
