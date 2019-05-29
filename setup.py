@@ -1,14 +1,20 @@
+import setuptools
 from setuptools import setup
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
 setup(name='builton-sdk',
-      version='0.1.0',
+      version='0.1.2',
       description='BuiltOn Python SDK',
+      long_description=long_description,
+      long_description_content_type="text/markdown",
       keywords='builton api sdk ai',
       url='https://github.com/BuiltonDev/python-sdk',
       author='BuiltOn',
       author_email='hello@builton.dev',
       license='MIT',
-      packages=["builton_sdk"],
+      packages=setuptools.find_packages(),
       install_requires=[
           'requests',
       ],
@@ -16,8 +22,7 @@ setup(name='builton-sdk',
       tests_require=['pytest', 'pytest-mock'],
       project_urls={
           "Bug Tracker": "https://github.com/BuiltonDev/python-sdk/issues",
-          "Documentation": "https://docs.builton.dev",
-          "Source Code": "https://github.com/BuiltonDev/python-sdk",
+          "Documentation": "https://docs.builton.dev"
       },
       classifiers=[
           "Development Status :: 4 - Beta",
