@@ -1,3 +1,6 @@
+ALLOWED_URL_PARAMS = ["size", "sort", "page", "order_status"]
+
+
 class Component:
     def __init__(self, request, props=None):
         if self.__class__.__name__ == 'Component':
@@ -41,10 +44,11 @@ class Component:
     def build_resource(self, _id, resource, api_path=None):
         if _id is None:
             raise ValueError('This method requires an ID')
-        if self.id and _id is not '':
-            local_id = '/%s' % self.id
-        elif _id:
+
+        if _id:
             local_id = _id if _id[0] is '/' else '/%s' % _id
+        elif not _id and self.id:
+            local_id = '/%s' % self.id
         else:
             local_id = ''
 
@@ -64,6 +68,7 @@ class Component:
             raise Exception(error)
 
     def simple_query(self,
+                     *args,
                      _type='get',
                      _id='',
                      resource='',
@@ -71,12 +76,27 @@ class Component:
                      body=None,
                      api_path=None,
                      res_constructor=None,
-                     json=False):
+                     json=False,
+                     **kwargs):
 
         # TODO: add pagination
         # TODO: add object expand
 
+        if url_params is None:
+            url_params = {}
+
         resource = self.build_resource(_id, resource, api_path)
+
+        if _type == 'get':
+            for param in ALLOWED_URL_PARAMS:
+                if param in kwargs.keys():
+                    url_params[param] = kwargs[param]
+        elif _type == 'put':
+            if body is None:
+                body = {}
+
+            for item, value in kwargs.items():
+                body[item] = value
 
         response = self.request.query(
             _type=_type,

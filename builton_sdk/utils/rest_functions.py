@@ -11,16 +11,16 @@ def get(cls, url_params=None, json=False):
     return cls.simple_query(_id=cls.id, url_params=url_params, json=json)
 
 
-def get_all(cls, url_params=None, json=False):
-    return cls.simple_query(url_params=url_params, json=json)
+def get_all(cls, *args, **kwargs):
+    return cls.simple_query(*args, **kwargs)
 
 
 def refresh(cls, url_params=None, json=False):
     return get(cls, url_params=url_params, json=json)
 
 
-def update(cls, body=None, url_params=None, json=False):
-    return cls.simple_query(_type='put', _id=cls.id, body=body, url_params=url_params, json=json)
+def update(cls, *args, **kwargs):
+    return cls.simple_query(*args, _type='put', **kwargs)
 
 
 def delete(cls, url_params=None, json=False):

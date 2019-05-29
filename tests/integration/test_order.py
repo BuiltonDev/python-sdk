@@ -32,3 +32,42 @@ def test_get_specific_order(builton):
 
     order = builton.order(order_id).get()
     assert isinstance(order, Order)
+
+
+def test_get_orders_with_size_url_param(builton):
+    pass
+
+
+def test_get_orders_with_order_status_param(builton):
+    orders = builton.order().get_all(order_status="SUCCESS", size=1)
+    assert isinstance(orders, list)
+    assert 1 == len(orders)
+
+    order = orders[0]
+    assert "SUCCESS" == order.order_status
+
+
+def test_update_order_order_status(builton):
+    orders = builton.order().get_all(order_status="SUCCESS", size=1)
+    assert isinstance(orders, list)
+    assert 1 == len(orders)
+
+    order = orders[0]
+    assert "SUCCESS" == order.order_status
+
+    order = order.update(order_status="CREATED")
+    assert isinstance(order, Order)
+    assert "CREATED" == order.order_status
+
+
+def test_update_order_missing_field(builton):
+    orders = builton.order().get_all(order_status="SUCCESS", size=1)
+    assert isinstance(orders, list)
+    assert 1 == len(orders)
+
+    order = orders[0]
+    assert "SUCCESS" == order.order_status
+
+    updated_order = order.update(missing_field=True)
+    assert isinstance(updated_order, Order)
+    assert order == updated_order

@@ -3,7 +3,6 @@ from builton_sdk.api_models import User
 
 def test_get_users_has_attributes_with_right_types(builton):
     users = builton.user().get_all()
-
     assert isinstance(users, list)
 
     for user in users:
@@ -35,3 +34,9 @@ def test_get_user_orders(builton):
         for order in orders:
             assert order.id is not None
             assert order.user["$oid"] == user.id
+
+
+def test_get_users_params_instead_of_dict(builton):
+    users = builton.user().get_all(size=1)
+    assert isinstance(users, list)
+    assert 1 == len(users)
