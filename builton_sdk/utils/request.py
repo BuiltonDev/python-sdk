@@ -1,4 +1,5 @@
 import logging
+from urllib.parse import urljoin
 
 import requests
 
@@ -13,17 +14,15 @@ class Request:
     def update_headers(self, headers):
         self.headers = headers
 
-    def query(self, _type='get', resource='', url_params=None, body=None, headers=None,
-              endpoint=None):
-        if endpoint is None:
-            endpoint = self.endpoint
-        query_url = endpoint + resource
+    def _build_query_url(self, resource):
+        return urljoin(self.endpoint, resource)
+
+    def query(self, _type='get', resource='', url_params=None, body=None, headers=None):
+        query_url = self._build_query_url(resource)
+        query_headers = self.headers
+
         if headers:
-            query_headers = dict()
-            query_headers.update(self.headers)
             query_headers.update(headers)
-        else:
-            query_headers = self.headers
 
         logger.debug("query_url: %s" % query_url)
         logger.debug("headers: %s" % query_headers)

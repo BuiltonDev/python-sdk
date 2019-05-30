@@ -33,8 +33,23 @@ def test_query_with_headers(mocker):
 
 
 def test_query_builds_query_url(mocker):
-    r = Request(endpoint="endpoint", headers={})
+    r = Request(endpoint="http://example.com", headers={})
     mocker.patch.object(requests, 'request')
     r.query(resource="/resource")
-    requests.request.assert_called_once_with('get', 'endpoint/resource', headers={},
+    requests.request.assert_called_once_with('get', 'http://example.com/resource', headers={},
                                              json=None, params=None, verify=True)
+
+
+def test_build_query_url():
+    url = "https://qa.builton.dev"
+    resource = "users"
+    expected_url = "%s/%s" % (url, resource)
+
+    request = Request(endpoint=url, headers={})
+    query_url = request._build_query_url(resource)
+    assert expected_url == query_url
+
+    url = "https://qa.builton.dev///"
+    request = Request(endpoint=url, headers={})
+    query_url = request._build_query_url(resource)
+    assert expected_url == query_url
