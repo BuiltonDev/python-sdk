@@ -1,6 +1,6 @@
-from api_models import Subscription
 from builton_sdk.api_models.component import Component
 from builton_sdk.api_models.order import Order
+from builton_sdk.api_models.subscription import Subscription
 from builton_sdk.utils.rest_functions import *
 
 
