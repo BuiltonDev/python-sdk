@@ -30,10 +30,10 @@ class Component:
             data = [self.parse_json(element, res_constructor) for element in res_data]
         elif isinstance(res_data, dict):
             if res_constructor:
-                data = res_constructor(self.request)
+                data = res_constructor(self.request, res_data)
             else:
-                self.build_instance(res_data)
-                data = self
+                new_instance = self.__class__(self.request, res_data)
+                data = new_instance
         elif isinstance(res_data, (int, str, float)):
             data = res_data
         return data
@@ -92,29 +92,6 @@ class Component:
         except Exception:
             raise Exception("Error parsing JSON")
         return response
-
-    def build_query(self,
-                    _type='get',
-                    resource='',
-                    url_params=None,
-                    body=None,
-                    headers=None,
-                    endpoint=None,
-                    res_constructor=None,
-                    json=False):
-        res = self.request.query(
-            _type=_type,
-            url_params=url_params,
-            body=body,
-            resource=resource,
-            headers=headers,
-            endpoint=endpoint
-        )
-        if not 200 >= res.status_code < 400:
-            raise Exception('Bad response: %s' % res.status_code)
-
-        res_data = res.json()
-        return self.parse_json(res_data, res_constructor, raw_json=json)
 
     def __repr__(self):
         if hasattr(self, 'id'):
