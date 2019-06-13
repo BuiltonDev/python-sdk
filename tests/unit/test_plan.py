@@ -1,4 +1,4 @@
-from src.collection.plan import Plan
+from builton_sdk.api_models import Plan
 
 
 def test_rest_decorators():

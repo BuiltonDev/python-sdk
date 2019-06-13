@@ -1,6 +1,6 @@
 import requests
 
-from src.utils.request import Request
+from builton_sdk.utils.request import Request
 
 
 def test_init_sets_endpoint_and_headers():
@@ -24,18 +24,32 @@ def test_query_with_no_arguments(mocker):
 
 
 def test_query_with_headers(mocker):
-    r = Request(endpoint="endpoint", headers={'foo' : 'bar'})
+    r = Request(endpoint="endpoint", headers={'foo': 'bar'})
     mocker.patch.object(requests, 'request')
-    r.query(headers={'monty' : 'python'})
+    r.query(headers={'monty': 'python'})
     requests.request.assert_called_once_with('get', 'endpoint',
-                                             headers={'foo' : 'bar', 'monty': 'python'},
+                                             headers={'foo': 'bar', 'monty': 'python'},
                                              json=None, params=None, verify=True)
 
 
 def test_query_builds_query_url(mocker):
-    r = Request(endpoint="endpoint", headers={})
+    r = Request(endpoint="http://example.com", headers={})
     mocker.patch.object(requests, 'request')
     r.query(resource="/resource")
-    requests.request.assert_called_once_with('get', 'endpoint/resource', headers={},
+    requests.request.assert_called_once_with('get', 'http://example.com/resource', headers={},
                                              json=None, params=None, verify=True)
 
+
+def test_build_query_url():
+    url = "https://qa.builton.dev"
+    resource = "users"
+    expected_url = "%s/%s" % (url, resource)
+
+    request = Request(endpoint=url, headers={})
+    query_url = request._build_query_url(resource)
+    assert expected_url == query_url
+
+    url = "https://qa.builton.dev///"
+    request = Request(endpoint=url, headers={})
+    query_url = request._build_query_url(resource)
+    assert expected_url == query_url

@@ -1,4 +1,4 @@
-from src.collection.ai_model import AIModel
+from builton_sdk.api_models import AIModel
 
 
 def test_rest_decorators():

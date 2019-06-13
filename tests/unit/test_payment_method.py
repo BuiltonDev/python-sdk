@@ -1,4 +1,4 @@
-from src.collection.payment_method import PaymentMethod
+from builton_sdk.api_models import PaymentMethod
 
 
 def test_rest_decorators():

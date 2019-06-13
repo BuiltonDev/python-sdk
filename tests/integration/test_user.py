@@ -1,19 +1,8 @@
-import pytest
-
-from src.main import Kvass
-from src.collection.user import User
-from tests.integration.config import ENDPOINT, API_KEY, BEARER_TOKEN
+from builton_sdk.api_models import User
 
 
-@pytest.fixture
-def kvass():
-    return Kvass(endpoint=ENDPOINT,
-                 api_key=API_KEY,
-                 bearer_token=BEARER_TOKEN)
-
-
-def test_get_users_has_attributes_with_right_types(kvass):
-    users = kvass.user().get_all()
+def test_get_users_has_attributes_with_right_types(builton):
+    users = builton.user().get_all()
 
     assert isinstance(users, list)
 
@@ -22,9 +11,27 @@ def test_get_users_has_attributes_with_right_types(kvass):
         assert isinstance(user.id, str)
         assert isinstance(user.first_name, str)
         assert isinstance(user.last_name, str)
-        assert isinstance(user.email, str)
+        if hasattr(user, "email"):
+            assert isinstance(user.email, str)
         assert isinstance(user.roles, list)
-        assert isinstance(user.mobile_phone_number, str)
+        if hasattr(user, "mobile_phone_number"):
+            assert isinstance(user.mobile_phone_number, str)
         assert isinstance(user.addresses, list)
         assert isinstance(user.bio, str)
         assert isinstance(user.tags, list)
+
+
+def test_get_users(builton):
+    users = builton.user().get_all(url_params={"size": 2})
+    first_user = users[0]
+    second_user = users[1]
+    assert first_user.id != second_user.id
+
+
+def test_get_user_orders(builton):
+    users = builton.user().get_all(url_params={"sort": "-created"})
+    for user in users:
+        orders = user.get_orders()
+        for order in orders:
+            assert order.id is not None
+            assert order.user["$oid"] == user.id

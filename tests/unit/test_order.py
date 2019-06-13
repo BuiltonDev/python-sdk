@@ -1,4 +1,4 @@
-from src.collection.order import Order
+from builton_sdk.api_models import Order
 
 
 def test_rest_decorators():

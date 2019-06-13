@@ -1,4 +1,4 @@
-from src.collection.subscription import Subscription
+from builton_sdk.api_models import Subscription
 
 
 def test_rest_decorators():

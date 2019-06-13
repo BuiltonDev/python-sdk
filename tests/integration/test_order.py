@@ -1,19 +1,8 @@
-import pytest
-
-from src.main import Kvass
-from src.collection.order import Order
-from tests.integration.config import ENDPOINT, API_KEY, BEARER_TOKEN
+from builton_sdk.api_models import Order
 
 
-@pytest.fixture
-def kvass():
-    return Kvass(endpoint=ENDPOINT,
-                 api_key=API_KEY,
-                 bearer_token=BEARER_TOKEN)
-
-
-def test_get_orders_has_attributes_with_right_types(kvass):
-    orders = kvass.order().get_all()
+def test_get_orders_has_attributes_with_right_types(builton):
+    orders = builton.order().get_all()
 
     assert isinstance(orders, list)
 
@@ -28,10 +17,18 @@ def test_get_orders_has_attributes_with_right_types(kvass):
         assert isinstance(order.note, str)
         assert isinstance(order.payments, list)
         assert isinstance(order.resources, list)
-        assert isinstance(order.top_up_amount, int)
-        assert isinstance(order.top_up_vat, float)
+        assert isinstance(order.top_up_amount, (int, float))
+        assert isinstance(order.top_up_vat, (int, float))
         assert isinstance(order.total_amount, (int, float))
         assert isinstance(order.total_quantity, int)
         assert isinstance(order.units, int)
         assert isinstance(order.stripe_charge_id, str)
         assert isinstance(order.stripe_refund_id, str)
+
+
+def test_get_specific_order(builton):
+    orders = builton.order().get_all()
+    order_id = orders[0].id
+
+    order = builton.order(order_id).get()
+    assert isinstance(order, Order)

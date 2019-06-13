@@ -1,4 +1,4 @@
-from src.collection.product import Product
+from builton_sdk.api_models import Product
 
 
 def test_rest_decorators():
