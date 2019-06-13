@@ -6,10 +6,6 @@ class Provider(User):
         super(User, self).__init__(request, props)
         self.api_path = 'providers'
 
-    def create(self, body, url_params=None, json=False):
-        return self.simple_query(_type='post', api_path='v2/providers', url_params=url_params,
-                                 body=body, json=json)
-
     def find(self, url_params=None, json=False):
         return self.simple_query(resource='find', url_params=url_params, json=json)
 
@@ -40,11 +36,6 @@ class Provider(User):
 
     def get_products(self, url_params=None):
         return self.simple_query(_id=self.id, resource='products', url_params=url_params, json=True)
-
-    def post_products(self, body, url_params=None):
-        return self.simple_query(_type='post', _id=self.id, resource='products', body=body,
-                                 url_params=url_params,
-                                 json=True)
 
     def update_addresses(self, body, url_params=None):
         raise NotImplementedError

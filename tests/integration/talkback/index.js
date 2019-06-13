@@ -21,7 +21,6 @@ const opts = {
     debug: true,
     ignoreHeaders: ['authorization'],
     tapeNameGenerator: nameGenerator,
-    record: talkback.Options.RecordMode.NEW // use DISABLED for test running
 };
 const server = talkback(opts);
 server.start();

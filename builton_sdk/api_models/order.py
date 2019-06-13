@@ -32,7 +32,7 @@ class Order(Component):
             raise ValueError('This method requires an ID')
         if not delivery_id:
             raise ValueError('This method requires a delivery_id')
-        return self.build_query(
+        return self.simple_query(
             _type='post',
             resource="%s/%s/deliveries/%s" % (self.api_path, self.id, delivery_id),
             body=body,
