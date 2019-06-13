@@ -1,9 +1,9 @@
 # BuiltOn Python SDK
 > Python SDK for the BuiltOn APIs
 
-![PyPI](https://img.shields.io/pypi/v/django.svg)
-![PyPI - Status](https://img.shields.io/pypi/status/django.svg)
-![PyPI - Downloads](https://img.shields.io/pypi/dd/django.svg)
+![PyPI](https://img.shields.io/pypi/v/builton-sdk.svg)
+![PyPI - Status](https://img.shields.io/pypi/status/builton-sdk.svg)
+![PyPI - Downloads](https://img.shields.io/pypi/dd/builton-sdk.svg)
 
 [![Builton logo](https://res.cloudinary.com/dftspnwxo/image/upload/v1554131594/Builton_logo_positiv_wc3j7x.svg)](https://builton.dev)
 
