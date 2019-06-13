@@ -2,8 +2,8 @@ import pytest
 
 from builton_sdk import Builton
 from builton_sdk.api_models import *
-from builton_sdk.utils.request import Request
 from builton_sdk.main import DEFAULT_ENDPOINT
+from builton_sdk.utils.request import Request
 
 
 def test_init_sets_parameters():
