@@ -1,0 +1,1198 @@
+{
+    meta: {
+        createdAt: '2019-06-13T14:01:47.205Z',
+        host: 'https://qa.builton.dev',
+        resHumanReadable: true,
+    },
+    req: {
+        url: '/users?sort=-created',
+        method: 'GET',
+        headers: {
+            'user-agent': 'python-requests/2.20.1',
+            'accept-encoding': 'gzip, deflate',
+            accept: '*/*',
+            connection: 'keep-alive',
+            'x-builton-api-key': 'ASXNoQLJrcFWUKioNo4D4N1LSKsn9fs0uvFWKz7hp-yM78YFHV4AL6bDS6TiFvUaoCcgK8txIgvmFpW17IlUMg==',
+        },
+        body: '',
+    },
+    res: {
+        status: 200,
+        headers: {
+            connection: [
+                'keep-alive',
+            ],
+            server: [
+                'gunicorn/19.7.1',
+            ],
+            date: [
+                'Thu, 13 Jun 2019 14:01:47 GMT',
+            ],
+            'content-type': [
+                'application/json',
+            ],
+            'x-rate-limit-remaining': [
+                '89',
+            ],
+            'x-service-account': [
+                '5ce3c40427269e000c7fa944',
+            ],
+            'x-pagination-total': [
+                '144',
+            ],
+            'access-control-allow-origin': [
+                '*',
+            ],
+            'access-control-allow-methods': [
+                'PUT, GET, POST, DELETE, OPTIONS',
+            ],
+            'access-control-allow-headers': [
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Builton-Api-Key, X-Kvass-Api-Key, Kvass-Api-Key, X-Share-Api-Key',
+            ],
+            'access-control-expose-headers': [
+                'X-Pagination-Total',
+            ],
+            'content-length': [
+                '16567',
+            ],
+            via: [
+                '1.1 vegur',
+            ],
+        },
+        body: [
+            {
+                _id: {
+                    $oid: '5c81578ece39da000915cae2',
+                },
+                _cls: 'User',
+                created: {
+                    $date: 1551980430028,
+                },
+                modified: {
+                    $date: 1551980430412,
+                },
+                first_name: 'John',
+                last_name: 'Doe',
+                email: 'john@email.com',
+                mobile_phone_number: '+4712345678',
+                addresses: [
+                    {
+                        street_name: 'Iversenstien 7',
+                        zip_code: '0556',
+                        city: 'Danielsen',
+                        state: 'Oslo',
+                        country: 'Paraguay',
+                        geo: [
+                            -23.44,
+                            -58.44,
+                        ],
+                        raw: {
+                            formatted_address: 'Paraguay',
+                            address_components: [
+                                {
+                                    long_name: 'Paraguay',
+                                    types: [
+                                        'country',
+                                        'political',
+                                    ],
+                                    short_name: 'PY',
+                                },
+                            ],
+                            geometry: {
+                                location: {
+                                    lng: -58.44,
+                                    lat: -23.44,
+                                },
+                                location_type: 'APPROXIMATE',
+                                viewport: {
+                                    northeast: {
+                                        lng: -54.26,
+                                        lat: -19.29,
+                                    },
+                                    southwest: {
+                                        lng: -62.64,
+                                        lat: -27.58,
+                                    },
+                                },
+                                bounds: {
+                                    northeast: {
+                                        lng: -54.26,
+                                        lat: -19.29,
+                                    },
+                                    southwest: {
+                                        lng: -62.64,
+                                        lat: -27.58,
+                                    },
+                                },
+                            },
+                            types: [
+                                'country',
+                                'political',
+                            ],
+                            place_id: 'ChIJYz3xkDQIXJQR8y5YHWH_-rM',
+                            partial_match: true,
+                        },
+                        alias: '',
+                        service: 'google',
+                        service_address_id: 'ChIJYz3xkDQIXJQR8y5YHWH_-rM',
+                    },
+                ],
+                billing_address: {
+                    alias: '',
+                    service: 'google',
+                },
+                voucher: {
+                    initial_quantity: 0,
+                    expires: {
+                        $date: 1583516430027,
+                    },
+                    consumed: 0,
+                    created: {
+                        $date: 1551980430027,
+                    },
+                    modified: {
+                        $date: 1560434416418,
+                    },
+                    uuid: '83aa151b-1257-4be0-956e-6e036b28b619',
+                },
+                human_id: '72WRRD',
+                bio: '',
+                note: '',
+                avatar: '',
+                last_login: {
+                    $date: 1551980430411,
+                },
+                company: {
+                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                },
+                tags: [],
+                stripe_customer_id: '',
+                auth_id: '',
+                national_id: '',
+                new_customer: true,
+                is_company: false,
+                roles: [
+                    'user',
+                ],
+                deleted: false,
+                receive_notifications: true,
+                blocked: false,
+            },
+            {
+                _id: {
+                    $oid: '5c7fe5d33831170009821ca5',
+                },
+                _cls: 'User',
+                created: {
+                    $date: 1551885778730,
+                },
+                modified: {
+                    $date: 1551885779146,
+                },
+                first_name: 'John',
+                last_name: 'Doe',
+                email: 'john@email.com',
+                mobile_phone_number: '+4712345678',
+                addresses: [
+                    {
+                        street_name: 'Iversenstien 7',
+                        zip_code: '0556',
+                        city: 'Danielsen',
+                        state: 'Oslo',
+                        country: 'Paraguay',
+                        geo: [
+                            -23.44,
+                            -58.44,
+                        ],
+                        raw: {
+                            address_components: [
+                                {
+                                    long_name: 'Paraguay',
+                                    types: [
+                                        'country',
+                                        'political',
+                                    ],
+                                    short_name: 'PY',
+                                },
+                            ],
+                            place_id: 'ChIJYz3xkDQIXJQR8y5YHWH_-rM',
+                            partial_match: true,
+                            geometry: {
+                                location_type: 'APPROXIMATE',
+                                bounds: {
+                                    southwest: {
+                                        lat: -27.58,
+                                        lng: -62.64,
+                                    },
+                                    northeast: {
+                                        lat: -19.29,
+                                        lng: -54.26,
+                                    },
+                                },
+                                location: {
+                                    lat: -23.44,
+                                    lng: -58.44,
+                                },
+                                viewport: {
+                                    southwest: {
+                                        lat: -27.58,
+                                        lng: -62.64,
+                                    },
+                                    northeast: {
+                                        lat: -19.29,
+                                        lng: -54.26,
+                                    },
+                                },
+                            },
+                            types: [
+                                'country',
+                                'political',
+                            ],
+                            formatted_address: 'Paraguay',
+                        },
+                        alias: '',
+                        service: 'google',
+                        service_address_id: 'ChIJYz3xkDQIXJQR8y5YHWH_-rM',
+                    },
+                ],
+                billing_address: {
+                    alias: '',
+                    service: 'google',
+                },
+                voucher: {
+                    initial_quantity: 0,
+                    expires: {
+                        $date: 1583421778730,
+                    },
+                    consumed: 0,
+                    created: {
+                        $date: 1551885778730,
+                    },
+                    modified: {
+                        $date: 1560434416426,
+                    },
+                    uuid: '7d1a0aa2-d5ab-48bb-91c6-25794a3e1df1',
+                },
+                human_id: 'QDL67P',
+                bio: '',
+                note: '',
+                avatar: '',
+                last_login: {
+                    $date: 1551885779145,
+                },
+                company: {
+                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                },
+                tags: [],
+                stripe_customer_id: '',
+                auth_id: '',
+                national_id: '',
+                new_customer: true,
+                is_company: false,
+                roles: [
+                    'user',
+                ],
+                deleted: false,
+                receive_notifications: true,
+                blocked: false,
+            },
+            {
+                _id: {
+                    $oid: '5c617b3a12a14c001710a1d9',
+                },
+                _cls: 'User',
+                created: {
+                    $date: 1549892410477,
+                },
+                modified: {
+                    $date: 1550656194641,
+                },
+                first_name: 'Garison',
+                last_name: 'Rekesreb',
+                email: 'g.Rekesreb@mail.com',
+                mobile_phone_number: '+47 123 45 678',
+                addresses: [
+                    {
+                        street_name: 'Bygdøyveien 20',
+                        zip_code: '0287',
+                        city: 'Oslo',
+                        country: 'Norway',
+                        geo: [
+                            59.92,
+                            10.68,
+                        ],
+                        raw: {
+                            place_id: 'ChIJie3k1LRtQUYRpBH56SaqtvU',
+                            plus_code: {
+                                compound_code: 'WM9J+3W Oslo, Norway',
+                                global_code: '9FFGWM9J+3W',
+                            },
+                            geometry: {
+                                location: {
+                                    lng: 10.68,
+                                    lat: 59.92,
+                                },
+                                viewport: {
+                                    northeast: {
+                                        lng: 10.68,
+                                        lat: 59.92,
+                                    },
+                                    southwest: {
+                                        lng: 10.68,
+                                        lat: 59.92,
+                                    },
+                                },
+                                location_type: 'ROOFTOP',
+                            },
+                            address_components: [
+                                {
+                                    short_name: '20',
+                                    long_name: '20',
+                                    types: [
+                                        'street_number',
+                                    ],
+                                },
+                                {
+                                    short_name: 'Bygdøyveien',
+                                    long_name: 'Bygdøyveien',
+                                    types: [
+                                        'route',
+                                    ],
+                                },
+                                {
+                                    short_name: 'Oslo',
+                                    long_name: 'Oslo',
+                                    types: [
+                                        'postal_town',
+                                    ],
+                                },
+                                {
+                                    short_name: 'Oslo kommune',
+                                    long_name: 'Oslo kommune',
+                                    types: [
+                                        'administrative_area_level_2',
+                                        'political',
+                                    ],
+                                },
+                                {
+                                    short_name: 'Oslo',
+                                    long_name: 'Oslo',
+                                    types: [
+                                        'administrative_area_level_1',
+                                        'political',
+                                    ],
+                                },
+                                {
+                                    short_name: 'NO',
+                                    long_name: 'Norway',
+                                    types: [
+                                        'country',
+                                        'political',
+                                    ],
+                                },
+                                {
+                                    short_name: '0287',
+                                    long_name: '0287',
+                                    types: [
+                                        'postal_code',
+                                    ],
+                                },
+                            ],
+                            formatted_address: 'Bygdøyveien 20, 0287 Oslo, Norway',
+                            types: [
+                                'street_address',
+                            ],
+                        },
+                        alias: '',
+                        organization_name: 'Iron Output AS',
+                        service: 'google',
+                        service_address_id: 'ChIJie3k1LRtQUYRpBH56SaqtvU',
+                    },
+                ],
+                billing_address: {
+                    alias: '',
+                    service: 'google',
+                },
+                voucher: {
+                    initial_quantity: 0,
+                    expires: {
+                        $date: 1581428410478,
+                    },
+                    consumed: 0,
+                    created: {
+                        $date: 1549892410478,
+                    },
+                    modified: {
+                        $date: 1560434416431,
+                    },
+                    uuid: 'acc1016c-6c00-4c08-9d4d-b1d6c25bc9cb',
+                },
+                human_id: 'VXJ8NP',
+                bio: '',
+                note: '',
+                avatar: '',
+                company: {
+                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                },
+                tags: [],
+                stripe_customer_id: '',
+                auth_id: '',
+                national_id: 'No national ID',
+                new_customer: true,
+                is_company: false,
+                roles: [
+                    'user',
+                ],
+                deleted: false,
+                visma_customer_id: '13280',
+                shopify_customer_id: '623927787620',
+                receive_notifications: true,
+                blocked: false,
+            },
+            {
+                _id: {
+                    $oid: '5c1cc0c3ae702b00123f99fb',
+                },
+                _cls: 'User',
+                created: {
+                    $date: 1545388227119,
+                },
+                modified: {
+                    $date: 1545388231439,
+                },
+                first_name: 'Gabriel',
+                last_name: 'Blondeau',
+                email: 'gabriel@kvass.ai',
+                mobile_phone_number: '',
+                addresses: [
+                    {
+                        street_name: 'Slottsplassen 1',
+                        zip_code: '0010',
+                        city: 'Oslo',
+                        country: 'Norway',
+                        geo: [
+                            59.92,
+                            10.73,
+                        ],
+                        raw: {
+                            formatted_address: 'Slottsplassen 1, 0010 Oslo, Norway',
+                            geometry: {
+                                location_type: 'ROOFTOP',
+                                location: {
+                                    lat: 59.92,
+                                    lng: 10.73,
+                                },
+                                viewport: {
+                                    southwest: {
+                                        lat: 59.92,
+                                        lng: 10.73,
+                                    },
+                                    northeast: {
+                                        lat: 59.92,
+                                        lng: 10.73,
+                                    },
+                                },
+                            },
+                            types: [
+                                'establishment',
+                                'point_of_interest',
+                                'premise',
+                            ],
+                            plus_code: {
+                                global_code: '9FFGWP8G+RX',
+                                compound_code: 'WP8G+RX Oslo, Norway',
+                            },
+                            address_components: [
+                                {
+                                    long_name: '1',
+                                    short_name: '1',
+                                    types: [
+                                        'street_number',
+                                    ],
+                                },
+                                {
+                                    long_name: 'Slottsplassen',
+                                    short_name: 'Slottsplassen',
+                                    types: [
+                                        'route',
+                                    ],
+                                },
+                                {
+                                    long_name: 'Sentrum',
+                                    short_name: 'Sentrum',
+                                    types: [
+                                        'political',
+                                        'sublocality',
+                                        'sublocality_level_1',
+                                    ],
+                                },
+                                {
+                                    long_name: 'Oslo',
+                                    short_name: 'Oslo',
+                                    types: [
+                                        'postal_town',
+                                    ],
+                                },
+                                {
+                                    long_name: 'Oslo kommune',
+                                    short_name: 'Oslo kommune',
+                                    types: [
+                                        'administrative_area_level_2',
+                                        'political',
+                                    ],
+                                },
+                                {
+                                    long_name: 'Oslo',
+                                    short_name: 'Oslo',
+                                    types: [
+                                        'administrative_area_level_1',
+                                        'political',
+                                    ],
+                                },
+                                {
+                                    long_name: 'Norway',
+                                    short_name: 'NO',
+                                    types: [
+                                        'country',
+                                        'political',
+                                    ],
+                                },
+                                {
+                                    long_name: '0010',
+                                    short_name: '0010',
+                                    types: [
+                                        'postal_code',
+                                    ],
+                                },
+                            ],
+                            place_id: 'ChIJezW6eddtQUYRHFnCrMk4cGc',
+                        },
+                        alias: '',
+                        service: 'google',
+                        service_address_id: 'ChIJezW6eddtQUYRHFnCrMk4cGc',
+                    },
+                ],
+                billing_address: {
+                    alias: '',
+                    service: 'google',
+                },
+                voucher: {
+                    initial_quantity: 0,
+                    expires: {
+                        $date: 1576924227120,
+                    },
+                    consumed: 0,
+                    created: {
+                        $date: 1545388227119,
+                    },
+                    modified: {
+                        $date: 1560434416439,
+                    },
+                    uuid: 'e49308cc-3a88-47e8-8c61-403aac7a82da',
+                },
+                human_id: 'XZX2WV',
+                bio: '',
+                note: '',
+                avatar: '',
+                company: {
+                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                },
+                tags: [],
+                stripe_customer_id: '',
+                auth_id: '',
+                national_id: '',
+                new_customer: true,
+                is_company: false,
+                roles: [
+                    'user',
+                ],
+                deleted: false,
+                visma_customer_id: '13278',
+                shopify_customer_id: '1143922655315',
+                receive_notifications: true,
+                blocked: false,
+            },
+            {
+                _id: {
+                    $oid: '5c06f716702d76000bf98d41',
+                },
+                _cls: 'User',
+                created: {
+                    $date: 1543960342943,
+                },
+                modified: {
+                    $date: 1544024885309,
+                },
+                first_name: 'Shareactor',
+                last_name: 'Admin2',
+                email: 'admin+2@kvass.ai',
+                mobile_phone_number: '',
+                addresses: [],
+                billing_address: {
+                    alias: '',
+                    service: 'google',
+                },
+                voucher: {
+                    initial_quantity: 0,
+                    expires: {
+                        $date: 1575496342942,
+                    },
+                    consumed: 0,
+                    created: {
+                        $date: 1543960342942,
+                    },
+                    modified: {
+                        $date: 1560434416443,
+                    },
+                    uuid: 'b0617006-fc8f-4e8b-af19-4dfd09ae5b3e',
+                },
+                human_id: '5WVD4E',
+                bio: '',
+                note: '',
+                avatar: 'https://s.gravatar.com/avatar/6db05a791efc75faf9a8b6da45e092cb?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fad.png',
+                last_login: {
+                    $date: 1544024885309,
+                },
+                company: {
+                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                },
+                tags: [],
+                stripe_customer_id: '',
+                auth_id: 'auth0|5c06744335b0da38467a3e78',
+                national_id: '',
+                new_customer: true,
+                is_company: false,
+                roles: [
+                    'user',
+                ],
+                deleted: false,
+                receive_notifications: true,
+                blocked: false,
+            },
+            {
+                _id: {
+                    $oid: '5bf676046a605b000a1422af',
+                },
+                _cls: 'User',
+                created: {
+                    $date: 1542878724157,
+                },
+                modified: {
+                    $date: 1542878724159,
+                },
+                first_name: 'Birger',
+                last_name: 'Lie',
+                email: 'birger.lie@gmail.com',
+                mobile_phone_number: '+4702907469',
+                addresses: [],
+                billing_address: {
+                    alias: '',
+                    service: 'google',
+                },
+                voucher: {
+                    initial_quantity: 0,
+                    expires: {
+                        $date: 1574414724156,
+                    },
+                    consumed: 0,
+                    created: {
+                        $date: 1542878724156,
+                    },
+                    modified: {
+                        $date: 1560434416446,
+                    },
+                    uuid: 'd7134de1-2360-4d92-9bdb-4a01c063d879',
+                },
+                human_id: '627XP2',
+                bio: '',
+                note: '',
+                avatar: '',
+                last_login: {
+                    $date: 1542878724158,
+                },
+                company: {
+                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                },
+                tags: [],
+                stripe_customer_id: '',
+                auth_id: 'user1',
+                national_id: '02019321722',
+                new_customer: true,
+                is_company: false,
+                roles: [
+                    'user',
+                ],
+                deleted: false,
+                receive_notifications: true,
+                blocked: false,
+            },
+            {
+                _id: {
+                    $oid: '5b7aba82612421000da4dda7',
+                },
+                _cls: 'User',
+                created: {
+                    $date: 1534769794571,
+                },
+                modified: {
+                    $date: 1536327475601,
+                },
+                first_name: 'Customer',
+                last_name: '5b7aba82612421000da4dda5',
+                email: 'customer@gmail.com',
+                mobile_phone_number: '+47123456789',
+                addresses: [],
+                billing_address: {
+                    alias: '',
+                    service: 'google',
+                },
+                voucher: {
+                    initial_quantity: 0,
+                    expires: {
+                        $date: 1566305794571,
+                    },
+                    consumed: 0,
+                    created: {
+                        $date: 1534769794572,
+                    },
+                    modified: {
+                        $date: 1560434416451,
+                    },
+                    uuid: 'd99e5187-e90e-48b2-8c99-20d6ebca58ef',
+                },
+                human_id: '7LZ8K4',
+                bio: '5b7aba82612421000da4dda5',
+                note: '',
+                avatar: '',
+                last_login: {
+                    $date: 1534769794575,
+                },
+                company: {
+                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                },
+                tags: [],
+                stripe_customer_id: '',
+                auth_id: '',
+                national_id: '02019321722',
+                new_customer: true,
+                is_company: false,
+                roles: [
+                    'user',
+                ],
+                deleted: false,
+                receive_notifications: true,
+                blocked: false,
+            },
+            {
+                _id: {
+                    $oid: '5b75a1d5aec8880044869d32',
+                },
+                _cls: 'User',
+                created: {
+                    $date: 1534435796991,
+                },
+                modified: {
+                    $date: 1534435797476,
+                },
+                first_name: 'Julie',
+                last_name: 'Madshaven',
+                email: 'julie.madshaven@gmail.com',
+                mobile_phone_number: '+4747015243',
+                addresses: [
+                    {
+                        street_name: 'Nygaten 1',
+                        zip_code: '4876',
+                        city: 'Grimstad',
+                        country: 'Norway',
+                        geo: [
+                            58.34,
+                            8.59,
+                        ],
+                        raw: {
+                            plus_code: {
+                                global_code: '9FCC8HRR+WF',
+                                compound_code: '8HRR+WF Grimstad, Grimstad Municipality, Norway',
+                            },
+                            place_id: 'ChIJ3xEccmTuR0YR80lxU2nDo2k',
+                            types: [
+                                'street_address',
+                            ],
+                            formatted_address: 'Nygaten 1, 4876 Grimstad, Norway',
+                            address_components: [
+                                {
+                                    types: [
+                                        'street_number',
+                                    ],
+                                    short_name: '1',
+                                    long_name: '1',
+                                },
+                                {
+                                    types: [
+                                        'route',
+                                    ],
+                                    short_name: 'Nygaten',
+                                    long_name: 'Nygaten',
+                                },
+                                {
+                                    types: [
+                                        'postal_town',
+                                    ],
+                                    short_name: 'Grimstad',
+                                    long_name: 'Grimstad',
+                                },
+                                {
+                                    types: [
+                                        'administrative_area_level_2',
+                                        'political',
+                                    ],
+                                    short_name: 'Grimstad',
+                                    long_name: 'Grimstad',
+                                },
+                                {
+                                    types: [
+                                        'administrative_area_level_1',
+                                        'political',
+                                    ],
+                                    short_name: 'Aust-Agder',
+                                    long_name: 'Aust-Agder',
+                                },
+                                {
+                                    types: [
+                                        'country',
+                                        'political',
+                                    ],
+                                    short_name: 'NO',
+                                    long_name: 'Norway',
+                                },
+                                {
+                                    types: [
+                                        'postal_code',
+                                    ],
+                                    short_name: '4876',
+                                    long_name: '4876',
+                                },
+                            ],
+                            geometry: {
+                                location: {
+                                    lat: 58.34,
+                                    lng: 8.59,
+                                },
+                                location_type: 'ROOFTOP',
+                                viewport: {
+                                    southwest: {
+                                        lat: 58.34,
+                                        lng: 8.59,
+                                    },
+                                    northeast: {
+                                        lat: 58.34,
+                                        lng: 8.59,
+                                    },
+                                },
+                            },
+                        },
+                        alias: '',
+                        service: 'google',
+                        service_address_id: 'ChIJ3xEccmTuR0YR80lxU2nDo2k',
+                    },
+                ],
+                billing_address: {
+                    alias: '',
+                    service: 'google',
+                },
+                voucher: {
+                    initial_quantity: 0,
+                    expires: {
+                        $date: 1565971796990,
+                    },
+                    consumed: 0,
+                    created: {
+                        $date: 1534435796990,
+                    },
+                    modified: {
+                        $date: 1560434416455,
+                    },
+                    uuid: '5c598703-65cb-4dcd-81f3-4a811c87f696',
+                },
+                human_id: 'VPR7NP',
+                bio: '',
+                note: '',
+                avatar: '',
+                last_login: {
+                    $date: 1534435797475,
+                },
+                company: {
+                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                },
+                tags: [],
+                stripe_customer_id: '',
+                auth_id: 'sms|5b75a1684f8c43afc76df781',
+                national_id: '',
+                bank_account_number: '12088657851',
+                new_customer: true,
+                is_company: false,
+                roles: [
+                    'user',
+                ],
+                deleted: false,
+                receive_notifications: true,
+                blocked: false,
+            },
+            {
+                _id: {
+                    $oid: '5b72aeb0636221000989d394',
+                },
+                _cls: 'User',
+                created: {
+                    $date: 1534242479990,
+                },
+                modified: {
+                    $date: 1534242480646,
+                },
+                first_name: 'Marit',
+                last_name: 'Bakkevoll-Eriksen',
+                email: 'mie@nordtroms.net',
+                mobile_phone_number: '+4741652634',
+                addresses: [
+                    {
+                        street_name: 'Kåfjorddalen ',
+                        zip_code: '9147',
+                        city: 'Kåfjorddalen',
+                        country: 'Norway',
+                        geo: [
+                            69.46,
+                            20.94,
+                        ],
+                        raw: {
+                            formatted_address: 'Kåfjorddalen, Norway',
+                            types: [
+                                'locality',
+                                'political',
+                            ],
+                            address_components: [
+                                {
+                                    types: [
+                                        'locality',
+                                        'political',
+                                    ],
+                                    long_name: 'Kåfjorddalen',
+                                    short_name: 'Kåfjorddalen',
+                                },
+                                {
+                                    types: [
+                                        'administrative_area_level_1',
+                                        'political',
+                                    ],
+                                    long_name: 'Troms',
+                                    short_name: 'Troms',
+                                },
+                                {
+                                    types: [
+                                        'country',
+                                        'political',
+                                    ],
+                                    long_name: 'Norway',
+                                    short_name: 'NO',
+                                },
+                            ],
+                            geometry: {
+                                location: {
+                                    lat: 69.46,
+                                    lng: 20.94,
+                                },
+                                location_type: 'APPROXIMATE',
+                                viewport: {
+                                    northeast: {
+                                        lat: 69.47,
+                                        lng: 20.95,
+                                    },
+                                    southwest: {
+                                        lat: 69.46,
+                                        lng: 20.92,
+                                    },
+                                },
+                            },
+                            place_id: 'ChIJ3_ml_1hbxUURLFUjZZ0oLF8',
+                        },
+                        alias: '',
+                        service: 'google',
+                        service_address_id: 'ChIJ3_ml_1hbxUURLFUjZZ0oLF8',
+                    },
+                ],
+                billing_address: {
+                    alias: '',
+                    service: 'google',
+                },
+                voucher: {
+                    initial_quantity: 0,
+                    expires: {
+                        $date: 1565778479993,
+                    },
+                    consumed: 0,
+                    created: {
+                        $date: 1534242479993,
+                    },
+                    modified: {
+                        $date: 1560434416458,
+                    },
+                    uuid: '211bdaf0-dc94-471e-9d5d-904ca6756825',
+                },
+                human_id: 'Q2W8PD',
+                bio: '',
+                note: '',
+                avatar: '',
+                last_login: {
+                    $date: 1534242480645,
+                },
+                company: {
+                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                },
+                tags: [],
+                stripe_customer_id: '',
+                auth_id: 'sms|5b72ae674f8c43afc76a8f9f',
+                national_id: '',
+                bank_account_number: '05408917672',
+                new_customer: true,
+                is_company: false,
+                roles: [
+                    'user',
+                ],
+                deleted: false,
+                receive_notifications: true,
+                blocked: false,
+            },
+            {
+                _id: {
+                    $oid: '5b292c3d75b2b0000d66d666',
+                },
+                _cls: 'User',
+                created: {
+                    $date: 1529424957361,
+                },
+                modified: {
+                    $date: 1529424962420,
+                },
+                first_name: 'Bjarne',
+                last_name: 'Hansen',
+                email: 'hunmus@hotmail.com',
+                mobile_phone_number: '',
+                addresses: [
+                    {
+                        street_name: 'Gamleveien 20',
+                        zip_code: '4766',
+                        city: 'Herefoss',
+                        country: 'Norway',
+                        geo: [
+                            58.53,
+                            8.35,
+                        ],
+                        raw: {
+                            address_components: [
+                                {
+                                    short_name: 'Herefoss',
+                                    long_name: 'Herefoss',
+                                    types: [
+                                        'locality',
+                                        'political',
+                                    ],
+                                },
+                                {
+                                    short_name: 'Aust-Agder',
+                                    long_name: 'Aust-Agder',
+                                    types: [
+                                        'administrative_area_level_1',
+                                        'political',
+                                    ],
+                                },
+                                {
+                                    short_name: 'NO',
+                                    long_name: 'Norway',
+                                    types: [
+                                        'country',
+                                        'political',
+                                    ],
+                                },
+                            ],
+                            place_id: 'ChIJo0pw1U-KR0YR3outho6iLDc',
+                            geometry: {
+                                bounds: {
+                                    southwest: {
+                                        lat: 58.52,
+                                        lng: 8.35,
+                                    },
+                                    northeast: {
+                                        lat: 58.53,
+                                        lng: 8.36,
+                                    },
+                                },
+                                location: {
+                                    lat: 58.53,
+                                    lng: 8.35,
+                                },
+                                viewport: {
+                                    southwest: {
+                                        lat: 58.52,
+                                        lng: 8.35,
+                                    },
+                                    northeast: {
+                                        lat: 58.53,
+                                        lng: 8.36,
+                                    },
+                                },
+                                location_type: 'APPROXIMATE',
+                            },
+                            partial_match: true,
+                            formatted_address: 'Herefoss, Norway',
+                            types: [
+                                'locality',
+                                'political',
+                            ],
+                        },
+                        alias: '',
+                        organization_name: 'Hansensutemiljø AS',
+                        service: 'google',
+                        service_address_id: 'ChIJo0pw1U-KR0YR3outho6iLDc',
+                    },
+                ],
+                billing_address: {
+                    alias: '',
+                    service: 'google',
+                },
+                voucher: {
+                    initial_quantity: 0,
+                    expires: {
+                        $date: 1560960957361,
+                    },
+                    consumed: 0,
+                    created: {
+                        $date: 1529424957361,
+                    },
+                    modified: {
+                        $date: 1560434416460,
+                    },
+                    uuid: '7ba7cac6-41d5-4741-98df-180eba6aea67',
+                },
+                human_id: 'Q76VEE',
+                bio: '',
+                note: '',
+                avatar: '',
+                company: {
+                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                },
+                tags: [],
+                stripe_customer_id: '',
+                auth_id: '',
+                national_id: '',
+                new_customer: true,
+                is_company: false,
+                roles: [
+                    'user',
+                ],
+                deleted: false,
+                visma_customer_id: '25987',
+                shopify_customer_id: '524608176175',
+                receive_notifications: true,
+                blocked: false,
+            },
+        ],
+    },
+}
