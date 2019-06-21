@@ -29,7 +29,7 @@ all Python 3+ versions.
 
 To install the package use pip as usual:
 ```bash
-pip install --upgrade builton
+pip install --upgrade builton-sdk
 ```
 
 To install from source use:
