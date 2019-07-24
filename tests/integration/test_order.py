@@ -70,4 +70,5 @@ def test_update_order_missing_field(builton):
 
     updated_order = order.update(missing_field=True)
     assert isinstance(updated_order, Order)
-    assert order == updated_order
+    assert not hasattr(updated_order, "missing_field")
+    assert not hasattr(order, "missing_field")
