@@ -1,0 +1,369 @@
+{
+    meta: {
+        createdAt: '2019-07-24T14:44:50.299Z',
+        host: 'https://qa.builton.dev',
+        resHumanReadable: true,
+    },
+    req: {
+        url: '/orders?size=1&order_status=SUCCESS',
+        method: 'GET',
+        headers: {
+            'user-agent': 'python-requests/2.20.1',
+            'accept-encoding': 'gzip, deflate',
+            accept: '*/*',
+            connection: 'keep-alive',
+            'x-builton-api-key': 'ASXNoQLJrcFWUKioNo4D4N1LSKsn9fs0uvFWKz7hp-yM78YFHV4AL6bDS6TiFvUaoCcgK8txIgvmFpW17IlUMg==',
+        },
+        body: '',
+    },
+    res: {
+        status: 200,
+        headers: {
+            connection: [
+                'keep-alive',
+            ],
+            server: [
+                'gunicorn/19.7.1',
+            ],
+            date: [
+                'Wed, 24 Jul 2019 14:44:51 GMT',
+            ],
+            'content-type': [
+                'application/json',
+            ],
+            'x-rate-limit-remaining': [
+                '99',
+            ],
+            'x-service-account': [
+                '5ce3c40427269e000c7fa944',
+            ],
+            'x-pagination-total': [
+                '61',
+            ],
+            'access-control-allow-origin': [
+                '*',
+            ],
+            'access-control-allow-methods': [
+                'PUT, GET, POST, DELETE, OPTIONS',
+            ],
+            'access-control-allow-headers': [
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Builton-Api-Key, X-Kvass-Api-Key, Kvass-Api-Key, X-Share-Api-Key',
+            ],
+            'access-control-expose-headers': [
+                'X-Pagination-Total',
+            ],
+            'x-content-type-options': [
+                'nosniff',
+            ],
+            'strict-transport-security': [
+                'max-age=3600',
+            ],
+            'content-security-policy': [
+                "default-src 'none'; frame-ancestors 'none'",
+            ],
+            'x-frame-options': [
+                'deny',
+            ],
+            'x-xss-protection': [
+                '1; mode=block',
+            ],
+            'content-length': [
+                '4445',
+            ],
+            via: [
+                '1.1 vegur',
+            ],
+        },
+        body: [
+            {
+                _id: {
+                    $oid: '5ae31005bef5270008d1f961',
+                },
+                accounting_reference: '203864',
+                company: {
+                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                },
+                created: {
+                    $date: 1524830213252,
+                },
+                currency: 'NOK',
+                deleted: false,
+                deliveries: [],
+                delivery_address: {
+                    alias: '',
+                    city: 'Tvedestrand',
+                    country: 'Norway',
+                    geo: [
+                        58.61,
+                        8.95,
+                    ],
+                    raw: {
+                        address_components: [
+                            {
+                                long_name: '1',
+                                short_name: '1',
+                                types: [
+                                    'street_number',
+                                ],
+                            },
+                            {
+                                long_name: 'Epleviktangen',
+                                short_name: 'Epleviktangen',
+                                types: [
+                                    'route',
+                                ],
+                            },
+                            {
+                                long_name: 'Tvedestrand',
+                                short_name: 'Tvedestrand',
+                                types: [
+                                    'postal_town',
+                                ],
+                            },
+                            {
+                                long_name: 'Tvedestrand',
+                                short_name: 'Tvedestrand',
+                                types: [
+                                    'administrative_area_level_2',
+                                    'political',
+                                ],
+                            },
+                            {
+                                long_name: 'Aust-Agder',
+                                short_name: 'Aust-Agder',
+                                types: [
+                                    'administrative_area_level_1',
+                                    'political',
+                                ],
+                            },
+                            {
+                                long_name: 'Norway',
+                                short_name: 'NO',
+                                types: [
+                                    'country',
+                                    'political',
+                                ],
+                            },
+                            {
+                                long_name: '4900',
+                                short_name: '4900',
+                                types: [
+                                    'postal_code',
+                                ],
+                            },
+                        ],
+                        formatted_address: 'Epleviktangen 1, 4900 Tvedestrand, Norway',
+                        geometry: {
+                            location: {
+                                lat: 58.61,
+                                lng: 8.95,
+                            },
+                            location_type: 'RANGE_INTERPOLATED',
+                            viewport: {
+                                northeast: {
+                                    lat: 58.61,
+                                    lng: 8.95,
+                                },
+                                southwest: {
+                                    lat: 58.61,
+                                    lng: 8.95,
+                                },
+                            },
+                        },
+                        partial_match: true,
+                        place_id: 'EihFcGxldmlrdGFuZ2VuIDEsIDQ5MDAgVHZlZGVzdHJhbmQsIE5vcmdlIhoSGAoUChIJh8vjIs2iR0YRXdbgSSGEG00QAQ',
+                        types: [
+                            'street_address',
+                        ],
+                    },
+                    service: 'google',
+                    service_address_id: 'EihFcGxldmlrdGFuZ2VuIDEsIDQ5MDAgVHZlZGVzdHJhbmQsIE5vcmdlIhoSGAoUChIJh8vjIs2iR0YRXdbgSSGEG00QAQ',
+                    street_name: 'Epleviktangen 1',
+                    zip_code: '4900',
+                },
+                delivery_status: 'PENDING',
+                human_id: 'WR84LG',
+                items: [],
+                modified: {
+                    $date: 1559141803658,
+                },
+                note: '',
+                order_status: 'SUCCESS',
+                override_company_take: -1,
+                payments: [
+                    {
+                        $oid: '5ae3103bbef527000c82ca39',
+                    },
+                ],
+                resources: [
+                    {
+                        $oid: '5ae31004bef527000a99d207',
+                    },
+                ],
+                stripe_charge_id: '',
+                stripe_refund_id: '',
+                top_up_amount: 0,
+                top_up_vat: 0,
+                total_amount: 9,
+                total_quantity: 1,
+                units: 1,
+                user: {
+                    $oid: '5a687cc42952c10013dcd7f3',
+                    _cls: 'User',
+                    _id: {
+                        $oid: '5a687cc42952c10013dcd7f3',
+                    },
+                    addresses: [
+                        {
+                            alias: '',
+                            city: 'Tvedestrand',
+                            country: 'Norway',
+                            geo: [
+                                58.61,
+                                8.95,
+                            ],
+                            raw: {
+                                address_components: [
+                                    {
+                                        long_name: '1',
+                                        short_name: '1',
+                                        types: [
+                                            'street_number',
+                                        ],
+                                    },
+                                    {
+                                        long_name: 'Epleviktangen',
+                                        short_name: 'Epleviktangen',
+                                        types: [
+                                            'route',
+                                        ],
+                                    },
+                                    {
+                                        long_name: 'Tvedestrand',
+                                        short_name: 'Tvedestrand',
+                                        types: [
+                                            'postal_town',
+                                        ],
+                                    },
+                                    {
+                                        long_name: 'Tvedestrand',
+                                        short_name: 'Tvedestrand',
+                                        types: [
+                                            'administrative_area_level_2',
+                                            'political',
+                                        ],
+                                    },
+                                    {
+                                        long_name: 'Aust-Agder',
+                                        short_name: 'Aust-Agder',
+                                        types: [
+                                            'administrative_area_level_1',
+                                            'political',
+                                        ],
+                                    },
+                                    {
+                                        long_name: 'Norway',
+                                        short_name: 'NO',
+                                        types: [
+                                            'country',
+                                            'political',
+                                        ],
+                                    },
+                                    {
+                                        long_name: '4900',
+                                        short_name: '4900',
+                                        types: [
+                                            'postal_code',
+                                        ],
+                                    },
+                                ],
+                                formatted_address: 'Epleviktangen 1, 4900 Tvedestrand, Norway',
+                                geometry: {
+                                    location: {
+                                        lat: 58.61,
+                                        lng: 8.95,
+                                    },
+                                    location_type: 'RANGE_INTERPOLATED',
+                                    viewport: {
+                                        northeast: {
+                                            lat: 58.61,
+                                            lng: 8.95,
+                                        },
+                                        southwest: {
+                                            lat: 58.61,
+                                            lng: 8.95,
+                                        },
+                                    },
+                                },
+                                partial_match: true,
+                                place_id: 'EihFcGxldmlrdGFuZ2VuIDEsIDQ5MDAgVHZlZGVzdHJhbmQsIE5vcmdlIhoSGAoUChIJh8vjIs2iR0YRXdbgSSGEG00QAQ',
+                                types: [
+                                    'street_address',
+                                ],
+                            },
+                            service: 'google',
+                            service_address_id: 'EihFcGxldmlrdGFuZ2VuIDEsIDQ5MDAgVHZlZGVzdHJhbmQsIE5vcmdlIhoSGAoUChIJh8vjIs2iR0YRXdbgSSGEG00QAQ',
+                            street_name: 'Epleviktangen 1',
+                            zip_code: '4900',
+                        },
+                    ],
+                    auth_id: 'sms|5a6878f01d8a078df24a837d',
+                    avatar: '',
+                    bank_account_number: '15035116386',
+                    billing_address: {
+                        alias: '',
+                        service: 'google',
+                    },
+                    bio: '',
+                    blocked: false,
+                    company: {
+                        $oid: '59ce1e0a9d3bde0006fa45a9',
+                    },
+                    created: {
+                        $date: 1516797124140,
+                    },
+                    default_payment_method: {
+                        $oid: '5ac4b541d69d81000b494f18',
+                    },
+                    deleted: false,
+                    email: 'toringvald@greenphones.no',
+                    first_name: 'Tor Ingvald ',
+                    human_id: 'Y8VQZ3',
+                    is_company: false,
+                    last_login: {
+                        $date: 1516797124144,
+                    },
+                    last_name: 'Kilen',
+                    mobile_phone_number: '+4795332087',
+                    modified: {
+                        $date: 1527500285992,
+                    },
+                    national_id: '',
+                    new_customer: true,
+                    note: '',
+                    receive_notifications: true,
+                    roles: [
+                        'user',
+                    ],
+                    stripe_customer_id: '',
+                    tags: [],
+                    visma_supplier_id: '50761',
+                    voucher: {
+                        consumed: 0,
+                        created: {
+                            $date: 1516797124140,
+                        },
+                        expires: {
+                            $date: 1548333124140,
+                        },
+                        initial_quantity: 0,
+                        modified: {
+                            $date: 1563979491633,
+                        },
+                        uuid: 'd0c8f503-277d-4892-9b92-8f669f0fa6f7',
+                    },
+                },
+            },
+        ],
+    },
+}
