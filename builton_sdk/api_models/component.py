@@ -1,3 +1,6 @@
+from urllib.parse import urljoin
+
+
 ALLOWED_URL_PARAMS = ["size", "sort", "page", "order_status"]
 
 
@@ -46,9 +49,9 @@ class Component:
             raise ValueError('This method requires an ID')
 
         if _id:
-            local_id = _id if _id[0] is '/' else '/%s' % _id
+            local_id = urljoin('/', _id)
         elif not _id and self.id:
-            local_id = '/%s' % self.id
+            local_id = urljoin('/', self.id)
         else:
             local_id = ''
 
