@@ -3,7 +3,7 @@ ALLOWED_URL_PARAMS = ["size", "sort", "page", "order_status"]
 
 class Component:
     def __init__(self, request, props=None):
-        if self.__class__.__name__ == 'Component':
+        if self.__class__ == Component:
             raise Exception('Cannot construct Abstract instances')
 
         self.identifier = None
