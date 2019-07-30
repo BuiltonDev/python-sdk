@@ -111,9 +111,8 @@ class Component:
         resource = self.build_resource(_id, resource, api_path)
 
         if _type == 'get':
-            for param in ALLOWED_URL_PARAMS:
-                if param in kwargs.keys():
-                    url_params[param] = kwargs[param]
+            url_params.update(self._build_url_params(kwargs))
+
         elif _type == 'put':
             if body is None:
                 body = {}
