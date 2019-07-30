@@ -83,7 +83,7 @@ class Component:
         if len(args) == 2:
             _id = args[1]
         elif len(args) > 2:
-            raise Exception("Not expecting more than the id has an argument")
+            raise Exception("Not expecting more than the id as an argument")
         elif 'id' in kwargs:
             _id = kwargs.pop('id')
         else:
