@@ -48,12 +48,11 @@ class Component:
         if _id is None:
             raise ValueError('This method requires an ID')
 
+        local_id = ''
         if _id:
             local_id = urljoin('/', _id)
-        elif not _id and self.id:
+        elif self.id:
             local_id = urljoin('/', self.id)
-        else:
-            local_id = ''
 
         local_resource = resource if not resource or resource[0] is '/' else '/%s' % resource
         local_api_path = api_path if api_path else self.api_path
