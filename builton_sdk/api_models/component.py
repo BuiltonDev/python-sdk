@@ -71,11 +71,7 @@ class Component:
 
     @staticmethod
     def _build_url_params(kwargs):
-        url_params = {}
-        for param in ALLOWED_URL_PARAMS:
-            if param in kwargs.keys():
-                url_params[param] = kwargs[param]
-        return url_params
+        return dict(filter(lambda item: item[0] in ALLOWED_URL_PARAMS, kwargs.items()))
 
     def simple_get_query(self, *args, _type='get', **kwargs):
         _id = ''
