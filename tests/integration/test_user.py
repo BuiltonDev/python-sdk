@@ -53,3 +53,4 @@ def test_get_user_by_id(builton):
     new_user = builton.user().get(id=user_id)
     assert isinstance(new_user, User)
     assert new_user.id == user.id == user_id
+

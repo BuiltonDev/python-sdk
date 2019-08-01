@@ -111,7 +111,7 @@ class Component:
         if _type == 'get':
             url_params.update(self._build_url_params(kwargs))
 
-        elif _type == 'put':
+        elif _type in ['put', 'post']:
             if body is None:
                 body = {}
 

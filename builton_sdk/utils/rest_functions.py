@@ -27,8 +27,8 @@ def delete(cls, url_params=None, json=False):
     return cls.simple_query(_type='del', _id=cls.id, url_params=url_params, json=json)
 
 
-def create(cls, body=None, url_params=None, json=False):
-    return cls.simple_query(_type='post', body=body, url_params=url_params, json=json)
+def create(cls, *args, **kwargs):
+    return cls.simple_query(*args, _type='post', **kwargs)
 
 
 def search(cls, query, url_params=None, json=False):

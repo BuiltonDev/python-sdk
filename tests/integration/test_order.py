@@ -1,3 +1,5 @@
+import pytest
+
 from builton_sdk.api_models import Order
 
 
@@ -64,6 +66,7 @@ def test_update_order_order_status(builton):
 
 def test_update_order_missing_field(builton):
     orders = builton.order().get_all(order_status="SUCCESS", size=1)
+
     assert isinstance(orders, list)
     assert 1 == len(orders)
 
@@ -74,3 +77,13 @@ def test_update_order_missing_field(builton):
     assert isinstance(updated_order, Order)
     assert not hasattr(updated_order, "missing_field")
     assert not hasattr(order, "missing_field")
+
+
+@pytest.mark.skip("run it manually, so the list of "
+                  "orders doesn't grow indefinitely")
+def test_create_order(builton):
+    items = [{"product": "5b768cd4a39863000a62707b",
+              "quantity": 1}]
+    user = "5a2a837a9bb92800137cb16f"
+    order = builton.order().create(items=items, user=user)
+    assert isinstance(order, Order)
