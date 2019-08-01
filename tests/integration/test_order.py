@@ -35,7 +35,9 @@ def test_get_specific_order(builton):
 
 
 def test_get_orders_with_size_url_param(builton):
-    pass
+    orders = builton.order().get_all(url_params={"size": 1})
+    assert isinstance(orders, list)
+    assert 1 == len(orders)
 
 
 def test_get_orders_with_order_status_param(builton):
