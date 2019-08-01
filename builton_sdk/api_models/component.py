@@ -119,8 +119,7 @@ class Component:
             if body is None:
                 body = {}
 
-            for item, value in kwargs.items():
-                body[item] = value
+            body.update(kwargs)
 
         response = self.request.query(
             _type=_type,
