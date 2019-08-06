@@ -34,3 +34,20 @@ def test_get_product(builton):
     assert isinstance(product, Product)
 
 
+@pytest.mark.skip("run it manually")
+def test_create_and_delete_product(builton):
+    data = {
+        "name": "NAND gate",
+        "description": "Super fast!",
+        "currency": "NOK",
+        "price": 2.89
+    }
+    product = builton.product().create(**data)
+    assert isinstance(product, Product)
+    assert data['name'] == product.name
+
+    product = builton.product().delete(product.id)
+    assert True == product.deleted
+
+
+

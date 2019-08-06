@@ -73,7 +73,7 @@ class Component:
     def _build_url_params(kwargs):
         return dict(filter(lambda item: item[0] in ALLOWED_URL_PARAMS, kwargs.items()))
 
-    def simple_get_query(self, *args, _type='get', **kwargs):
+    def __extract_id(self, *args, **kwargs):
         _id = ''
 
         if len(args) == 2:
@@ -84,7 +84,16 @@ class Component:
             _id = kwargs.pop('id')
         else:
             raise Exception("Need id to get resource")
+        return _id
 
+    def simple_del_query(self, *args, _type='delete', **kwargs):
+        _id = self.__extract_id(*args, **kwargs)
+        url_params = self._build_url_params(kwargs)
+
+        return self.simple_query(_id=_id, url_params=url_params, _type=_type)
+
+    def simple_get_query(self, *args, _type='get', **kwargs):
+        _id = self.__extract_id(*args, **kwargs)
         url_params = self._build_url_params(kwargs)
 
         return self.simple_query(_id=_id, url_params=url_params, _type=_type)
@@ -116,6 +125,9 @@ class Component:
                 body = {}
 
             body.update(kwargs)
+
+        elif _type == 'delete':
+            url_params.update(self._build_url_params(kwargs))
 
         response = self.request.query(
             _type=_type,

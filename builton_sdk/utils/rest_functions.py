@@ -23,8 +23,8 @@ def update(cls, *args, **kwargs):
     return cls.simple_query(*args, _type='put', **kwargs)
 
 
-def delete(cls, url_params=None, json=False):
-    return cls.simple_query(_type='del', _id=cls.id, url_params=url_params, json=json)
+def delete(cls, *args, **kwargs):
+    return cls.simple_del_query(cls.id, *args, **kwargs)
 
 
 def create(cls, *args, **kwargs):
