@@ -34,6 +34,14 @@ def test_get_product(builton):
     assert isinstance(product, Product)
 
 
+def test_update_product(builton):
+    product = builton.product().get_all()[0]
+
+    new_description = "test Python SDK"
+    product = product.update(description=new_description)
+    assert new_description == product.description
+
+
 @pytest.mark.skip("run it manually")
 def test_create_and_delete_product(builton):
     data = {
@@ -46,8 +54,7 @@ def test_create_and_delete_product(builton):
     assert isinstance(product, Product)
     assert data['name'] == product.name
 
-    product = builton.product().delete(product.id)
-    assert True == product.deleted
-
-
-
+    product = builton.product().get_all()[-1]
+    product = product.delete()
+    assert True is product.deleted
+    assert False is product.active

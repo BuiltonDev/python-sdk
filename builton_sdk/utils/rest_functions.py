@@ -24,7 +24,7 @@ def update(cls, *args, **kwargs):
 
 
 def delete(cls, *args, **kwargs):
-    return cls.simple_del_query(cls.id, *args, **kwargs)
+    return cls.simple_query(*args, _type='delete', **kwargs)
 
 
 def create(cls, *args, **kwargs):
