@@ -86,12 +86,6 @@ class Component:
             raise Exception("Need id to get resource")
         return _id
 
-    def simple_del_query(self, *args, _type='delete', **kwargs):
-        _id = self.__extract_id(*args, **kwargs)
-        url_params = self._build_url_params(kwargs)
-
-        return self.simple_query(_id=_id, url_params=url_params, _type=_type)
-
     def simple_get_query(self, *args, _type='get', **kwargs):
         _id = self.__extract_id(*args, **kwargs)
         url_params = self._build_url_params(kwargs)
