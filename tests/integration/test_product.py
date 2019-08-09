@@ -90,3 +90,12 @@ def test_refresh_product(builton):
 
     updated_product = product.refresh()
     assert new_price == updated_product.price
+
+
+def test_search_expand(builton):
+    product = builton.product().get(id="5d0ca6675f7745000a2e47d7")
+    assert len(product.company) == 1
+
+    product = builton.product().get(id="5d0ca6675f7745000a2e47d7", expand="company")
+    assert len(product.company) > 1
+    assert 'name' in product.company

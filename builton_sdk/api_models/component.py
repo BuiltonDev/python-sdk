@@ -86,11 +86,20 @@ class Component:
             raise Exception("Need id to get resource")
         return _id
 
+    @staticmethod
+    def _extract_expand(**kwargs):
+        _expand = ''
+        # TODO: Should we check in the args as well?
+        if 'expand' in kwargs:
+            _expand = kwargs['expand']
+        return _expand
+
     def simple_get_query(self, *args, _type='get', **kwargs):
         _id = self.__extract_id(*args, **kwargs)
-        url_params = self._build_url_params(kwargs)
+        _url_params = self._build_url_params(kwargs)
+        _expand = self._extract_expand(**kwargs)
 
-        return self.simple_query(_id=_id, url_params=url_params, _type=_type)
+        return self.simple_query(_id=_id, url_params=_url_params, _type=_type, expand=_expand)
 
     def simple_query(self,
                      _type='get',
@@ -101,13 +110,31 @@ class Component:
                      api_path=None,
                      res_constructor=None,
                      json=False,
+                     expand=None,
                      **kwargs):
+        """
+
+        :param _type: string
+        :param _id: string
+        :param resource:
+        :param url_params: dict
+        :param body:
+        :param api_path: string
+        :param res_constructor:
+        :param json: boolean
+        :param expand:
+        :param kwargs:
+        :return:
+        """
 
         # TODO: add pagination
-        # TODO: add object expand
+        # TODO: add object expand => Should it be a proper Object. e.q: product.company.name ?
 
         if url_params is None:
             url_params = {}
+
+        if expand:
+            url_params['expand'] = expand
 
         resource = self.build_resource(_id, resource, api_path)
 
@@ -130,7 +157,6 @@ class Component:
             resource=resource
         )
         self.handle_error(response)
-
         try:
             response_data = response.json()
             response = self.parse_json(response_data, res_constructor, raw_json=json)

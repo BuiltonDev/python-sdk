@@ -1,0 +1,132 @@
+{
+    meta: {
+        createdAt: '2019-08-09T14:15:05.304Z',
+        host: 'https://qa.builton.dev',
+        reqHumanReadable: true,
+        resHumanReadable: true,
+    },
+    req: {
+        url: '/products/5d0ca6675f7745000a2e47d7',
+        method: 'PUT',
+        headers: {
+            'user-agent': 'python-requests/2.20.1',
+            'accept-encoding': 'gzip, deflate',
+            accept: '*/*',
+            connection: 'keep-alive',
+            'x-builton-api-key': 'FzC1JXikAgmcylqfNKTUtRfjS1Lf0j0N4ierWl_KoFeqXSSBOOTQZeCM4ymzN_v8udCEBVY_GW1C5NMJYBQ2PQ==',
+            'content-type': 'application/json',
+        },
+        body: {
+            description: 'test Python SDK',
+        },
+    },
+    res: {
+        status: 200,
+        headers: {
+            connection: [
+                'keep-alive',
+            ],
+            server: [
+                'gunicorn/19.7.1',
+            ],
+            date: [
+                'Fri, 09 Aug 2019 14:15:06 GMT',
+            ],
+            'content-type': [
+                'application/json',
+            ],
+            'x-rate-limit-remaining': [
+                '99',
+            ],
+            'x-service-account': [
+                '5d0278422c6e23000ce93073',
+            ],
+            'access-control-allow-origin': [
+                '*',
+            ],
+            'access-control-allow-methods': [
+                'PUT, GET, POST, DELETE, OPTIONS',
+            ],
+            'access-control-allow-headers': [
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Builton-Api-Key, X-Kvass-Api-Key, Kvass-Api-Key, X-Share-Api-Key',
+            ],
+            'access-control-expose-headers': [
+                'X-Pagination-Total',
+            ],
+            'x-content-type-options': [
+                'nosniff',
+            ],
+            'strict-transport-security': [
+                'max-age=3600',
+            ],
+            'content-security-policy': [
+                "default-src 'none'; frame-ancestors 'none'",
+            ],
+            'x-frame-options': [
+                'deny',
+            ],
+            'x-xss-protection': [
+                '1; mode=block',
+            ],
+            'cache-control': [
+                'private, no-cache, no-store, max-age=0, must-revalidate',
+            ],
+            'content-length': [
+                '851',
+            ],
+            via: [
+                '1.1 vegur',
+            ],
+        },
+        body: {
+            _cls: 'Product',
+            _id: {
+                $oid: '5d0ca6675f7745000a2e47d7',
+            },
+            _sub_products: [],
+            active: true,
+            business_rules: [],
+            company: {
+                $oid: '5ce68495873a43000d3a0d1c',
+            },
+            company_take: -1,
+            created: {
+                $date: 1561110119399,
+            },
+            currency: 'EUR',
+            default_position: [
+                -1,
+                -1,
+            ],
+            deleted: false,
+            description: 'test Python SDK',
+            discount: 0,
+            external_reference: 'apple-airpods',
+            human_id: 'PPQE74',
+            image_url: 'https://cdn.shopify.com/s/files/1/2424/9275/products/airpods.jpg?v=1524510855',
+            main_product: true,
+            max_distance: 0,
+            modified: {
+                $date: 1565360106534,
+            },
+            name: 'Apple AirPods',
+            parents: [],
+            path: '/',
+            price: 1750,
+            price_change_percentage: 0,
+            properties: {
+                grams: '1050',
+                vendor: 'Apple',
+                weight_unit: 'kg',
+            },
+            short_description: '',
+            tags: [
+                'airpods',
+                ' apple',
+                ' sound',
+                'Accessories',
+            ],
+            vat: 0,
+        },
+    },
+}
