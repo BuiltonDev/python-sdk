@@ -1,4 +1,5 @@
 import pytest
+import random
 
 from builton_sdk.api_models import Product
 
@@ -62,7 +63,7 @@ def test_create_and_delete_product(builton):
 
 def test_search_product(builton):
     query = 'apple'
-    products = builton.product().search(url_params={'query': "blablaba"})
+    products = builton.product().search(query=query)
     for product in products:
         assert query in product.name.lower()
 
@@ -75,3 +76,17 @@ def test_search_product_json(builton):
     for product in products:
         assert isinstance(product, dict)
         assert query in product['name'].lower()
+
+
+@pytest.mark.skip("run it manually")
+def test_refresh_product(builton):
+    product = builton.product().create(name="WoW Classic", description="Return to the origin",
+                                       currency="NOK", price=13.90)
+    assert isinstance(product, Product)
+
+    new_price = round(random.uniform(100.0, 200.42), 2)
+    product.update(price=new_price)
+    assert new_price != product.price
+
+    updated_product = product.refresh()
+    assert new_price == updated_product.price

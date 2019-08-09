@@ -15,8 +15,8 @@ def get_all(cls, *args, **kwargs):
     return cls.simple_query(*args, **kwargs)
 
 
-def refresh(cls, url_params=None, json=False):
-    return get(cls, url_params=url_params, json=json)
+def refresh(cls, *args, **kwargs):
+    return get(cls, id=cls.id, *args, **kwargs)
 
 
 def update(cls, *args, **kwargs):
