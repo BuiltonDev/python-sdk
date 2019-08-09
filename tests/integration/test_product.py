@@ -14,9 +14,9 @@ def test_get_products_has_attributes_with_right_types(builton):
         assert isinstance(product.short_description, str)
         assert isinstance(product.currency, str)
         assert isinstance(product.company, dict)
-        assert isinstance(product.price, float)
-        assert isinstance(product.price_change_percentage, float)
-        assert isinstance(product.vat, float)
+        assert isinstance(product.price, (float, int))
+        assert isinstance(product.price_change_percentage, (float, int))
+        assert isinstance(product.vat, (float, int))
         assert isinstance(product.tags, list)
         assert isinstance(product.human_id, str)
         assert isinstance(product.main_product, bool)
@@ -58,3 +58,20 @@ def test_create_and_delete_product(builton):
     product = product.delete()
     assert True is product.deleted
     assert False is product.active
+
+
+def test_search_product(builton):
+    query = 'apple'
+    products = builton.product().search(url_params={'query': "blablaba"})
+    for product in products:
+        assert query in product.name.lower()
+
+
+def test_search_product_json(builton):
+    query = 'apple'
+    products = builton.product().search(query=query, json=True)
+    assert isinstance(products, list)
+
+    for product in products:
+        assert isinstance(product, dict)
+        assert query in product['name'].lower()

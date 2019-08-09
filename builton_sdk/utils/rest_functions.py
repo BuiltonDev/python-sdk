@@ -31,7 +31,8 @@ def create(cls, *args, **kwargs):
     return cls.simple_query(*args, _type='post', **kwargs)
 
 
-def search(cls, query, url_params=None, json=False):
-    params = url_params.copy()
-    params.update(query)
-    return cls.simple_query(url_params=params, json=json)
+def search(cls, url_params=None, query=None, *args, **kwargs):
+    params = url_params.copy() if url_params else dict()
+    if query:
+        params.update({'query': query})
+    return cls.simple_query(*args, url_params=params, **kwargs)
