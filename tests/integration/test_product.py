@@ -62,14 +62,15 @@ def test_create_and_delete_product(builton):
 
 
 def test_search_product(builton):
-    query = 'apple'
+    query = 'product'
     products = builton.product().search(query=query)
     for product in products:
+        print(product.name)
         assert query in product.name.lower()
 
 
 def test_search_product_json(builton):
-    query = 'apple'
+    query = 'product'
     products = builton.product().search(query=query, json=True)
     assert isinstance(products, list)
 
@@ -93,9 +94,9 @@ def test_refresh_product(builton):
 
 
 def test_search_expand(builton):
-    product = builton.product().get(id="5d0ca6675f7745000a2e47d7")
+    product = builton.product().get(id="5d67c87ad661690e5f6250a6")
     assert len(product.company) == 1
 
-    product = builton.product().get(id="5d0ca6675f7745000a2e47d7", expand="company")
+    product = builton.product().get(id="5d67c87ad661690e5f6250a6", expand="company")
     assert len(product.company) > 1
     assert 'name' in product.company

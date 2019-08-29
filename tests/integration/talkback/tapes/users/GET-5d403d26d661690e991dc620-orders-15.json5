@@ -1,0 +1,212 @@
+{
+    meta: {
+        createdAt: '2019-08-29T14:11:17.415Z',
+        host: 'https://qa.builton.dev',
+        resHumanReadable: true,
+    },
+    req: {
+        url: '/users/5d403d26d661690e991dc620/orders',
+        method: 'GET',
+        headers: {
+            'user-agent': 'python-requests/2.20.1',
+            'accept-encoding': 'gzip, deflate',
+            accept: '*/*',
+            connection: 'keep-alive',
+            'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+        },
+        body: '',
+    },
+    res: {
+        status: 200,
+        headers: {
+            connection: [
+                'keep-alive',
+            ],
+            server: [
+                'gunicorn/19.7.1',
+            ],
+            date: [
+                'Thu, 29 Aug 2019 14:11:17 GMT',
+            ],
+            'content-type': [
+                'application/json',
+            ],
+            'x-rate-limit-remaining': [
+                '87',
+            ],
+            'x-service-account': [
+                '5d67cdba6a543a000b3de666',
+            ],
+            'x-pagination-total': [
+                '1',
+            ],
+            'access-control-allow-origin': [
+                '*',
+            ],
+            'access-control-allow-methods': [
+                'PUT, GET, POST, DELETE, OPTIONS',
+            ],
+            'access-control-allow-headers': [
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Kvass-Api-Key, X-Share-Api-Key',
+            ],
+            'access-control-expose-headers': [
+                'X-Pagination-Total',
+            ],
+            'x-content-type-options': [
+                'nosniff',
+            ],
+            'strict-transport-security': [
+                'max-age=3600',
+            ],
+            'content-security-policy': [
+                "default-src 'none'; frame-ancestors 'none'",
+            ],
+            'x-frame-options': [
+                'deny',
+            ],
+            'x-xss-protection': [
+                '1; mode=block',
+            ],
+            'content-length': [
+                '2090',
+            ],
+            via: [
+                '1.1 vegur',
+            ],
+        },
+        body: [
+            {
+                _id: {
+                    $oid: '5d403d27d661690e991dc622',
+                },
+                company: {
+                    $oid: '5d36fd7ea2802f0010b1477b',
+                },
+                created: {
+                    $date: 1564491046860,
+                },
+                currency: 'USD',
+                deleted: false,
+                deliveries: [],
+                delivery_status: 'PENDING',
+                human_id: 'M3JYGG',
+                items: [
+                    {
+                        already_filled: false,
+                        currency: 'NOK',
+                        discount: 0,
+                        product: {
+                            _cls: 'Product',
+                            _id: {
+                                $oid: '5d403d26d661690e991dc621',
+                            },
+                            _sub_products: [],
+                            active: true,
+                            business_rules: [],
+                            company: {
+                                $oid: '5d36fd7ea2802f0010b1477b',
+                            },
+                            company_take: -1,
+                            created: {
+                                $date: 1564491046139,
+                            },
+                            currency: 'NOK',
+                            default_position: [
+                                -1,
+                                -1,
+                            ],
+                            deleted: false,
+                            description: 'test Python SDK',
+                            discount: 0,
+                            human_id: 'MREGD3',
+                            main_product: true,
+                            max_distance: 0,
+                            media: [],
+                            modified: {
+                                $date: 1567079855129,
+                            },
+                            name: 'product 0',
+                            parents: [],
+                            path: '/',
+                            price: 71.6,
+                            price_change_percentage: 0,
+                            properties: {},
+                            short_description: '',
+                            tags: [],
+                            vat: 0,
+                        },
+                        quantity: 1,
+                        sub_products: [],
+                        vat: 0,
+                    },
+                ],
+                modified: {
+                    $date: 1564491046860,
+                },
+                note: '',
+                order_status: 'CREATED',
+                override_company_take: -1,
+                payments: [],
+                resources: [],
+                stripe_charge_id: '',
+                stripe_refund_id: '',
+                top_up_amount: 0,
+                top_up_vat: 0,
+                total_amount: 71.6,
+                total_quantity: 1,
+                units: 1,
+                user: {
+                    $oid: '5d403d26d661690e991dc620',
+                    _cls: 'User',
+                    _id: {
+                        $oid: '5d403d26d661690e991dc620',
+                    },
+                    addresses: [],
+                    auth_id: '',
+                    avatar: '',
+                    bio: '',
+                    blocked: false,
+                    company: {
+                        $oid: '5d36fd7ea2802f0010b1477b',
+                    },
+                    created: {
+                        $date: 1564491045416,
+                    },
+                    deleted: false,
+                    email: '',
+                    first_name: 'Amanda',
+                    human_id: 'WRVKED',
+                    is_company: false,
+                    last_name: 'Davis',
+                    mobile_phone_number: '',
+                    modified: {
+                        $date: 1564491045417,
+                    },
+                    national_id: '',
+                    new_customer: true,
+                    note: '',
+                    receive_notifications: true,
+                    roles: [
+                        'user',
+                    ],
+                    stripe_customer_id: '',
+                    tags: [],
+                    voucher: {
+                        consumed: 0,
+                        created: {
+                            $date: 1564491045416,
+                        },
+                        expires: {
+                            $date: 1596027045416,
+                        },
+                        initial_quantity: 0,
+                        modified: {
+                            $date: 1564491045416,
+                        },
+                        uuid: '22fa4b38-d4db-4f3c-b6af-ce230aac6c06',
+                    },
+                },
+            },
+        ],
+    },
+}

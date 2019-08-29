@@ -1,19 +1,19 @@
 {
     meta: {
-        createdAt: '2019-08-09T14:15:05.304Z',
+        createdAt: '2019-08-29T14:11:13.446Z',
         host: 'https://qa.builton.dev',
         reqHumanReadable: true,
         resHumanReadable: true,
     },
     req: {
-        url: '/products/5d0ca6675f7745000a2e47d7',
+        url: '/products/5d67c87ad661690e5f6250a6',
         method: 'PUT',
         headers: {
             'user-agent': 'python-requests/2.20.1',
             'accept-encoding': 'gzip, deflate',
             accept: '*/*',
             connection: 'keep-alive',
-            'x-builton-api-key': 'FzC1JXikAgmcylqfNKTUtRfjS1Lf0j0N4ierWl_KoFeqXSSBOOTQZeCM4ymzN_v8udCEBVY_GW1C5NMJYBQ2PQ==',
+            'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
             'content-type': 'application/json',
         },
         body: {
@@ -30,16 +30,16 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 09 Aug 2019 14:15:06 GMT',
+                'Thu, 29 Aug 2019 14:11:13 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '99',
+                '91',
             ],
             'x-service-account': [
-                '5d0278422c6e23000ce93073',
+                '5d67cdba6a543a000b3de666',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -48,7 +48,7 @@
                 'PUT, GET, POST, DELETE, OPTIONS',
             ],
             'access-control-allow-headers': [
-                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Builton-Api-Key, X-Kvass-Api-Key, Kvass-Api-Key, X-Share-Api-Key',
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Kvass-Api-Key, X-Share-Api-Key',
             ],
             'access-control-expose-headers': [
                 'X-Pagination-Total',
@@ -72,7 +72,7 @@
                 'private, no-cache, no-store, max-age=0, must-revalidate',
             ],
             'content-length': [
-                '851',
+                '626',
             ],
             via: [
                 '1.1 vegur',
@@ -81,19 +81,19 @@
         body: {
             _cls: 'Product',
             _id: {
-                $oid: '5d0ca6675f7745000a2e47d7',
+                $oid: '5d67c87ad661690e5f6250a6',
             },
             _sub_products: [],
             active: true,
             business_rules: [],
             company: {
-                $oid: '5ce68495873a43000d3a0d1c',
+                $oid: '5d36fd7ea2802f0010b1477b',
             },
             company_take: -1,
             created: {
-                $date: 1561110119399,
+                $date: 1567082618360,
             },
-            currency: 'EUR',
+            currency: 'NOK',
             default_position: [
                 -1,
                 -1,
@@ -101,31 +101,21 @@
             deleted: false,
             description: 'test Python SDK',
             discount: 0,
-            external_reference: 'apple-airpods',
-            human_id: 'PPQE74',
-            image_url: 'https://cdn.shopify.com/s/files/1/2424/9275/products/airpods.jpg?v=1524510855',
+            human_id: 'PP8GRG',
             main_product: true,
             max_distance: 0,
+            media: [],
             modified: {
-                $date: 1565360106534,
+                $date: 1567087873909,
             },
-            name: 'Apple AirPods',
+            name: 'product 0',
             parents: [],
             path: '/',
-            price: 1750,
+            price: 50.6,
             price_change_percentage: 0,
-            properties: {
-                grams: '1050',
-                vendor: 'Apple',
-                weight_unit: 'kg',
-            },
+            properties: {},
             short_description: '',
-            tags: [
-                'airpods',
-                ' apple',
-                ' sound',
-                'Accessories',
-            ],
+            tags: [],
             vat: 0,
         },
     },

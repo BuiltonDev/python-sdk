@@ -21,7 +21,7 @@ def test_get_users_has_attributes_with_right_types(builton):
 
 
 def test_get_users(builton):
-    users = builton.user().get_all(url_params={"size": 2})
+    users = builton.user().get_all(page=0, size=2)
     first_user = users[0]
     second_user = users[1]
     assert first_user.id != second_user.id

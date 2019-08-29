@@ -1,6 +1,6 @@
 {
     meta: {
-        createdAt: '2019-07-24T14:44:54.089Z',
+        createdAt: '2019-08-29T14:11:17.970Z',
         host: 'https://qa.builton.dev',
         resHumanReadable: true,
     },
@@ -12,7 +12,7 @@
             'accept-encoding': 'gzip, deflate',
             accept: '*/*',
             connection: 'keep-alive',
-            'x-builton-api-key': 'ASXNoQLJrcFWUKioNo4D4N1LSKsn9fs0uvFWKz7hp-yM78YFHV4AL6bDS6TiFvUaoCcgK8txIgvmFpW17IlUMg==',
+            'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
         },
         body: '',
     },
@@ -26,19 +26,19 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Wed, 24 Jul 2019 14:44:54 GMT',
+                'Thu, 29 Aug 2019 14:11:18 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '96',
+                '86',
             ],
             'x-service-account': [
-                '5ce3c40427269e000c7fa944',
+                '5d67cdba6a543a000b3de666',
             ],
             'x-pagination-total': [
-                '144',
+                '1',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -47,7 +47,7 @@
                 'PUT, GET, POST, DELETE, OPTIONS',
             ],
             'access-control-allow-headers': [
-                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Builton-Api-Key, X-Kvass-Api-Key, Kvass-Api-Key, X-Share-Api-Key',
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Kvass-Api-Key, X-Share-Api-Key',
             ],
             'access-control-expose-headers': [
                 'X-Pagination-Total',
@@ -68,7 +68,7 @@
                 '1; mode=block',
             ],
             'content-length': [
-                '1003',
+                '761',
             ],
             via: [
                 '1.1 vegur',
@@ -78,48 +78,28 @@
             {
                 _cls: 'User',
                 _id: {
-                    $oid: '5a2a837a9bb92800137cb16f',
+                    $oid: '5d403d26d661690e991dc620',
                 },
-                addresses: [
-                    {
-                        alias: '',
-                        city: 'Oslo',
-                        country: 'Norway',
-                        geo: [
-                            59.92,
-                            10.77,
-                        ],
-                        service: 'google',
-                        street_name: '17 Tromsøgata',
-                        zip_code: '0565',
-                    },
-                ],
+                addresses: [],
                 auth_id: '',
                 avatar: '',
-                billing_address: {
-                    alias: '',
-                    service: 'google',
-                },
                 bio: '',
                 blocked: false,
                 company: {
-                    $oid: '59ce1e0a9d3bde0006fa45a9',
+                    $oid: '5d36fd7ea2802f0010b1477b',
                 },
                 created: {
-                    $date: 1512735610287,
+                    $date: 1564491045416,
                 },
                 deleted: false,
                 email: '',
-                first_name: 'Telenor',
-                human_id: 'JQ4QLJ',
+                first_name: 'Amanda',
+                human_id: 'WRVKED',
                 is_company: false,
-                last_login: {
-                    $date: 1512735610288,
-                },
-                last_name: '',
+                last_name: 'Davis',
                 mobile_phone_number: '',
                 modified: {
-                    $date: 1512735610289,
+                    $date: 1564491045417,
                 },
                 national_id: '',
                 new_customer: true,
@@ -133,16 +113,16 @@
                 voucher: {
                     consumed: 0,
                     created: {
-                        $date: 1512735610286,
+                        $date: 1564491045416,
                     },
                     expires: {
-                        $date: 1544271610286,
+                        $date: 1596027045416,
                     },
                     initial_quantity: 0,
                     modified: {
-                        $date: 1563979494603,
+                        $date: 1564491045416,
                     },
-                    uuid: '83f2bba1-14d5-4779-b512-4d5de97bfc63',
+                    uuid: '22fa4b38-d4db-4f3c-b6af-ce230aac6c06',
                 },
             },
         ],
