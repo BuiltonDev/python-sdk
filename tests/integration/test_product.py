@@ -46,7 +46,6 @@ def test_update_product(builton):
     assert new_description == product.description
 
 
-@pytest.mark.skip("run it manually")
 def test_create_and_delete_product(builton):
     data = {
         "name": "NAND gate",
@@ -60,8 +59,8 @@ def test_create_and_delete_product(builton):
 
     product = builton.product().get(id=product.id)
     product = product.delete()
-    assert True is product.deleted
-    assert False is product.active
+    assert True == product.deleted
+    assert False == product.active
 
 
 def test_search_product(builton):

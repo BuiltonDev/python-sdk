@@ -1,11 +1,11 @@
 {
     meta: {
-        createdAt: '2019-08-30T14:04:10.783Z',
+        createdAt: '2019-08-30T14:04:11.439Z',
         host: 'https://qa.builton.dev',
         resHumanReadable: true,
     },
     req: {
-        url: '/orders?order_status=CREATED&size=1',
+        url: '/orders?delivery_status=PENDING&size=1',
         method: 'GET',
         headers: {
             'user-agent': 'python-requests/2.20.1',
@@ -32,7 +32,7 @@
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '96',
+                '95',
             ],
             'x-service-account': [
                 '5d67cdba6a543a000b3de666',

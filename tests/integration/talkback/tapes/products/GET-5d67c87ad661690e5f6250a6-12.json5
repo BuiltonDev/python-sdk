@@ -1,24 +1,20 @@
 {
     meta: {
-        createdAt: '2019-08-29T14:11:11.703Z',
+        createdAt: '2019-08-30T14:04:16.998Z',
         host: 'https://qa.builton.dev',
-        reqHumanReadable: true,
         resHumanReadable: true,
     },
     req: {
-        url: '/orders/5d67c882d661690e5f6250b9',
-        method: 'PUT',
+        url: '/products/5d67c87ad661690e5f6250a6',
+        method: 'GET',
         headers: {
             'user-agent': 'python-requests/2.20.1',
             'accept-encoding': 'gzip, deflate',
             accept: '*/*',
             connection: 'keep-alive',
             'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
-            'content-type': 'application/json',
         },
-        body: {
-            missing_field: true,
-        },
+        body: '',
     },
     res: {
         status: 200,
@@ -30,16 +26,13 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Thu, 29 Aug 2019 14:11:12 GMT',
+                'Fri, 30 Aug 2019 14:04:17 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '94',
-            ],
-            'x-service-account': [
-                '5d67cdba6a543a000b3de666',
+                '88',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -68,65 +61,52 @@
             'x-xss-protection': [
                 '1; mode=block',
             ],
-            'cache-control': [
-                'private, no-cache, no-store, max-age=0, must-revalidate',
-            ],
             'content-length': [
-                '795',
+                '626',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
         body: {
+            _cls: 'Product',
             _id: {
-                $oid: '5d67c882d661690e5f6250b9',
+                $oid: '5d67c87ad661690e5f6250a6',
             },
+            _sub_products: [],
+            active: true,
+            business_rules: [],
             company: {
                 $oid: '5d36fd7ea2802f0010b1477b',
             },
+            company_take: -1,
             created: {
-                $date: 1567082625959,
+                $date: 1567082618360,
             },
-            currency: 'USD',
-            deleted: false,
-            deliveries: [],
-            delivery_status: 'PENDING',
-            human_id: '8QNJZZ',
-            items: [
-                {
-                    already_filled: true,
-                    currency: 'NOK',
-                    discount: 0,
-                    final_price: 76.6,
-                    name: 'product 1',
-                    price: 76.6,
-                    product: {
-                        $oid: '5d67c87bd661690e5f6250a7',
-                    },
-                    quantity: 1,
-                    sub_products: [],
-                    vat: 0,
-                },
+            currency: 'NOK',
+            default_position: [
+                -1,
+                -1,
             ],
+            deleted: false,
+            description: 'test Python SDK',
+            discount: 0,
+            human_id: 'PP8GRG',
+            main_product: true,
+            max_distance: 0,
+            media: [],
             modified: {
-                $date: 1567087872215,
+                $date: 1567173773286,
             },
-            note: '',
-            order_status: 'CREATED',
-            override_company_take: -1,
-            payments: [],
-            resources: [],
-            stripe_charge_id: '',
-            stripe_refund_id: '',
-            top_up_amount: 0,
-            top_up_vat: 0,
-            total_amount: 76.6,
-            total_quantity: 1,
-            units: 1,
-            user: {
-                $oid: '5d67bf08d661690cd21c0592',
-            },
+            name: 'product 0',
+            parents: [],
+            path: '/',
+            price: 50.6,
+            price_change_percentage: 0,
+            properties: {},
+            short_description: '',
+            tags: [],
+            vat: 0,
         },
     },
 }

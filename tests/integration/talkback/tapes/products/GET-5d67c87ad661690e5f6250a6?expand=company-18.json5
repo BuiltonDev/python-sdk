@@ -1,6 +1,6 @@
 {
     meta: {
-        createdAt: '2019-08-29T14:11:14.583Z',
+        createdAt: '2019-08-30T14:04:20.939Z',
         host: 'https://qa.builton.dev',
         resHumanReadable: true,
     },
@@ -26,13 +26,13 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Thu, 29 Aug 2019 14:11:15 GMT',
+                'Fri, 30 Aug 2019 14:04:21 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '89',
+                '82',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -183,7 +183,7 @@
             max_distance: 0,
             media: [],
             modified: {
-                $date: 1567087873909,
+                $date: 1567173858668,
             },
             name: 'product 0',
             parents: [],

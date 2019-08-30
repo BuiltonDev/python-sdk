@@ -1,11 +1,11 @@
 {
     meta: {
-        createdAt: '2019-08-29T14:11:12.908Z',
+        createdAt: '2019-08-30T14:04:17.550Z',
         host: 'https://qa.builton.dev',
         resHumanReadable: true,
     },
     req: {
-        url: '/products/5d67c87ad661690e5f6250a6',
+        url: '/products?size=1',
         method: 'GET',
         headers: {
             'user-agent': 'python-requests/2.20.1',
@@ -26,13 +26,16 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Thu, 29 Aug 2019 14:11:13 GMT',
+                'Fri, 30 Aug 2019 14:04:18 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '83',
+                '87',
+            ],
+            'x-pagination-total': [
+                '9',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -62,51 +65,53 @@
                 '1; mode=block',
             ],
             'content-length': [
-                '626',
+                '628',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
-        body: {
-            _cls: 'Product',
-            _id: {
-                $oid: '5d67c87ad661690e5f6250a6',
+        body: [
+            {
+                _cls: 'Product',
+                _id: {
+                    $oid: '5d67c87ad661690e5f6250a6',
+                },
+                _sub_products: [],
+                active: true,
+                business_rules: [],
+                company: {
+                    $oid: '5d36fd7ea2802f0010b1477b',
+                },
+                company_take: -1,
+                created: {
+                    $date: 1567082618360,
+                },
+                currency: 'NOK',
+                default_position: [
+                    -1,
+                    -1,
+                ],
+                deleted: false,
+                description: 'test Python SDK',
+                discount: 0,
+                human_id: 'PP8GRG',
+                main_product: true,
+                max_distance: 0,
+                media: [],
+                modified: {
+                    $date: 1567173773286,
+                },
+                name: 'product 0',
+                parents: [],
+                path: '/',
+                price: 50.6,
+                price_change_percentage: 0,
+                properties: {},
+                short_description: '',
+                tags: [],
+                vat: 0,
             },
-            _sub_products: [],
-            active: true,
-            business_rules: [],
-            company: {
-                $oid: '5d36fd7ea2802f0010b1477b',
-            },
-            company_take: -1,
-            created: {
-                $date: 1567082618360,
-            },
-            currency: 'NOK',
-            default_position: [
-                -1,
-                -1,
-            ],
-            deleted: false,
-            description: 'test Python SDK',
-            discount: 0,
-            human_id: 'PP8GRG',
-            main_product: true,
-            max_distance: 0,
-            media: [],
-            modified: {
-                $date: 1567087529272,
-            },
-            name: 'product 0',
-            parents: [],
-            path: '/',
-            price: 50.6,
-            price_change_percentage: 0,
-            properties: {},
-            short_description: '',
-            tags: [],
-            vat: 0,
-        },
+        ],
     },
 }

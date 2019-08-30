@@ -1,11 +1,11 @@
 {
     meta: {
-        createdAt: '2019-08-29T14:11:14.028Z',
+        createdAt: '2019-08-30T14:04:16.304Z',
         host: 'https://qa.builton.dev',
         resHumanReadable: true,
     },
     req: {
-        url: '/products?query=product',
+        url: '/products',
         method: 'GET',
         headers: {
             'user-agent': 'python-requests/2.20.1',
@@ -26,16 +26,16 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Thu, 29 Aug 2019 14:11:14 GMT',
+                'Fri, 30 Aug 2019 14:04:16 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '90',
+                '89',
             ],
             'x-pagination-total': [
-                '10',
+                '9',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -65,7 +65,7 @@
                 '1; mode=block',
             ],
             'content-length': [
-                '6145',
+                '5532',
             ],
             via: [
                 '1.1 vegur',
@@ -100,7 +100,7 @@
                 max_distance: 0,
                 media: [],
                 modified: {
-                    $date: 1567087873909,
+                    $date: 1567173773286,
                 },
                 name: 'product 0',
                 parents: [],
@@ -426,46 +426,6 @@
                 parents: [],
                 path: '/',
                 price: 96.6,
-                price_change_percentage: 0,
-                properties: {},
-                short_description: '',
-                tags: [],
-                vat: 0,
-            },
-            {
-                _cls: 'Product',
-                _id: {
-                    $oid: '5d67c87dd661690e5f6250af',
-                },
-                _sub_products: [],
-                active: true,
-                business_rules: [],
-                company: {
-                    $oid: '5d36fd7ea2802f0010b1477b',
-                },
-                company_take: -1,
-                created: {
-                    $date: 1567082621430,
-                },
-                currency: 'NOK',
-                default_position: [
-                    -1,
-                    -1,
-                ],
-                deleted: false,
-                description: '',
-                discount: 0,
-                human_id: 'X9J7W9',
-                main_product: true,
-                max_distance: 0,
-                media: [],
-                modified: {
-                    $date: 1567082621430,
-                },
-                name: 'product 9',
-                parents: [],
-                path: '/',
-                price: 86.6,
                 price_change_percentage: 0,
                 properties: {},
                 short_description: '',

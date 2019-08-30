@@ -1,20 +1,27 @@
 {
     meta: {
-        createdAt: '2019-08-29T14:11:15.137Z',
+        createdAt: '2019-08-30T14:04:18.811Z',
         host: 'https://qa.builton.dev',
+        reqHumanReadable: true,
         resHumanReadable: true,
     },
     req: {
-        url: '/users',
-        method: 'GET',
+        url: '/products',
+        method: 'POST',
         headers: {
             'user-agent': 'python-requests/2.20.1',
             'accept-encoding': 'gzip, deflate',
             accept: '*/*',
             connection: 'keep-alive',
             'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+            'content-type': 'application/json',
         },
-        body: '',
+        body: {
+            name: 'NAND gate',
+            description: 'Super fast!',
+            currency: 'NOK',
+            price: 2.89,
+        },
     },
     res: {
         status: 200,
@@ -26,19 +33,16 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Thu, 29 Aug 2019 14:11:15 GMT',
+                'Fri, 30 Aug 2019 14:04:19 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '90',
+                '85',
             ],
             'x-service-account': [
                 '5d67cdba6a543a000b3de666',
-            ],
-            'x-pagination-total': [
-                '1',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -67,64 +71,55 @@
             'x-xss-protection': [
                 '1; mode=block',
             ],
+            'cache-control': [
+                'private, no-cache, no-store, max-age=0, must-revalidate',
+            ],
             'content-length': [
-                '761',
+                '622',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
-        body: [
-            {
-                _cls: 'User',
-                _id: {
-                    $oid: '5d403d26d661690e991dc620',
-                },
-                addresses: [],
-                auth_id: '',
-                avatar: '',
-                bio: '',
-                blocked: false,
-                company: {
-                    $oid: '5d36fd7ea2802f0010b1477b',
-                },
-                created: {
-                    $date: 1564491045416,
-                },
-                deleted: false,
-                email: '',
-                first_name: 'Amanda',
-                human_id: 'WRVKED',
-                is_company: false,
-                last_name: 'Davis',
-                mobile_phone_number: '',
-                modified: {
-                    $date: 1564491045417,
-                },
-                national_id: '',
-                new_customer: true,
-                note: '',
-                receive_notifications: true,
-                roles: [
-                    'user',
-                ],
-                stripe_customer_id: '',
-                tags: [],
-                voucher: {
-                    consumed: 0,
-                    created: {
-                        $date: 1564491045416,
-                    },
-                    expires: {
-                        $date: 1596027045416,
-                    },
-                    initial_quantity: 0,
-                    modified: {
-                        $date: 1564491045416,
-                    },
-                    uuid: '22fa4b38-d4db-4f3c-b6af-ce230aac6c06',
-                },
+        body: {
+            _cls: 'Product',
+            _id: {
+                $oid: '5d692ce3b6aed0006a098ae6',
             },
-        ],
+            _sub_products: [],
+            active: true,
+            business_rules: [],
+            company: {
+                $oid: '5d36fd7ea2802f0010b1477b',
+            },
+            company_take: -1,
+            created: {
+                $date: 1567173859335,
+            },
+            currency: 'NOK',
+            default_position: [
+                -1,
+                -1,
+            ],
+            deleted: false,
+            description: 'Super fast!',
+            discount: 0,
+            human_id: '7J2KD7',
+            main_product: true,
+            max_distance: 0,
+            media: [],
+            modified: {
+                $date: 1567173859336,
+            },
+            name: 'NAND gate',
+            parents: [],
+            path: '/',
+            price: 2.89,
+            price_change_percentage: 0,
+            properties: {},
+            short_description: '',
+            tags: [],
+            vat: 0,
+        },
     },
 }
