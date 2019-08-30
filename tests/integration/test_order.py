@@ -51,6 +51,36 @@ def test_get_orders_with_order_status_param(builton):
     assert "CREATED" == order.order_status
 
 
+def test_get_orders_with_delivery_status_param(builton):
+    orders = builton.order().get_all(delivery_status="PENDING", size=1)
+    assert isinstance(orders, list)
+    assert 1 == len(orders)
+
+    order = orders[0]
+    assert "PENDING" == order.delivery_status
+
+
+def test_get_orders_with_from_date_param(builton):
+    orders = builton.order().get_all(from_date=0, size=1)
+    assert isinstance(orders, list)
+    assert 1 == len(orders)
+
+    order = orders[0]
+    assert 0 < order.created['$date']
+
+
+def test_get_orders_with_from_date_param_in_the_future(builton):
+    orders = builton.order().get_all(from_date=2 << 70)
+    assert isinstance(orders, list)
+    assert 0 == len(orders)
+
+
+def test_get_orders_with_to_date_param(builton):
+    orders = builton.order().get_all(to_date=1567172963)
+    assert isinstance(orders, list)
+    assert 10 == len(orders)
+
+
 def test_update_order_order_status(builton):
     orders = builton.order().get_all(order_status="CREATED", size=1)
     assert isinstance(orders, list)

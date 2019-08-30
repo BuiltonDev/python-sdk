@@ -1,7 +1,8 @@
 from urllib.parse import urljoin
 
 
-ALLOWED_URL_PARAMS = ["size", "sort", "page", "order_status"]
+ALLOWED_URL_PARAMS = ["size", "sort", "page", "order_status",
+                      "from_date", "to_date", "delivery_status"]
 
 
 class Component:
