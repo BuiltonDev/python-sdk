@@ -102,30 +102,16 @@ class Component:
         return self.simple_query(_id=_id, url_params=_url_params, _type=_type, expand=_expand)
 
     def simple_query(self,
-                     _type='get',
-                     _id='',
-                     resource='',
-                     url_params=None,
-                     body=None,
-                     api_path=None,
-                     res_constructor=None,
-                     json=False,
-                     expand=None,
+                     _type: str = 'get',
+                     _id: str = '',
+                     resource: str = '',
+                     url_params: dict = None,
+                     body: dict = None,
+                     api_path: str = None,
+                     res_constructor = None,
+                     json: bool = False,
+                     expand: str = None,
                      **kwargs):
-        """
-
-        :param _type: string
-        :param _id: string
-        :param resource:
-        :param url_params: dict
-        :param body:
-        :param api_path: string
-        :param res_constructor:
-        :param json: boolean
-        :param expand:
-        :param kwargs:
-        :return:
-        """
 
         # TODO: add pagination
         # TODO: add object expand => Should it be a proper Object. e.q: product.company.name ?
