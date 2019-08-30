@@ -147,9 +147,6 @@ class Component:
 
             body.update(kwargs)
 
-        elif _type == 'delete':
-            url_params.update(self._build_url_params(kwargs))
-
         response = self.request.query(
             _type=_type,
             url_params=url_params,

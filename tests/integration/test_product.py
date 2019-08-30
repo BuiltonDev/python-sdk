@@ -58,7 +58,7 @@ def test_create_and_delete_product(builton):
     assert isinstance(product, Product)
     assert data['name'] == product.name
 
-    product = builton.product().get_all()[-1]
+    product = builton.product().get(id=product.id)
     product = product.delete()
     assert True is product.deleted
     assert False is product.active
@@ -84,7 +84,8 @@ def test_search_product_json(builton):
 
 @pytest.mark.skip("run it manually")
 def test_refresh_product(builton):
-    product = builton.product().create(name="WoW Classic", description="Return to the origin",
+    product = builton.product().create(name="WoW Classic",
+                                       description="Return to the origin",
                                        currency="NOK", price=13.90)
     assert isinstance(product, Product)
 
