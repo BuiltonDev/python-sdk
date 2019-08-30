@@ -29,7 +29,7 @@ all Python 3+ versions.
 
 To install the package use pip as usual:
 ```bash
-pip install --upgrade builton-sdk
+pip install builton-sdk
 ```
 
 To install from source use:
@@ -71,7 +71,7 @@ and then you can run the following script to start the talkback server:
 After the server starts, you can put it in background and then run the tests:
 
 ```bash
-python -m pytest tests/
+pytest tests/
 ```
 
 ### Pushing Changes
