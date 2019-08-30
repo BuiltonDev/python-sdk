@@ -28,7 +28,12 @@ def test_get_users(builton):
 
 
 def test_get_user_orders(builton):
-    users = builton.user().get_all(url_params={"sort": "-created"})
+    users = builton.user().get_all(page=0, sort="-created")
+
+    assert sorted(users,
+                  key=lambda user: user.created['$date'],
+                  reverse=True) == users
+
     for user in users:
         orders = user.get_orders()
         for order in orders:
