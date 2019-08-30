@@ -114,9 +114,6 @@ class Component:
                      expand: str = None,
                      **kwargs):
 
-        # TODO: add pagination
-        # TODO: add object expand => Should it be a proper Object. e.q: product.company.name ?
-
         if url_params is None:
             url_params = {}
 
