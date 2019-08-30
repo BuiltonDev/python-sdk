@@ -34,6 +34,9 @@ def test_get_product(builton):
     product = builton.product().get(id=product_id)
     assert isinstance(product, Product)
 
+    product = builton.product().get_all(size=1)[0]
+    assert isinstance(product, Product)
+
 
 def test_update_product(builton):
     product = builton.product().get_all()[0]
