@@ -1,9 +1,10 @@
 # BuiltOn Python SDK
 > Python SDK for the BuiltOn APIs
 
-![PyPI](https://img.shields.io/pypi/v/builton-sdk.svg)
-![PyPI - Status](https://img.shields.io/pypi/status/builton-sdk.svg)
-![PyPI - Downloads](https://img.shields.io/pypi/dd/builton-sdk.svg)
+[![PyPI](https://img.shields.io/pypi/v/builton-sdk.svg)](https://pypi.org/project/builton-sdk)
+[![PyPI - Status](https://img.shields.io/pypi/status/builton-sdk.svg)](https://pypi.org/project/builton-sdk)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/builton-sdk.svg)](https://pypi.org/project/builton-sdk)
+[![Downloads](https://pepy.tech/badge/builton-sdk)](https://pepy.tech/project/builton-sdk)
 
 [![Builton logo](https://res.cloudinary.com/dftspnwxo/image/upload/v1554131594/Builton_logo_positiv_wc3j7x.svg)](https://builton.dev)
 
@@ -29,7 +30,7 @@ all Python 3+ versions.
 
 To install the package use pip as usual:
 ```bash
-pip install --upgrade builton-sdk
+pip install builton-sdk
 ```
 
 To install from source use:
@@ -42,7 +43,7 @@ python setup.py install
 ```python
 from builton_sdk import Builton
 builton = Builton(api_key="API_KEY", bearer_token="BEARER_TOKEN")
-builton.product().get_all({"size": 1})
+builton.product().get_all(size=1)
 ``` 
 
 The `API_KEY` and the `BEARER_TOKEN` are both in the [Settings](https://dashboard.builton.dev/settings) 
@@ -71,7 +72,7 @@ and then you can run the following script to start the talkback server:
 After the server starts, you can put it in background and then run the tests:
 
 ```bash
-python -m pytest tests/
+pytest tests/
 ```
 
 ### Pushing Changes

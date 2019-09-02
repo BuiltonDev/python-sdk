@@ -1,6 +1,13 @@
+from urllib.parse import urljoin
+
+
+ALLOWED_URL_PARAMS = ["size", "sort", "page", "order_status",
+                      "from_date", "to_date", "delivery_status"]
+
+
 class Component:
     def __init__(self, request, props=None):
-        if self.__class__.__name__ == 'Component':
+        if self.__class__ == Component:
             raise Exception('Cannot construct Abstract instances')
 
         self.identifier = None
@@ -41,12 +48,12 @@ class Component:
     def build_resource(self, _id, resource, api_path=None):
         if _id is None:
             raise ValueError('This method requires an ID')
-        if self.id and _id is not '':
-            local_id = '/%s' % self.id
-        elif _id:
-            local_id = _id if _id[0] is '/' else '/%s' % _id
-        else:
-            local_id = ''
+
+        local_id = ''
+        if _id:
+            local_id = urljoin('/', _id)
+        elif self.id:
+            local_id = urljoin('/', self.id)
 
         local_resource = resource if not resource or resource[0] is '/' else '/%s' % resource
         local_api_path = api_path if api_path else self.api_path
@@ -63,20 +70,66 @@ class Component:
                 pass
             raise Exception(error)
 
-    def simple_query(self,
-                     _type='get',
-                     _id='',
-                     resource='',
-                     url_params=None,
-                     body=None,
-                     api_path=None,
-                     res_constructor=None,
-                     json=False):
+    @staticmethod
+    def _build_url_params(kwargs):
+        return dict(filter(lambda item: item[0] in ALLOWED_URL_PARAMS, kwargs.items()))
 
-        # TODO: add pagination
-        # TODO: add object expand
+    def __extract_id(self, *args, **kwargs):
+        _id = ''
+
+        if len(args) == 2:
+            _id = args[1]
+        elif len(args) > 2:
+            raise Exception("Not expecting more than the id as an argument")
+        elif 'id' in kwargs:
+            _id = kwargs.pop('id')
+        else:
+            raise Exception("Need id to get resource")
+        return _id
+
+    @staticmethod
+    def _extract_expand(**kwargs):
+        _expand = ''
+        # TODO: Should we check in the args as well?
+        if 'expand' in kwargs:
+            _expand = kwargs['expand']
+        return _expand
+
+    def simple_get_query(self, *args, _type='get', **kwargs):
+        _id = self.__extract_id(*args, **kwargs)
+        _url_params = self._build_url_params(kwargs)
+        _expand = self._extract_expand(**kwargs)
+
+        return self.simple_query(_id=_id, url_params=_url_params, _type=_type, expand=_expand)
+
+    def simple_query(self,
+                     _type: str = 'get',
+                     _id: str = '',
+                     resource: str = '',
+                     url_params: dict = None,
+                     body: dict = None,
+                     api_path: str = None,
+                     res_constructor = None,
+                     json: bool = False,
+                     expand: str = None,
+                     **kwargs):
+
+        if url_params is None:
+            url_params = {}
+
+        if expand:
+            url_params['expand'] = expand
 
         resource = self.build_resource(_id, resource, api_path)
+
+        if _type == 'get':
+            url_params.update(self._build_url_params(kwargs))
+
+        elif _type in ['put', 'post']:
+            if body is None:
+                body = {}
+
+            body.update(kwargs)
 
         response = self.request.query(
             _type=_type,
@@ -85,7 +138,6 @@ class Component:
             resource=resource
         )
         self.handle_error(response)
-
         try:
             response_data = response.json()
             response = self.parse_json(response_data, res_constructor, raw_json=json)

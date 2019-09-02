@@ -1,0 +1,132 @@
+{
+    meta: {
+        createdAt: '2019-08-30T14:04:15.457Z',
+        host: 'https://qa.builton.dev',
+        reqHumanReadable: true,
+        resHumanReadable: true,
+    },
+    req: {
+        url: '/orders/5d67c882d661690e5f6250b9',
+        method: 'PUT',
+        headers: {
+            'user-agent': 'python-requests/2.20.1',
+            'accept-encoding': 'gzip, deflate',
+            accept: '*/*',
+            connection: 'keep-alive',
+            'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+            'content-type': 'application/json',
+        },
+        body: {
+            missing_field: true,
+        },
+    },
+    res: {
+        status: 200,
+        headers: {
+            connection: [
+                'keep-alive',
+            ],
+            server: [
+                'gunicorn/19.7.1',
+            ],
+            date: [
+                'Fri, 30 Aug 2019 14:04:16 GMT',
+            ],
+            'content-type': [
+                'application/json',
+            ],
+            'x-rate-limit-remaining': [
+                '90',
+            ],
+            'x-service-account': [
+                '5d67cdba6a543a000b3de666',
+            ],
+            'access-control-allow-origin': [
+                '*',
+            ],
+            'access-control-allow-methods': [
+                'PUT, GET, POST, DELETE, OPTIONS',
+            ],
+            'access-control-allow-headers': [
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Kvass-Api-Key, X-Share-Api-Key',
+            ],
+            'access-control-expose-headers': [
+                'X-Pagination-Total',
+            ],
+            'x-content-type-options': [
+                'nosniff',
+            ],
+            'strict-transport-security': [
+                'max-age=3600',
+            ],
+            'content-security-policy': [
+                "default-src 'none'; frame-ancestors 'none'",
+            ],
+            'x-frame-options': [
+                'deny',
+            ],
+            'x-xss-protection': [
+                '1; mode=block',
+            ],
+            'cache-control': [
+                'private, no-cache, no-store, max-age=0, must-revalidate',
+            ],
+            'content-length': [
+                '795',
+            ],
+            via: [
+                '1.1 vegur',
+            ],
+        },
+        body: {
+            _id: {
+                $oid: '5d67c882d661690e5f6250b9',
+            },
+            company: {
+                $oid: '5d36fd7ea2802f0010b1477b',
+            },
+            created: {
+                $date: 1567082625959,
+            },
+            currency: 'USD',
+            deleted: false,
+            deliveries: [],
+            delivery_status: 'PENDING',
+            human_id: '8QNJZZ',
+            items: [
+                {
+                    already_filled: true,
+                    currency: 'NOK',
+                    discount: 0,
+                    final_price: 76.6,
+                    name: 'product 1',
+                    price: 76.6,
+                    product: {
+                        $oid: '5d67c87bd661690e5f6250a7',
+                    },
+                    quantity: 1,
+                    sub_products: [],
+                    vat: 0,
+                },
+            ],
+            modified: {
+                $date: 1567173855969,
+            },
+            note: '',
+            order_status: 'CREATED',
+            override_company_take: -1,
+            payments: [],
+            resources: [],
+            stripe_charge_id: '',
+            stripe_refund_id: '',
+            top_up_amount: 0,
+            top_up_vat: 0,
+            total_amount: 76.6,
+            total_quantity: 1,
+            units: 1,
+            user: {
+                $oid: '5d67bf08d661690cd21c0592',
+            },
+        },
+    },
+}

@@ -1,18 +1,18 @@
 {
     meta: {
-        createdAt: '2019-06-13T14:01:50.851Z',
+        createdAt: '2019-08-30T14:04:28.525Z',
         host: 'https://qa.builton.dev',
         resHumanReadable: true,
     },
     req: {
-        url: '/users/5b7aba82612421000da4dda7/orders',
+        url: '/users/5d67c877d661690e5f62509f/orders',
         method: 'GET',
         headers: {
             'user-agent': 'python-requests/2.20.1',
             'accept-encoding': 'gzip, deflate',
             accept: '*/*',
             connection: 'keep-alive',
-            'x-builton-api-key': 'ASXNoQLJrcFWUKioNo4D4N1LSKsn9fs0uvFWKz7hp-yM78YFHV4AL6bDS6TiFvUaoCcgK8txIgvmFpW17IlUMg==',
+            'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
         },
         body: '',
     },
@@ -26,16 +26,16 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Thu, 13 Jun 2019 14:01:51 GMT',
+                'Fri, 30 Aug 2019 14:04:28 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '75',
+                '91',
             ],
             'x-service-account': [
-                '5ce3c40427269e000c7fa944',
+                '5d67cdba6a543a000b3de666',
             ],
             'x-pagination-total': [
                 '0',
@@ -47,10 +47,25 @@
                 'PUT, GET, POST, DELETE, OPTIONS',
             ],
             'access-control-allow-headers': [
-                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Builton-Api-Key, X-Kvass-Api-Key, Kvass-Api-Key, X-Share-Api-Key',
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Kvass-Api-Key, X-Share-Api-Key',
             ],
             'access-control-expose-headers': [
                 'X-Pagination-Total',
+            ],
+            'x-content-type-options': [
+                'nosniff',
+            ],
+            'strict-transport-security': [
+                'max-age=3600',
+            ],
+            'content-security-policy': [
+                "default-src 'none'; frame-ancestors 'none'",
+            ],
+            'x-frame-options': [
+                'deny',
+            ],
+            'x-xss-protection': [
+                '1; mode=block',
             ],
             'content-length': [
                 '2',
