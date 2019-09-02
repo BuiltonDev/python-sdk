@@ -4,6 +4,7 @@
 [![PyPI](https://img.shields.io/pypi/v/builton-sdk.svg)](https://pypi.org/project/builton-sdk)
 [![PyPI - Status](https://img.shields.io/pypi/status/builton-sdk.svg)](https://pypi.org/project/builton-sdk)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/builton-sdk.svg)](https://pypi.org/project/builton-sdk)
+[![Downloads](https://pepy.tech/badge/builton-sdk)](https://pepy.tech/project/builton-sdk)
 
 [![Builton logo](https://res.cloudinary.com/dftspnwxo/image/upload/v1554131594/Builton_logo_positiv_wc3j7x.svg)](https://builton.dev)
 
