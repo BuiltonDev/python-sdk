@@ -6,7 +6,6 @@ from builton_sdk.api_models.payment import Payment
 from builton_sdk.api_models.payment_method import PaymentMethod
 from builton_sdk.api_models.plan import Plan
 from builton_sdk.api_models.product import Product
-from builton_sdk.api_models.provider import Provider
 from builton_sdk.api_models.resource import Resource
 from builton_sdk.api_models.subscription import Subscription
 from builton_sdk.api_models.tag import Tag

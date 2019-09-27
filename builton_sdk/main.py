@@ -67,9 +67,6 @@ class Builton:
     def product(self, props=None):
         return Product(self.request, props)
 
-    def provider(self, props=None):
-        return Provider(self.request, props)
-
     def resource(self, props=None):
         return Resource(self.request, props)
 

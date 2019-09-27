@@ -7,3 +7,13 @@ class Payment(Component):
     def __init__(self, request, props):
         super(Payment, self).__init__(request, props)
         self.api_path = 'payments'
+
+    def pay(self, body, url_params=None, json=False):
+        return self.simple_query(_type='post', _id=self.id, resource='pay', body=body,
+                                 url_params=url_params,
+                                 json=json)
+
+    def confirm(self, body, url_params=None, json=False):
+        return self.simple_query(_type='post', _id=self.id, resource='confirm', body=body,
+                                 url_params=url_params,
+                                 json=json)

@@ -1,0 +1,344 @@
+{
+    "AIModel": {
+        "object": {
+            "roles": {
+                "admin": [
+                    "delete",
+                    "train",
+                    "create_version"
+                ],
+                "user": [
+                    "get",
+                    "refresh",
+                    "get_recommendations"
+                ]
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [
+                    "create",
+                    "search"
+                ],
+                "user": [
+                    "get_all"
+                ]
+            }
+        }
+    },
+    "Company": {
+        "object": {
+            "roles": {
+                "admin": [],
+                "user": []
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [
+                    "get_all",
+                    "refresh",
+                    "get"
+                ],
+                "user": [
+                    "get_properties"
+                ]
+            }
+        }
+    },
+    "Event": {
+        "object": {
+            "roles": {
+                "admin": [
+                    "get",
+                    "refresh"
+                ],
+                "user": []
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [
+                    "get_all",
+                    "search"
+                ],
+                "user": []
+            }
+        }
+    },
+    "Image": {
+        "object": {
+            "roles": {
+                "admin": [],
+                "user": []
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [],
+                "user": [
+                    "create"
+                ]
+            }
+        }
+    },
+    "Order": {
+        "object": {
+            "roles": {
+                "admin": [],
+                "user": [
+                    "get",
+                    "refresh",
+                    "update",
+                    "get_payments",
+                    "pay",
+                    "cancel"
+                ]
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [],
+                "user": [
+                    "search",
+                    "get_all",
+                    "create"
+                ]
+            }
+        }
+    },
+    "Payment": {
+        "object": {
+            "roles": {
+                "admin": [
+                    "update",
+                    "delete"
+                ],
+                "user": [
+                    "get",
+                    "refresh",
+                    "confirm",
+                    "pay"
+                ]
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [
+                    "search"
+                ],
+                "user": [
+                    "create",
+                    "get_all"
+                ]
+            }
+        }
+    },
+    "PaymentMethod": {
+        "object": {
+            "roles": {
+                "admin": [],
+                "user": [
+                    "get",
+                    "refresh",
+                    "delete",
+                    "update"
+                ]
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [],
+                "user": [
+                    "create",
+                    "get_all"
+                ]
+            }
+        }
+    },
+    "Plan": {
+        "object": {
+            "roles": {
+                "admin": [
+                    "update",
+                    "delete"
+                ],
+                "user": [
+                    "get",
+                    "refresh",
+                    "get_subscriptions"
+                ]
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [
+                    "create"
+                ],
+                "user": [
+                    "search",
+                    "get_all"
+                ]
+            }
+        }
+    },
+    "Product": {
+        "object": {
+            "roles": {
+                "admin": [
+                    "delete",
+                    "update"
+                ],
+                "user": [
+                    "get",
+                    "refresh",
+                    "get_subproducts",
+                    "search_subproducts"
+                ]
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [
+                    "create"
+                ],
+                "user": [
+                    "search",
+                    "get_all"
+                ]
+            }
+        }
+    },
+    "Resource": {
+        "object": {
+            "roles": {
+                "admin": [],
+                "user": [
+                    "delete",
+                    "update",
+                    "get",
+                    "refresh",
+                    "get_orders"
+                ]
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [],
+                "user": [
+                    "create",
+                    "create_bulk",
+                    "update_bulk",
+                    "search",
+                    "get_all"
+                ]
+            }
+        }
+    },
+    "Subscription": {
+        "object": {
+            "roles": {
+                "admin": [
+                    "delete"
+                ],
+                "user": [
+                    "get",
+                    "refresh",
+                    "get_payments",
+                    "start",
+                    "stop",
+                    "update"
+                ]
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [
+                    "create"
+                ],
+                "user": [
+                    "get_all",
+                    "search"
+                ]
+            }
+        }
+    },
+    "Tag": {
+        "object": {
+            "roles": {
+                "admin": [
+                    "update"
+                ],
+                "user": [
+                    "get",
+                    "refresh",
+                    "get_products",
+                    "get_resources"
+                ]
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [
+                    "create",
+                    "delete"
+                ],
+                "user": [
+                    "search",
+                    "get_all"
+                ]
+            }
+        }
+    },
+    "User": {
+        "object": {
+            "roles": {
+                "admin": [],
+                "user": [
+                    "get",
+                    "refresh",
+                    "update",
+                    "get_orders",
+                    "update_addresses",
+                    "get_subscriptions",
+                    "delete"
+                ]
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [
+                    "get_all",
+                    "search"
+                ],
+                "user": [
+                    "create",
+                    "authenticate"
+                ]
+            }
+        }
+    },
+    "Webhook": {
+        "object": {
+            "roles": {
+                "admin": [
+                    "get",
+                    "refresh",
+                    "update",
+                    "delete"
+                ],
+                "user": []
+            }
+        },
+        "resource": {
+            "roles": {
+                "admin": [
+                    "get_all",
+                    "search",
+                    "create"
+                ],
+                "user": []
+            }
+        }
+    }
+}

@@ -64,21 +64,21 @@ def test_create_and_delete_product(builton):
 
 
 def test_search_product(builton):
-    query = 'product'
+    query = 'NE6Z2V'
     products = builton.product().search(query=query)
     for product in products:
-        print(product.name)
-        assert query in product.name.lower()
+        assert product.name.lower() == 'test'
 
 
 def test_search_product_json(builton):
-    query = 'product'
+    query = 'NE6Z2V'
     products = builton.product().search(query=query, json=True)
     assert isinstance(products, list)
 
     for product in products:
+        print(product['name'])
         assert isinstance(product, dict)
-        assert query in product['name'].lower()
+        assert product['name'].lower() == 'test'
 
 
 @pytest.mark.skip("run it manually")

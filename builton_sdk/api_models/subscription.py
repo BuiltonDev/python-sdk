@@ -1,4 +1,5 @@
 from builton_sdk.api_models.component import Component
+from builton_sdk.api_models.payment import Payment
 from builton_sdk.utils.rest_functions import *
 
 
@@ -10,10 +11,12 @@ class Subscription(Component):
 
     def start(self, body, url_params=None, json=False):
         return self.simple_query(_type='post', _id=self.id, resource='start', url_params=url_params,
-                                 body=body,
-                                 json=json)
+                                 body=body, json=json)
 
     def stop(self, body, url_params=None, json=False):
         return self.simple_query(_type='post', _id=self.id, resource='stop', url_params=url_params,
-                                 body=body,
-                                 json=json)
+                                 body=body, json=json)
+
+    def get_payments(self, url_params=None, json=False):
+        return self.simple_query(_id=self.id, resource='payments', url_params=url_params,
+                                 json=json, res_constructor=Payment)
