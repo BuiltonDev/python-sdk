@@ -53,7 +53,6 @@ def test_architecture():
     check_architecture_for_model(Product)
     check_architecture_for_model(Resource)
     check_architecture_for_model(Subscription)
-    check_architecture_for_model(Tag)
     check_architecture_for_model(User)
     check_architecture_for_model(Webhook)
 
@@ -68,15 +67,13 @@ def get_functions_of(obj):
 def get_expected_functions_of(obj):
     function_name = obj.__name__
     with open('./tests/architecture/architecture.json', 'r') as f:
-        test = json.load(f)
-        expected_functions = test[function_name]['object']['roles']['admin'] + test[function_name]['object']['roles']['user'] + test[function_name]['resource']['roles']['admin'] + test[function_name]['resource']['roles']['user']
+        functionArchitecture = json.load(f)[function_name]
+        expected_functions = functionArchitecture['object']['roles']['admin'] + functionArchitecture['object']['roles']['user'] + functionArchitecture['resource']['roles']['admin'] + functionArchitecture['resource']['roles']['user']
         expected_functions.sort()
         return expected_functions
 
 def check_architecture_for_model(obj):
     actual_functions = get_functions_of(obj)
     expected_functions = get_expected_functions_of(obj)
-    print(actual_functions)
-    print(expected_functions)
     assert(actual_functions==expected_functions)
 

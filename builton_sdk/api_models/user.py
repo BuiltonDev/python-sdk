@@ -4,14 +4,17 @@ from builton_sdk.api_models.subscription import Subscription
 from builton_sdk.utils.rest_functions import *
 
 
-@rest_decorator(create, get, delete, get_all, refresh, update, search)
+@rest_decorator(get, delete, get_all, refresh, update, search)
 class User(Component):
     def __init__(self, request, props):
         super(User, self).__init__(request, props)
         self.api_path = 'users'
 
-    def authenticate(cls, *args, **kwargs):
-        return cls.create(*args, _type='post', **kwargs)
+    def authenticate(self, *args, **kwargs):
+        return self.create(*args, **kwargs)
+
+    def create(self, *args, **kwargs):
+        return self.simple_query(*args, _type='post', api_path='v2/users', **kwargs)
 
     def get_orders(self, url_params=None, json=False):
         return self.simple_query(resource='orders', _id=self.id, url_params=url_params, json=json,
@@ -22,7 +25,8 @@ class User(Component):
                                  url_params=url_params,
                                  json=True)
 
-    def get_subscriptions(self, body, url_params=None):
-        return self.simple_query(_type='put', _id=self.id, resource='subscriptions', body=body,
+    def get_subscriptions(self, url_params=None, json=False):
+        return self.simple_query(_type='get', _id=self.id, resource='subscriptions',
                                  url_params=url_params,
-                                 res_constructor=Subscription)
+                                 res_constructor=Subscription,
+                                 json=json)

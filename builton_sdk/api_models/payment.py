@@ -9,7 +9,7 @@ class Payment(Component):
         self.api_path = 'payments'
 
     def pay(self, body, url_params=None, json=False):
-        return self.simple_query(_type='post', _id=self.id, resource='pay', body=body,
+        return self.simple_query(_type='post', body=body,
                                  url_params=url_params,
                                  json=json)
 

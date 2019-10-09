@@ -1,20 +1,25 @@
 {
     meta: {
-        createdAt: '2019-09-27T07:49:30.873Z',
+        createdAt: '2019-10-09T11:09:55.771Z',
         host: 'https://qa.builton.dev',
+        reqHumanReadable: true,
         resHumanReadable: true,
     },
     req: {
-        url: '/products/5d8dbf0ac6a303000e362c16',
-        method: 'GET',
+        url: '/payment_methods',
+        method: 'POST',
         headers: {
-            accept: '*/*',
             'accept-encoding': 'gzip, deflate',
-            'user-agent': 'python-requests/2.20.1',
             connection: 'keep-alive',
+            accept: '*/*',
+            'user-agent': 'python-requests/2.20.1',
             'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+            'content-type': 'application/json',
         },
-        body: '',
+        body: {
+            payment_method_id: 'pm_1FRd3HLYJSL3bx2plI13IODU',
+            payment_method: 'stripe',
+        },
     },
     res: {
         status: 200,
@@ -26,13 +31,13 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 27 Sep 2019 07:49:31 GMT',
+                'Wed, 09 Oct 2019 11:09:57 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '93',
+                '99',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -61,53 +66,59 @@
             'x-xss-protection': [
                 '1; mode=block',
             ],
+            'cache-control': [
+                'private, no-cache, no-store, max-age=0, must-revalidate',
+            ],
             'content-length': [
-                '643',
+                '776',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
         body: {
-            _cls: 'Product',
+            _cls: 'PaymentMethod.StripePaymentMethod',
             _id: {
-                $oid: '5d8dbf0ac6a303000e362c16',
+                $oid: '5d9dc0059a5540000dd6b8bf',
             },
-            _sub_products: [],
             active: true,
-            business_rules: [],
+            card: {
+                brand: 'visa',
+                checks: {
+                    address_line1_check: null,
+                    address_postal_code_check: null,
+                    cvc_check: 'unchecked',
+                },
+                country: 'US',
+                exp_month: 12,
+                exp_year: 2020,
+                fingerprint: 'npPw68vQg1usKUWb',
+                funding: 'credit',
+                generated_from: null,
+                last4: '4242',
+                three_d_secure_usage: {
+                    supported: true,
+                },
+                wallet: null,
+            },
             company: {
                 $oid: '5d36fd7ea2802f0010b1477b',
             },
-            company_take: -1,
             created: {
-                $date: 1569570570688,
+                $date: 1570619396423,
             },
-            currency: 'NOK',
-            default_position: [
-                -1,
-                -1,
-            ],
+            customer_id: 'cus_Fuxlir3E5Y3Pnp',
             deleted: false,
-            description: 'Super fast!',
-            discount: 0,
-            final_price: 2.89,
-            human_id: '3RWWK6',
-            main_product: true,
-            max_distance: 0,
-            media: [],
+            is_sca_compatible: true,
+            method: 'stripe',
             modified: {
-                $date: 1569570570689,
+                $date: 1570619397263,
             },
-            name: 'NAND gate',
-            parents: [],
-            path: '/',
-            price: 2.89,
-            price_change_percentage: 0,
-            properties: {},
-            short_description: '',
-            tags: [],
-            vat: 0,
+            name: 'Stripe',
+            source: 'pm_1FRd3HLYJSL3bx2plI13IODU',
+            user: {
+                $oid: '5d9218f71fad44000b0fb80a',
+            },
         },
     },
 }

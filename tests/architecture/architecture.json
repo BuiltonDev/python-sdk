@@ -263,33 +263,6 @@
             }
         }
     },
-    "Tag": {
-        "object": {
-            "roles": {
-                "admin": [
-                    "update"
-                ],
-                "user": [
-                    "get",
-                    "refresh",
-                    "get_products",
-                    "get_resources"
-                ]
-            }
-        },
-        "resource": {
-            "roles": {
-                "admin": [
-                    "create",
-                    "delete"
-                ],
-                "user": [
-                    "search",
-                    "get_all"
-                ]
-            }
-        }
-    },
     "User": {
         "object": {
             "roles": {

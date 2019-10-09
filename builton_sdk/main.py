@@ -73,9 +73,6 @@ class Builton:
     def subscription(self, props=None):
         return Subscription(self.request, props)
 
-    def tag(self, props=None):
-        return Tag(self.request, props)
-
     def user(self, props=None):
         return User(self.request, props)
 

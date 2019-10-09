@@ -1,20 +1,27 @@
 {
     meta: {
-        createdAt: '2019-09-27T08:13:10.411Z',
+        createdAt: '2019-10-09T11:11:00.616Z',
         host: 'https://qa.builton.dev',
+        reqHumanReadable: true,
         resHumanReadable: true,
     },
     req: {
-        url: '/products/5d8dc49482abc5000a774157',
-        method: 'DELETE',
+        url: '/products',
+        method: 'POST',
         headers: {
-            'user-agent': 'python-requests/2.20.1',
-            accept: '*/*',
-            connection: 'keep-alive',
             'accept-encoding': 'gzip, deflate',
+            'user-agent': 'python-requests/2.20.1',
+            connection: 'keep-alive',
+            accept: '*/*',
             'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+            'content-type': 'application/json',
         },
-        body: '',
+        body: {
+            description: 'Return to the origin',
+            name: 'WoW Classic',
+            currency: 'NOK',
+            price: 13.9,
+        },
     },
     res: {
         status: 200,
@@ -26,13 +33,13 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 27 Sep 2019 08:13:11 GMT',
+                'Wed, 09 Oct 2019 11:11:01 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '94',
+                '95',
             ],
             'x-service-account': [
                 '5d67cdba6a543a000b3de666',
@@ -68,7 +75,7 @@
                 'private, no-cache, no-store, max-age=0, must-revalidate',
             ],
             'content-length': [
-                '643',
+                '654',
             ],
             via: [
                 '1.1 vegur',
@@ -77,38 +84,38 @@
         body: {
             _cls: 'Product',
             _id: {
-                $oid: '5d8dc49482abc5000a774157',
+                $oid: '5d9dc0459a5540000dd6b8c2',
             },
             _sub_products: [],
-            active: false,
+            active: true,
             business_rules: [],
             company: {
                 $oid: '5d36fd7ea2802f0010b1477b',
             },
             company_take: -1,
             created: {
-                $date: 1569571988582,
+                $date: 1570619461118,
             },
             currency: 'NOK',
             default_position: [
                 -1,
                 -1,
             ],
-            deleted: true,
-            description: 'Super fast!',
+            deleted: false,
+            description: 'Return to the origin',
             discount: 0,
-            final_price: 2.89,
-            human_id: 'Q2GVQ2',
+            final_price: 13.9,
+            human_id: 'GEQL7D',
             main_product: true,
             max_distance: 0,
             media: [],
             modified: {
-                $date: 1569571991191,
+                $date: 1570619461118,
             },
-            name: 'NAND gate',
+            name: 'WoW Classic',
             parents: [],
             path: '/',
-            price: 2.89,
+            price: 13.9,
             price_change_percentage: 0,
             properties: {},
             short_description: '',

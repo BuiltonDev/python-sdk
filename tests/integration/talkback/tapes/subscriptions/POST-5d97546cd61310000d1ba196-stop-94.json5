@@ -1,20 +1,22 @@
 {
     meta: {
-        createdAt: '2019-09-27T07:49:31.497Z',
+        createdAt: '2019-10-04T15:00:41.314Z',
         host: 'https://qa.builton.dev',
+        reqHumanReadable: true,
         resHumanReadable: true,
     },
     req: {
-        url: '/products/5d8dbf0ac6a303000e362c16',
-        method: 'DELETE',
+        url: '/subscriptions/5d97546cd61310000d1ba196/stop',
+        method: 'POST',
         headers: {
-            accept: '*/*',
             'accept-encoding': 'gzip, deflate',
-            'user-agent': 'python-requests/2.20.1',
+            accept: '*/*',
             connection: 'keep-alive',
+            'user-agent': 'python-requests/2.20.1',
             'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+            'content-type': 'application/json',
         },
-        body: '',
+        body: {},
     },
     res: {
         status: 200,
@@ -26,16 +28,13 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 27 Sep 2019 07:49:32 GMT',
+                'Fri, 04 Oct 2019 15:00:42 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '92',
-            ],
-            'x-service-account': [
-                '5d67cdba6a543a000b3de666',
+                '99',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -68,52 +67,67 @@
                 'private, no-cache, no-store, max-age=0, must-revalidate',
             ],
             'content-length': [
-                '643',
+                '965',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
         body: {
-            _cls: 'Product',
+            _cls: 'SubscriptionMethod.LicenseSubscription',
             _id: {
-                $oid: '5d8dbf0ac6a303000e362c16',
+                $oid: '5d97546cd61310000d1ba196',
             },
-            _sub_products: [],
-            active: false,
-            business_rules: [],
+            active: true,
             company: {
                 $oid: '5d36fd7ea2802f0010b1477b',
             },
-            company_take: -1,
             created: {
-                $date: 1569570570688,
+                $date: 1570198636625,
             },
-            currency: 'NOK',
-            default_position: [
-                -1,
-                -1,
-            ],
-            deleted: true,
-            description: 'Super fast!',
-            discount: 0,
-            final_price: 2.89,
-            human_id: '3RWWK6',
-            main_product: true,
-            max_distance: 0,
-            media: [],
+            current_billing_date_period_end: {
+                $date: 1572533888331,
+            },
+            current_billing_date_period_start: {
+                $date: 1570201088331,
+            },
+            deleted: false,
+            ending_date: {
+                $date: 1570201242412,
+            },
+            human_id: '48W4WW',
+            infinite: false,
+            is_retrying_payment: false,
+            method: 'license',
             modified: {
-                $date: 1569570572026,
+                $date: 1570201242439,
             },
-            name: 'NAND gate',
-            parents: [],
-            path: '/',
-            price: 2.89,
-            price_change_percentage: 0,
-            properties: {},
-            short_description: '',
-            tags: [],
-            vat: 0,
+            name: 'LICENSE',
+            payment_method: {
+                $oid: '5d96096b61a18e000f7d9fd1',
+            },
+            payments: [],
+            plan: {
+                $oid: '5d975251d61310000bbbb68f',
+            },
+            prorate_amount: -1000,
+            prorate_date: {
+                $date: 1570201242439,
+            },
+            starting_date: {
+                $date: 1570201088331,
+            },
+            status: 'NON_RENEWING',
+            throttling_starts: 1000,
+            total_fail_attempts: 0,
+            total_payment_retries: 0,
+            trial: false,
+            updated: {
+                $date: 1570198636625,
+            },
+            user: {
+                $oid: '5d9218f71fad44000b0fb80a',
+            },
         },
     },
 }

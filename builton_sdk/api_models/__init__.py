@@ -8,6 +8,5 @@ from builton_sdk.api_models.plan import Plan
 from builton_sdk.api_models.product import Product
 from builton_sdk.api_models.resource import Resource
 from builton_sdk.api_models.subscription import Subscription
-from builton_sdk.api_models.tag import Tag
 from builton_sdk.api_models.user import User
 from builton_sdk.api_models.webhook import Webhook

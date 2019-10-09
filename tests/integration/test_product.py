@@ -76,12 +76,11 @@ def test_search_product_json(builton):
     assert isinstance(products, list)
 
     for product in products:
-        print(product['name'])
         assert isinstance(product, dict)
         assert product['name'].lower() == 'test'
 
 
-@pytest.mark.skip("run it manually")
+#@pytest.mark.skip("run it manually")
 def test_refresh_product(builton):
     product = builton.product().create(name="WoW Classic",
                                        description="Return to the origin",
@@ -95,6 +94,14 @@ def test_refresh_product(builton):
     updated_product = product.refresh()
     assert new_price == updated_product.price
 
+#@pytest.mark.skip("run it manually")
+def test_refresh_product_2(builton):
+    product = builton.product().get(id="5d9316751fad44000aaab4ce")
+    assert isinstance(product, Product)
+
+    new_price = round(random.uniform(100.0, 200.42), 2)
+    product = product.update(price=new_price)
+    assert new_price == product.price
 
 def test_search_expand(builton):
     product = builton.product().get(id="5d67c87ad661690e5f6250a6")
@@ -103,3 +110,16 @@ def test_search_expand(builton):
     product = builton.product().get(id="5d67c87ad661690e5f6250a6", expand="company")
     assert len(product.company) > 1
     assert 'name' in product.company
+
+def test_get_subproducts(builton):
+    product = builton.product().get(id="5d6d195404cd38000a22ecdd")
+    sub_products = product.get_subproducts()
+    assert len(sub_products) > 0
+    assert sub_products[0].main_product == False
+
+def test_search_subproducts(builton):
+    product = builton.product().get(id="5d6d195404cd38000a22ecdd")
+    sub_products = product.search_subproducts(query="subproduct")
+    assert len(sub_products) > 0
+    assert sub_products[0].main_product == False
+    assert sub_products[0].human_id == "6L2D2W"

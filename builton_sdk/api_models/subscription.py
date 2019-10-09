@@ -13,7 +13,7 @@ class Subscription(Component):
         return self.simple_query(_type='post', _id=self.id, resource='start', url_params=url_params,
                                  body=body, json=json)
 
-    def stop(self, body, url_params=None, json=False):
+    def stop(self, body=None, url_params=None, json=False):
         return self.simple_query(_type='post', _id=self.id, resource='stop', url_params=url_params,
                                  body=body, json=json)
 

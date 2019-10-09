@@ -105,7 +105,6 @@ def test_methods_return_right_instances():
     assert isinstance(k.product(), Product)
     assert isinstance(k.resource(), Resource)
     assert isinstance(k.subscription(), Subscription)
-    assert isinstance(k.tag(), Tag)
     assert isinstance(k.user(), User)
     assert isinstance(k.webhook(), Webhook)
 

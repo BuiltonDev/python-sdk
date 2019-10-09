@@ -13,5 +13,5 @@ class Product(Component):
                                  json=json)
 
     def search_subproducts(self, query="", url_params=None, json=False):
-        return self.simple_query(_id=self.id, resource='sub_products', url_params=url_params,
+        return self.simple_query(_id=self.id, resource='sub_products/search', url_params=url_params,
                                  json=json, query=query)
