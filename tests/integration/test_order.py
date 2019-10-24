@@ -110,10 +110,16 @@ def test_update_order_missing_field(builton):
 
 
 @pytest.mark.skip("run it manually, so the list of "
-                  "orders doesn't grow indefinitely")
+                   "orders doesn't grow indefinitely")
 def test_create_order(builton):
-    items = [{"product": "5b768cd4a39863000a62707b",
+    users = builton.user().get_all(size=1)
+    user = users[0].id
+
+    products = builton.product().get_all(size=1)
+    product_id = products[0].id
+
+    items = [{"product": product_id,
               "quantity": 1}]
-    user = "5a2a837a9bb92800137cb16f"
+
     order = builton.order().create(items=items, user=user)
     assert isinstance(order, Order)
