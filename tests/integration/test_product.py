@@ -87,7 +87,7 @@ def test_refresh_product(builton):
                                        currency="NOK", price=13.90)
     assert isinstance(product, Product)
 
-    new_price = round(random.uniform(100.0, 200.42), 2)
+    new_price = 28.10
     product.update(price=new_price)
     assert new_price != product.price
 
