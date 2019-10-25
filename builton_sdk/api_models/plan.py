@@ -10,5 +10,5 @@ class Plan(_Component):
         self.api_path = 'plans'
 
     def get_subscriptions(self, url_params=None, json=False):
-        return self.simple_query(_id=self.id, resource='subscriptions', url_params=url_params,
-                                 json=json, res_constructor=Subscription)
+        return self._simple_query(_id=self.id, resource='subscriptions', url_params=url_params,
+                                  json=json, res_constructor=Subscription)

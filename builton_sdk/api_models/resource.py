@@ -14,9 +14,9 @@ class Resource(_Component):
                                   json=json)
 
     def update_bulk(self, body, url_params=None, json=False):
-        return self.simple_query(_type='put', resource='bulk', body=body, url_params=url_params,
+        return self._simple_query(_type='put', resource='bulk', body=body, url_params=url_params,
                                  json=json)
 
     def get_orders(self, body, url_params=None, json=False):
-        return self.simple_query(_id=self.id, resource='orders', body=body, url_params=url_params,
+        return self._simple_query(_id=self.id, resource='orders', body=body, url_params=url_params,
                                  json=json, res_constructor=Order)

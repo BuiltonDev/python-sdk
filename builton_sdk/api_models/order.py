@@ -1,4 +1,4 @@
-from builton_sdk.api_models.component import Component
+from builton_sdk.api_models._component import _Component
 from builton_sdk.api_models.payment import Payment
 from builton_sdk.utils.rest_functions import *
 
@@ -20,5 +20,5 @@ class Order(_Component):
                                   json=json)
 
     def get_payments(self, url_params=None, json=False):
-        return self.simple_query(_id=self.id, resource='payments', url_params=url_params,
-                                 json=json, res_constructor=Payment)
+        return self._simple_query(_id=self.id, resource='payments', url_params=url_params,
+                                  json=json, res_constructor=Payment)

@@ -1,11 +1,11 @@
 {
     meta: {
-        createdAt: '2019-10-25T12:30:39.434Z',
+        createdAt: '2019-10-25T12:33:34.711Z',
         host: 'https://qa.builton.dev',
         resHumanReadable: true,
     },
     req: {
-        url: '/orders?from_date=2361183241434822606848',
+        url: '/products/5db2eb9e63472e000fd27076',
         method: 'GET',
         headers: {
             'user-agent': 'python-requests/2.20.1',
@@ -26,19 +26,13 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 25 Oct 2019 12:33:12 GMT',
+                'Fri, 25 Oct 2019 12:33:35 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '92',
-            ],
-            'x-service-account': [
-                '5d67cdba6a543a000b3de666',
-            ],
-            'x-pagination-total': [
-                '0',
+                '63',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -68,12 +62,52 @@
                 '1; mode=block',
             ],
             'content-length': [
-                '2',
+                '654',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
-        body: [],
+        body: {
+            _cls: 'Product',
+            _id: {
+                $oid: '5db2eb9e63472e000fd27076',
+            },
+            _sub_products: [],
+            active: true,
+            business_rules: [],
+            company: {
+                $oid: '5d36fd7ea2802f0010b1477b',
+            },
+            company_take: -1,
+            created: {
+                $date: 1572006814119,
+            },
+            currency: 'NOK',
+            default_position: [
+                -1,
+                -1,
+            ],
+            deleted: false,
+            description: 'Return to the origin',
+            discount: 0,
+            final_price: 28.1,
+            human_id: 'RLG2E6',
+            main_product: true,
+            max_distance: 0,
+            media: [],
+            modified: {
+                $date: 1572006814620,
+            },
+            name: 'WoW Classic',
+            parents: [],
+            path: '/',
+            price: 28.1,
+            price_change_percentage: 0,
+            properties: {},
+            short_description: '',
+            tags: [],
+            vat: 0,
+        },
     },
 }

@@ -1,0 +1,211 @@
+{
+    meta: {
+        createdAt: '2019-10-25T12:31:08.888Z',
+        host: 'https://qa.builton.dev',
+        resHumanReadable: true,
+    },
+    req: {
+        url: '/subscriptions/5d97546cd61310000d1ba196/payments',
+        method: 'GET',
+        headers: {
+            'user-agent': 'python-requests/2.20.1',
+            'accept-encoding': 'gzip, deflate',
+            accept: '*/*',
+            connection: 'keep-alive',
+            'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+        },
+        body: '',
+    },
+    res: {
+        status: 200,
+        headers: {
+            connection: [
+                'keep-alive',
+            ],
+            server: [
+                'gunicorn/19.7.1',
+            ],
+            date: [
+                'Fri, 25 Oct 2019 12:33:41 GMT',
+            ],
+            'content-type': [
+                'application/json',
+            ],
+            'x-rate-limit-remaining': [
+                '50',
+            ],
+            'x-pagination-total': [
+                '4',
+            ],
+            'access-control-allow-origin': [
+                '*',
+            ],
+            'access-control-allow-methods': [
+                'PUT, GET, POST, DELETE, OPTIONS',
+            ],
+            'access-control-allow-headers': [
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Kvass-Api-Key, X-Share-Api-Key',
+            ],
+            'access-control-expose-headers': [
+                'X-Pagination-Total',
+            ],
+            'x-content-type-options': [
+                'nosniff',
+            ],
+            'strict-transport-security': [
+                'max-age=3600',
+            ],
+            'content-security-policy': [
+                "default-src 'none'; frame-ancestors 'none'",
+            ],
+            'x-frame-options': [
+                'deny',
+            ],
+            'x-xss-protection': [
+                '1; mode=block',
+            ],
+            'content-length': [
+                '2234',
+            ],
+            via: [
+                '1.1 vegur',
+            ],
+        },
+        body: [
+            {
+                _id: {
+                    $oid: '5d9b4cccc0c5f90009a39156',
+                },
+                active: true,
+                amount: 1000,
+                company: {
+                    $oid: '5d36fd7ea2802f0010b1477b',
+                },
+                created: {
+                    $date: 1570458828155,
+                },
+                currency: 'NOK',
+                current_state: 'processing',
+                deleted: false,
+                description: '',
+                human_id: '6LKZRE',
+                metadata: {
+                    charge_id: 'ch_1FQxbcLYJSL3bx2pS2EO9Ep7',
+                    intent_id: 'pi_1FQxbcLYJSL3bx2pp7pmdJ1w',
+                },
+                modified: {
+                    $date: 1570460077806,
+                },
+                payment_date: {
+                    $date: 1570458879194,
+                },
+                payment_method: {
+                    $oid: '5d96096b61a18e000f7d9fd1',
+                },
+                subject: {
+                    _cls: 'SubscriptionMethod.LicenseSubscription',
+                    _ref: '5d97546cd61310000d1ba196',
+                },
+                user: {
+                    $oid: '5d9218f71fad44000b0fb80a',
+                },
+            },
+            {
+                _id: {
+                    $oid: '5d9b444dc0c5f90009a39154',
+                },
+                active: true,
+                amount: 0,
+                company: {
+                    $oid: '5d36fd7ea2802f0010b1477b',
+                },
+                created: {
+                    $date: 1570456653029,
+                },
+                currency: 'NOK',
+                current_state: 'created',
+                deleted: false,
+                description: '',
+                human_id: 'Y8D2ZZ',
+                metadata: {},
+                modified: {
+                    $date: 1570456653030,
+                },
+                payment_method: {
+                    $oid: '5d96096b61a18e000f7d9fd1',
+                },
+                subject: {
+                    _cls: 'SubscriptionMethod.LicenseSubscription',
+                    _ref: '5d97546cd61310000d1ba196',
+                },
+                user: {
+                    $oid: '5d9218f71fad44000b0fb80a',
+                },
+            },
+            {
+                _id: {
+                    $oid: '5d9b3ec3c0c5f90009a39151',
+                },
+                active: true,
+                amount: 0,
+                company: {
+                    $oid: '5d36fd7ea2802f0010b1477b',
+                },
+                created: {
+                    $date: 1570455235003,
+                },
+                currency: 'NOK',
+                current_state: 'created',
+                deleted: false,
+                description: '',
+                human_id: 'RLZP4J',
+                metadata: {},
+                modified: {
+                    $date: 1570455235004,
+                },
+                payment_method: {
+                    $oid: '5d96096b61a18e000f7d9fd1',
+                },
+                subject: {
+                    _cls: 'SubscriptionMethod.LicenseSubscription',
+                    _ref: '5d97546cd61310000d1ba196',
+                },
+                user: {
+                    $oid: '5d9218f71fad44000b0fb80a',
+                },
+            },
+            {
+                _id: {
+                    $oid: '5d9b3d9ec0c5f90009a3914e',
+                },
+                active: true,
+                amount: 0,
+                company: {
+                    $oid: '5d36fd7ea2802f0010b1477b',
+                },
+                created: {
+                    $date: 1570454942737,
+                },
+                currency: 'NOK',
+                current_state: 'created',
+                deleted: false,
+                description: '',
+                human_id: 'Q7DE4Y',
+                metadata: {},
+                modified: {
+                    $date: 1570454942738,
+                },
+                payment_method: {
+                    $oid: '5d96096b61a18e000f7d9fd1',
+                },
+                subject: {
+                    _cls: 'SubscriptionMethod.LicenseSubscription',
+                    _ref: '5d97546cd61310000d1ba196',
+                },
+                user: {
+                    $oid: '5d9218f71fad44000b0fb80a',
+                },
+            },
+        ],
+    },
+}

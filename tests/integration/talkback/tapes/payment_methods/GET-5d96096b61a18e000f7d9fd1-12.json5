@@ -1,11 +1,11 @@
 {
     meta: {
-        createdAt: '2019-10-25T12:30:39.434Z',
+        createdAt: '2019-10-25T12:30:44.421Z',
         host: 'https://qa.builton.dev',
         resHumanReadable: true,
     },
     req: {
-        url: '/orders?from_date=2361183241434822606848',
+        url: '/payment_methods/5d96096b61a18e000f7d9fd1',
         method: 'GET',
         headers: {
             'user-agent': 'python-requests/2.20.1',
@@ -26,19 +26,13 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 25 Oct 2019 12:33:12 GMT',
+                'Fri, 25 Oct 2019 12:33:19 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '92',
-            ],
-            'x-service-account': [
-                '5d67cdba6a543a000b3de666',
-            ],
-            'x-pagination-total': [
-                '0',
+                '81',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -68,12 +62,55 @@
                 '1; mode=block',
             ],
             'content-length': [
-                '2',
+                '776',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
-        body: [],
+        body: {
+            _cls: 'PaymentMethod.StripePaymentMethod',
+            _id: {
+                $oid: '5d96096b61a18e000f7d9fd1',
+            },
+            active: true,
+            card: {
+                brand: 'visa',
+                checks: {
+                    address_line1_check: null,
+                    address_postal_code_check: null,
+                    cvc_check: 'unchecked',
+                },
+                country: 'US',
+                exp_month: 12,
+                exp_year: 2020,
+                fingerprint: 'npPw68vQg1usKUWb',
+                funding: 'credit',
+                generated_from: null,
+                last4: '4242',
+                three_d_secure_usage: {
+                    supported: true,
+                },
+                wallet: null,
+            },
+            company: {
+                $oid: '5d36fd7ea2802f0010b1477b',
+            },
+            created: {
+                $date: 1570113898769,
+            },
+            customer_id: 'cus_Fuxlir3E5Y3Pnp',
+            deleted: false,
+            is_sca_compatible: true,
+            method: 'stripe',
+            modified: {
+                $date: 1570113899406,
+            },
+            name: 'Stripe',
+            source: 'pm_1FPVY5LYJSL3bx2pJ2Hfv1Gn',
+            user: {
+                $oid: '5d9218f71fad44000b0fb80a',
+            },
+        },
     },
 }

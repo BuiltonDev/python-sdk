@@ -1,0 +1,157 @@
+{
+    meta: {
+        createdAt: '2019-10-25T12:31:18.010Z',
+        host: 'https://qa.builton.dev',
+        reqHumanReadable: true,
+        resHumanReadable: true,
+    },
+    req: {
+        url: '/v2/users',
+        method: 'POST',
+        headers: {
+            'user-agent': 'python-requests/2.20.1',
+            'accept-encoding': 'gzip, deflate',
+            accept: '*/*',
+            connection: 'keep-alive',
+            'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+            'content-type': 'application/json',
+        },
+        body: {
+            first_name: 'test',
+        },
+    },
+    res: {
+        status: 200,
+        headers: {
+            connection: [
+                'keep-alive',
+            ],
+            server: [
+                'gunicorn/19.7.1',
+            ],
+            date: [
+                'Fri, 25 Oct 2019 12:33:52 GMT',
+            ],
+            'content-type': [
+                'application/json',
+            ],
+            'x-rate-limit-remaining': [
+                '31',
+            ],
+            'access-control-allow-origin': [
+                '*',
+            ],
+            'access-control-allow-methods': [
+                'PUT, GET, POST, DELETE, OPTIONS',
+            ],
+            'access-control-allow-headers': [
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Kvass-Api-Key, X-Share-Api-Key',
+            ],
+            'access-control-expose-headers': [
+                'X-Pagination-Total',
+            ],
+            'x-content-type-options': [
+                'nosniff',
+            ],
+            'strict-transport-security': [
+                'max-age=3600',
+            ],
+            'content-security-policy': [
+                "default-src 'none'; frame-ancestors 'none'",
+            ],
+            'x-frame-options': [
+                'deny',
+            ],
+            'x-xss-protection': [
+                '1; mode=block',
+            ],
+            'cache-control': [
+                'private, no-cache, no-store, max-age=0, must-revalidate',
+            ],
+            'content-length': [
+                '1200',
+            ],
+            via: [
+                '1.1 vegur',
+            ],
+        },
+        body: {
+            _cls: 'User',
+            _id: {
+                $oid: '5d9218f71fad44000b0fb80a',
+            },
+            addresses: [
+                {
+                    alias: '',
+                    city: 'CA',
+                    country: 'United States',
+                    geo: [
+                        38.59,
+                        -121.29,
+                    ],
+                    service: 'google',
+                    state: 'Rancho Cordova',
+                    street_name: 'Olson Drive',
+                    zip_code: '95670',
+                },
+            ],
+            auth_id: '1234567890',
+            avatar: '',
+            billing_address: {
+                alias: '',
+                city: 'Berlin',
+                country: 'Germany',
+                geo: [
+                    52.56,
+                    13.38,
+                ],
+                service: 'google',
+                state: 'Berlin',
+                street_name: 'Osloer Straße',
+            },
+            bio: '',
+            company: {
+                $oid: '5d36fd7ea2802f0010b1477b',
+            },
+            created: {
+                $date: 1569855735370,
+            },
+            default_payment_method: {
+                $oid: '5d94a55430fea9000aa52f38',
+            },
+            deleted: false,
+            email: '',
+            first_name: 'test',
+            human_id: 'ZQK3YW',
+            is_company: false,
+            last_login: {
+                $date: 1572006832051,
+            },
+            last_name: '',
+            mobile_phone_number: '',
+            modified: {
+                $date: 1572006832052,
+            },
+            national_id: '',
+            new_customer: true,
+            note: '',
+            receive_notifications: true,
+            stripe_customer_id: 'cus_Fuxlir3E5Y3Pnp',
+            tags: [],
+            voucher: {
+                consumed: 0,
+                created: {
+                    $date: 1569855735370,
+                },
+                expires: {
+                    $date: 1601391735370,
+                },
+                initial_quantity: 0,
+                modified: {
+                    $date: 1569855735370,
+                },
+                uuid: '790bff04-e695-4ae1-873e-774c2c130d75',
+            },
+        },
+    },
+}

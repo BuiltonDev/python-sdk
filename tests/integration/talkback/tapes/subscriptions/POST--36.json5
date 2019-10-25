@@ -1,20 +1,25 @@
 {
     meta: {
-        createdAt: '2019-10-25T12:30:39.434Z',
+        createdAt: '2019-10-25T12:31:06.656Z',
         host: 'https://qa.builton.dev',
+        reqHumanReadable: true,
         resHumanReadable: true,
     },
     req: {
-        url: '/orders?from_date=2361183241434822606848',
-        method: 'GET',
+        url: '/subscriptions',
+        method: 'POST',
         headers: {
             'user-agent': 'python-requests/2.20.1',
             'accept-encoding': 'gzip, deflate',
             accept: '*/*',
             connection: 'keep-alive',
             'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+            'content-type': 'application/json',
         },
-        body: '',
+        body: {
+            plan: '5d975251d61310000bbbb68f',
+            subscription_method: 'license',
+        },
     },
     res: {
         status: 200,
@@ -26,19 +31,13 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 25 Oct 2019 12:33:12 GMT',
+                'Fri, 25 Oct 2019 12:33:39 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '92',
-            ],
-            'x-service-account': [
-                '5d67cdba6a543a000b3de666',
-            ],
-            'x-pagination-total': [
-                '0',
+                '54',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -67,13 +66,53 @@
             'x-xss-protection': [
                 '1; mode=block',
             ],
+            'cache-control': [
+                'private, no-cache, no-store, max-age=0, must-revalidate',
+            ],
             'content-length': [
-                '2',
+                '650',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
-        body: [],
+        body: {
+            _cls: 'SubscriptionMethod.LicenseSubscription',
+            _id: {
+                $oid: '5db2eba363472e000fd27078',
+            },
+            active: true,
+            company: {
+                $oid: '5d36fd7ea2802f0010b1477b',
+            },
+            created: {
+                $date: 1572006819589,
+            },
+            deleted: false,
+            human_id: 'L7K99N',
+            infinite: false,
+            is_retrying_payment: false,
+            method: 'license',
+            modified: {
+                $date: 1572006819597,
+            },
+            name: 'LICENSE',
+            payments: [],
+            plan: {
+                $oid: '5d975251d61310000bbbb68f',
+            },
+            prorate_amount: 0,
+            status: 'CREATED',
+            throttling_starts: 1000,
+            total_fail_attempts: 0,
+            total_payment_retries: 0,
+            trial: false,
+            updated: {
+                $date: 1572006819589,
+            },
+            user: {
+                $oid: '5d9218f71fad44000b0fb80a',
+            },
+        },
     },
 }

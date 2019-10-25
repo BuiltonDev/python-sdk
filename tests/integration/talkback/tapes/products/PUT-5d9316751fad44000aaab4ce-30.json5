@@ -1,20 +1,24 @@
 {
     meta: {
-        createdAt: '2019-10-25T12:30:39.434Z',
+        createdAt: '2019-10-25T12:31:03.146Z',
         host: 'https://qa.builton.dev',
+        reqHumanReadable: true,
         resHumanReadable: true,
     },
     req: {
-        url: '/orders?from_date=2361183241434822606848',
-        method: 'GET',
+        url: '/products/5d9316751fad44000aaab4ce',
+        method: 'PUT',
         headers: {
             'user-agent': 'python-requests/2.20.1',
             'accept-encoding': 'gzip, deflate',
             accept: '*/*',
             connection: 'keep-alive',
             'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+            'content-type': 'application/json',
         },
-        body: '',
+        body: {
+            price: 127.93,
+        },
     },
     res: {
         status: 200,
@@ -26,19 +30,16 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 25 Oct 2019 12:33:12 GMT',
+                'Fri, 25 Oct 2019 12:31:03 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '92',
+                '61',
             ],
             'x-service-account': [
                 '5d67cdba6a543a000b3de666',
-            ],
-            'x-pagination-total': [
-                '0',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -67,13 +68,56 @@
             'x-xss-protection': [
                 '1; mode=block',
             ],
+            'cache-control': [
+                'private, no-cache, no-store, max-age=0, must-revalidate',
+            ],
             'content-length': [
-                '2',
+                '647',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
-        body: [],
+        body: {
+            _cls: 'Product',
+            _id: {
+                $oid: '5d9316751fad44000aaab4ce',
+            },
+            _sub_products: [],
+            active: false,
+            business_rules: [],
+            company: {
+                $oid: '5d36fd7ea2802f0010b1477b',
+            },
+            company_take: -1,
+            created: {
+                $date: 1569920629339,
+            },
+            currency: 'NOK',
+            default_position: [
+                -1,
+                -1,
+            ],
+            deleted: true,
+            description: 'Super fast!',
+            discount: 0,
+            final_price: 127.93,
+            human_id: '623GJE',
+            main_product: true,
+            max_distance: 0,
+            media: [],
+            modified: {
+                $date: 1572006663580,
+            },
+            name: 'NAND gate',
+            parents: [],
+            path: '/',
+            price: 127.93,
+            price_change_percentage: 0,
+            properties: {},
+            short_description: '',
+            tags: [],
+            vat: 0,
+        },
     },
 }

@@ -1,11 +1,11 @@
 {
     meta: {
-        createdAt: '2019-10-25T12:30:39.434Z',
+        createdAt: '2019-10-25T12:31:10.907Z',
         host: 'https://qa.builton.dev',
         resHumanReadable: true,
     },
     req: {
-        url: '/orders?from_date=2361183241434822606848',
+        url: '/users/5d67d982d6616911cdfb243c/orders',
         method: 'GET',
         headers: {
             'user-agent': 'python-requests/2.20.1',
@@ -26,13 +26,13 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 25 Oct 2019 12:33:12 GMT',
+                'Fri, 25 Oct 2019 12:33:44 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '92',
+                '46',
             ],
             'x-service-account': [
                 '5d67cdba6a543a000b3de666',

@@ -1,11 +1,11 @@
 {
     meta: {
-        createdAt: '2019-10-25T12:30:39.434Z',
+        createdAt: '2019-10-25T12:31:05.155Z',
         host: 'https://qa.builton.dev',
         resHumanReadable: true,
     },
     req: {
-        url: '/orders?from_date=2361183241434822606848',
+        url: '/products/5d6d195404cd38000a22ecdd/sub_products',
         method: 'GET',
         headers: {
             'user-agent': 'python-requests/2.20.1',
@@ -26,19 +26,16 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 25 Oct 2019 12:33:12 GMT',
+                'Fri, 25 Oct 2019 12:33:38 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '92',
-            ],
-            'x-service-account': [
-                '5d67cdba6a543a000b3de666',
+                '57',
             ],
             'x-pagination-total': [
-                '0',
+                '1',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -68,12 +65,60 @@
                 '1; mode=block',
             ],
             'content-length': [
-                '2',
+                '690',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
-        body: [],
+        body: [
+            {
+                _cls: 'Product',
+                _id: {
+                    $oid: '5d9339881fad44000aaab4d0',
+                },
+                _sub_products: [],
+                active: true,
+                business_rules: [],
+                company: {
+                    $oid: '5d36fd7ea2802f0010b1477b',
+                },
+                company_take: -1,
+                created: {
+                    $date: 1569929608432,
+                },
+                currency: 'NOK',
+                default_position: [
+                    -1,
+                    -1,
+                ],
+                deleted: false,
+                description: '',
+                discount: 0,
+                final_price: 10,
+                human_id: '6L2D2W',
+                main_product: false,
+                max_distance: 0,
+                media: [],
+                modified: {
+                    $date: 1569936159840,
+                },
+                name: 'subproduct',
+                parents: [
+                    {
+                        $oid: '5d6d195404cd38000a22ecdd',
+                    },
+                ],
+                path: '/',
+                price: 10,
+                price_change_percentage: 0,
+                properties: {},
+                short_description: '',
+                tags: [
+                    'test-sub-product',
+                ],
+                vat: 0,
+            },
+        ],
     },
 }

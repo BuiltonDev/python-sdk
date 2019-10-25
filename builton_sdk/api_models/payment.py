@@ -9,11 +9,11 @@ class Payment(_Component):
         self.api_path = 'payments'
 
     def pay(self, body, url_params=None, json=False):
-        return self.simple_query(_type='post', body=body,
-                                 url_params=url_params,
-                                 json=json)
+        return self._simple_query(_type='post', body=body,
+                                  url_params=url_params,
+                                  json=json)
 
     def confirm(self, body, url_params=None, json=False):
-        return self.simple_query(_type='post', _id=self.id, resource='confirm', body=body,
-                                 url_params=url_params,
-                                 json=json)
+        return self._simple_query(_type='post', _id=self.id, resource='confirm', body=body,
+                                  url_params=url_params,
+                                  json=json)

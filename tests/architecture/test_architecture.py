@@ -34,12 +34,13 @@ ignore_functions = [
 
     '_build_url_params',
     '_extract_expand',
-    'build_instance',
-    'build_resource',
-    'handle_error',
-    'parse_json',
-    'simple_get_query',
-    'simple_query'
+    '_extract_id',
+    '_build_instance',
+    '_build_resource',
+    '_handle_error',
+    '_parse_json',
+    '_simple_get_query',
+    '_simple_query'
     ]
 
 def test_architecture():

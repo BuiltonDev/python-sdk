@@ -1,12 +1,12 @@
 {
     meta: {
-        createdAt: '2019-10-25T12:30:39.434Z',
+        createdAt: '2019-10-25T12:33:32.137Z',
         host: 'https://qa.builton.dev',
         resHumanReadable: true,
     },
     req: {
-        url: '/orders?from_date=2361183241434822606848',
-        method: 'GET',
+        url: '/products/5db2eb9b63472e000a513d45',
+        method: 'DELETE',
         headers: {
             'user-agent': 'python-requests/2.20.1',
             'accept-encoding': 'gzip, deflate',
@@ -26,19 +26,16 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 25 Oct 2019 12:33:12 GMT',
+                'Fri, 25 Oct 2019 12:33:32 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '92',
+                '68',
             ],
             'x-service-account': [
                 '5d67cdba6a543a000b3de666',
-            ],
-            'x-pagination-total': [
-                '0',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -67,13 +64,56 @@
             'x-xss-protection': [
                 '1; mode=block',
             ],
+            'cache-control': [
+                'private, no-cache, no-store, max-age=0, must-revalidate',
+            ],
             'content-length': [
-                '2',
+                '643',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
-        body: [],
+        body: {
+            _cls: 'Product',
+            _id: {
+                $oid: '5db2eb9b63472e000a513d45',
+            },
+            _sub_products: [],
+            active: false,
+            business_rules: [],
+            company: {
+                $oid: '5d36fd7ea2802f0010b1477b',
+            },
+            company_take: -1,
+            created: {
+                $date: 1572006811533,
+            },
+            currency: 'NOK',
+            default_position: [
+                -1,
+                -1,
+            ],
+            deleted: true,
+            description: 'Super fast!',
+            discount: 0,
+            final_price: 2.89,
+            human_id: '2D6LJV',
+            main_product: true,
+            max_distance: 0,
+            media: [],
+            modified: {
+                $date: 1572006812558,
+            },
+            name: 'NAND gate',
+            parents: [],
+            path: '/',
+            price: 2.89,
+            price_change_percentage: 0,
+            properties: {},
+            short_description: '',
+            tags: [],
+            vat: 0,
+        },
     },
 }

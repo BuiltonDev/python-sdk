@@ -1,20 +1,27 @@
 {
     meta: {
-        createdAt: '2019-10-25T12:30:39.434Z',
+        createdAt: '2019-10-25T12:30:45.415Z',
         host: 'https://qa.builton.dev',
+        reqHumanReadable: true,
         resHumanReadable: true,
     },
     req: {
-        url: '/orders?from_date=2361183241434822606848',
-        method: 'GET',
+        url: '/payments',
+        method: 'POST',
         headers: {
             'user-agent': 'python-requests/2.20.1',
             'accept-encoding': 'gzip, deflate',
             accept: '*/*',
             connection: 'keep-alive',
             'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+            'content-type': 'application/json',
         },
-        body: '',
+        body: {
+            orders: [
+                '5d97406ad6131000103999df',
+            ],
+            payment_method: '5d96096b61a18e000f7d9fd1',
+        },
     },
     res: {
         status: 200,
@@ -26,19 +33,16 @@
                 'gunicorn/19.7.1',
             ],
             date: [
-                'Fri, 25 Oct 2019 12:33:12 GMT',
+                'Fri, 25 Oct 2019 12:33:18 GMT',
             ],
             'content-type': [
                 'application/json',
             ],
             'x-rate-limit-remaining': [
-                '92',
-            ],
-            'x-service-account': [
-                '5d67cdba6a543a000b3de666',
+                '82',
             ],
             'x-pagination-total': [
-                '0',
+                '1',
             ],
             'access-control-allow-origin': [
                 '*',
@@ -67,13 +71,55 @@
             'x-xss-protection': [
                 '1; mode=block',
             ],
+            'cache-control': [
+                'private, no-cache, no-store, max-age=0, must-revalidate',
+            ],
             'content-length': [
-                '2',
+                '623',
             ],
             via: [
                 '1.1 vegur',
             ],
         },
-        body: [],
+        body: [
+            {
+                _id: {
+                    $oid: '5db2eb8d63472e000e523231',
+                },
+                active: true,
+                amount: 96.6,
+                company: {
+                    $oid: '5d36fd7ea2802f0010b1477b',
+                },
+                created: {
+                    $date: 1572006797397,
+                },
+                currency: 'NOK',
+                current_state: 'succeeded',
+                deleted: false,
+                description: '',
+                human_id: 'Z7R6EJ',
+                metadata: {
+                    charge_id: 'ch_1FXRyjLYJSL3bx2pNKuKwnIB',
+                    intent_id: 'pi_1FXRyjLYJSL3bx2pyO3UORnT',
+                },
+                modified: {
+                    $date: 1572006798858,
+                },
+                payment_date: {
+                    $date: 1572006797396,
+                },
+                payment_method: {
+                    $oid: '5d96096b61a18e000f7d9fd1',
+                },
+                subject: {
+                    _cls: 'Order',
+                    _ref: '5d97406ad6131000103999df',
+                },
+                user: {
+                    $oid: '5d9218f71fad44000b0fb80a',
+                },
+            },
+        ],
     },
 }
