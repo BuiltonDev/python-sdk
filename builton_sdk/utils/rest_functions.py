@@ -32,4 +32,4 @@ def create(cls, *args, **kwargs):
 
 
 def search(cls, *args, **kwargs):
-    return cls._simple_query(*args, **kwargs)
+    return cls.simple_query(resource='search', *args, **kwargs)

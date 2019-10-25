@@ -1,0 +1,116 @@
+{
+    meta: {
+        createdAt: '2019-10-04T12:35:19.632Z',
+        host: 'https://qa.builton.dev',
+        resHumanReadable: true,
+    },
+    req: {
+        url: '/payment_methods/5d96096b61a18e000f7d9fd1',
+        method: 'GET',
+        headers: {
+            accept: '*/*',
+            'accept-encoding': 'gzip, deflate',
+            connection: 'keep-alive',
+            'user-agent': 'python-requests/2.20.1',
+            'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+        },
+        body: '',
+    },
+    res: {
+        status: 200,
+        headers: {
+            connection: [
+                'keep-alive',
+            ],
+            server: [
+                'gunicorn/19.7.1',
+            ],
+            date: [
+                'Fri, 04 Oct 2019 12:35:20 GMT',
+            ],
+            'content-type': [
+                'application/json',
+            ],
+            'x-rate-limit-remaining': [
+                '99',
+            ],
+            'access-control-allow-origin': [
+                '*',
+            ],
+            'access-control-allow-methods': [
+                'PUT, GET, POST, DELETE, OPTIONS',
+            ],
+            'access-control-allow-headers': [
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Kvass-Api-Key, X-Share-Api-Key',
+            ],
+            'access-control-expose-headers': [
+                'X-Pagination-Total',
+            ],
+            'x-content-type-options': [
+                'nosniff',
+            ],
+            'strict-transport-security': [
+                'max-age=3600',
+            ],
+            'content-security-policy': [
+                "default-src 'none'; frame-ancestors 'none'",
+            ],
+            'x-frame-options': [
+                'deny',
+            ],
+            'x-xss-protection': [
+                '1; mode=block',
+            ],
+            'content-length': [
+                '776',
+            ],
+            via: [
+                '1.1 vegur',
+            ],
+        },
+        body: {
+            _cls: 'PaymentMethod.StripePaymentMethod',
+            _id: {
+                $oid: '5d96096b61a18e000f7d9fd1',
+            },
+            active: true,
+            card: {
+                brand: 'visa',
+                checks: {
+                    address_line1_check: null,
+                    address_postal_code_check: null,
+                    cvc_check: 'unchecked',
+                },
+                country: 'US',
+                exp_month: 12,
+                exp_year: 2020,
+                fingerprint: 'npPw68vQg1usKUWb',
+                funding: 'credit',
+                generated_from: null,
+                last4: '4242',
+                three_d_secure_usage: {
+                    supported: true,
+                },
+                wallet: null,
+            },
+            company: {
+                $oid: '5d36fd7ea2802f0010b1477b',
+            },
+            created: {
+                $date: 1570113898769,
+            },
+            customer_id: 'cus_Fuxlir3E5Y3Pnp',
+            deleted: false,
+            is_sca_compatible: true,
+            method: 'stripe',
+            modified: {
+                $date: 1570113899406,
+            },
+            name: 'Stripe',
+            source: 'pm_1FPVY5LYJSL3bx2pJ2Hfv1Gn',
+            user: {
+                $oid: '5d9218f71fad44000b0fb80a',
+            },
+        },
+    },
+}

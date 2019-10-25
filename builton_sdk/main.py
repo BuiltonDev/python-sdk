@@ -67,17 +67,11 @@ class Builton:
     def product(self, props=None):
         return Product(self.request, props)
 
-    def provider(self, props=None):
-        return Provider(self.request, props)
-
     def resource(self, props=None):
         return Resource(self.request, props)
 
     def subscription(self, props=None):
         return Subscription(self.request, props)
-
-    def tag(self, props=None):
-        return Tag(self.request, props)
 
     def user(self, props=None):
         return User(self.request, props)

@@ -109,17 +109,27 @@ def test_update_order_missing_field(builton):
     assert not hasattr(order, "missing_field")
 
 
+def test_get_order_payments(builton):
+    orders = builton.order().get_all(order_status="CREATED", size=1)
+    order = orders[0]
+    payments = order.get_payments()
+    assert isinstance(payments, list)
+
+
 @pytest.mark.skip("run it manually, so the list of "
-                   "orders doesn't grow indefinitely")
-def test_create_order(builton):
-    users = builton.user().get_all(size=1)
-    user = users[0].id
-
-    products = builton.product().get_all(size=1)
-    product_id = products[0].id
-
-    items = [{"product": product_id,
+                  "orders doesn't grow indefinitely")
+def test_create_order_as_admin(builton):
+    items = [{"product": "5d67c87dd661690e5f6250ae",
               "quantity": 1}]
-
+    user = "5d67d982d6616911cdfb243c"
     order = builton.order().create(items=items, user=user)
+    assert isinstance(order, Order)
+
+
+@pytest.mark.skip("run it manually, so the list of "
+                  "orders doesn't grow indefinitely")
+def test_create_order_as_user(builton_user):
+    items = [{"product": "5d67c87dd661690e5f6250ae",
+              "quantity": 1}]
+    order = builton_user.order().create(items=items)
     assert isinstance(order, Order)

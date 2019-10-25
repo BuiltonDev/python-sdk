@@ -1,0 +1,113 @@
+{
+    meta: {
+        createdAt: '2019-09-26T09:43:22.249Z',
+        host: 'https://qa.builton.dev',
+        resHumanReadable: true,
+    },
+    req: {
+        url: '/products/5d8c883ac6a303000e362c08',
+        method: 'GET',
+        headers: {
+            connection: 'keep-alive',
+            'user-agent': 'python-requests/2.20.1',
+            'accept-encoding': 'gzip, deflate',
+            accept: '*/*',
+            'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+        },
+        body: '',
+    },
+    res: {
+        status: 200,
+        headers: {
+            connection: [
+                'keep-alive',
+            ],
+            server: [
+                'gunicorn/19.7.1',
+            ],
+            date: [
+                'Thu, 26 Sep 2019 09:43:22 GMT',
+            ],
+            'content-type': [
+                'application/json',
+            ],
+            'x-rate-limit-remaining': [
+                '98',
+            ],
+            'access-control-allow-origin': [
+                '*',
+            ],
+            'access-control-allow-methods': [
+                'PUT, GET, POST, DELETE, OPTIONS',
+            ],
+            'access-control-allow-headers': [
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Kvass-Api-Key, X-Share-Api-Key',
+            ],
+            'access-control-expose-headers': [
+                'X-Pagination-Total',
+            ],
+            'x-content-type-options': [
+                'nosniff',
+            ],
+            'strict-transport-security': [
+                'max-age=3600',
+            ],
+            'content-security-policy': [
+                "default-src 'none'; frame-ancestors 'none'",
+            ],
+            'x-frame-options': [
+                'deny',
+            ],
+            'x-xss-protection': [
+                '1; mode=block',
+            ],
+            'content-length': [
+                '643',
+            ],
+            via: [
+                '1.1 vegur',
+            ],
+        },
+        body: {
+            _cls: 'Product',
+            _id: {
+                $oid: '5d8c883ac6a303000e362c08',
+            },
+            _sub_products: [],
+            active: true,
+            business_rules: [],
+            company: {
+                $oid: '5d36fd7ea2802f0010b1477b',
+            },
+            company_take: -1,
+            created: {
+                $date: 1569491002146,
+            },
+            currency: 'NOK',
+            default_position: [
+                -1,
+                -1,
+            ],
+            deleted: false,
+            description: 'Super fast!',
+            discount: 0,
+            final_price: 2.89,
+            human_id: '5ZWR98',
+            main_product: true,
+            max_distance: 0,
+            media: [],
+            modified: {
+                $date: 1569491002147,
+            },
+            name: 'NAND gate',
+            parents: [],
+            path: '/',
+            price: 2.89,
+            price_change_percentage: 0,
+            properties: {},
+            short_description: '',
+            tags: [],
+            vat: 0,
+        },
+    },
+}

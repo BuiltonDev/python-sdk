@@ -59,3 +59,17 @@ def test_get_user_by_id(builton):
     assert isinstance(new_user, User)
     assert new_user.id == user.id == user_id
 
+
+def test_get_users(builton):
+    users = builton.user().get_all(page=0, size=2)
+    first_user = users[0]
+    second_user = users[1]
+    assert first_user.id != second_user.id
+
+def test_authenticate_user(builton_user):
+    user = builton_user.user().authenticate(first_name='test')
+    assert user.first_name == 'test'
+
+def test_create_user(builton_user): # should be same as "authenticate"
+    user = builton_user.user().create(first_name='test')
+    assert user.first_name == 'test'

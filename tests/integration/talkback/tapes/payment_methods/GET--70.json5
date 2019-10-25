@@ -1,0 +1,167 @@
+{
+    meta: {
+        createdAt: '2019-10-03T12:33:20.343Z',
+        host: 'https://qa.builton.dev',
+        resHumanReadable: true,
+    },
+    req: {
+        url: '/payment_methods',
+        method: 'GET',
+        headers: {
+            'accept-encoding': 'gzip, deflate',
+            'user-agent': 'python-requests/2.20.1',
+            connection: 'keep-alive',
+            accept: '*/*',
+            'x-builton-api-key': 'kx5QBLCUJwUcbBJRVDLOuHRdR2H3HSTh5Z1xXKOEx50e9b3tnkgi_8A7hLZ2-A2R85qluuVThjgGg2vuFjgAVQ==',
+        },
+        body: '',
+    },
+    res: {
+        status: 200,
+        headers: {
+            connection: [
+                'keep-alive',
+            ],
+            server: [
+                'gunicorn/19.7.1',
+            ],
+            date: [
+                'Thu, 03 Oct 2019 12:33:21 GMT',
+            ],
+            'content-type': [
+                'application/json',
+            ],
+            'x-rate-limit-remaining': [
+                '99',
+            ],
+            'x-pagination-total': [
+                '3',
+            ],
+            'access-control-allow-origin': [
+                '*',
+            ],
+            'access-control-allow-methods': [
+                'PUT, GET, POST, DELETE, OPTIONS',
+            ],
+            'access-control-allow-headers': [
+                'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token, Authorization, X-BuiltOn-Api-Key, X-Kvass-Api-Key, X-Share-Api-Key',
+            ],
+            'access-control-expose-headers': [
+                'X-Pagination-Total',
+            ],
+            'x-content-type-options': [
+                'nosniff',
+            ],
+            'strict-transport-security': [
+                'max-age=3600',
+            ],
+            'content-security-policy': [
+                "default-src 'none'; frame-ancestors 'none'",
+            ],
+            'x-frame-options': [
+                'deny',
+            ],
+            'x-xss-protection': [
+                '1; mode=block',
+            ],
+            'content-length': [
+                '1779',
+            ],
+            via: [
+                '1.1 vegur',
+            ],
+        },
+        body: [
+            {
+                _cls: 'PaymentMethod.StripePaymentMethod',
+                _id: {
+                    $oid: '5d94a55430fea9000aa52f38',
+                },
+                active: true,
+                card: {},
+                company: {
+                    $oid: '5d36fd7ea2802f0010b1477b',
+                },
+                created: {
+                    $date: 1570022740224,
+                },
+                customer_id: 'cus_Fuxlir3E5Y3Pnp',
+                deleted: false,
+                is_sca_compatible: true,
+                method: 'stripe',
+                modified: {
+                    $date: 1570022740908,
+                },
+                name: 'Stripe',
+                setup_intent: {
+                    client_secret: 'seti_1FP7poLYJSL3bx2porleNJrk_secret_FuxlrtxKu8E1XImAoIUMKBoMHe8ulB1',
+                    id: 'seti_1FP7poLYJSL3bx2porleNJrk',
+                    status: 'requires_payment_method',
+                },
+                user: {
+                    $oid: '5d9218f71fad44000b0fb80a',
+                },
+            },
+            {
+                _cls: 'PaymentMethod.StripePaymentMethod',
+                _id: {
+                    $oid: '5d95a91530fea9000aa52f3b',
+                },
+                active: true,
+                card: {},
+                company: {
+                    $oid: '5d36fd7ea2802f0010b1477b',
+                },
+                created: {
+                    $date: 1570089237277,
+                },
+                customer_id: 'cus_Fuxlir3E5Y3Pnp',
+                deleted: false,
+                is_sca_compatible: true,
+                method: 'stripe',
+                modified: {
+                    $date: 1570089237638,
+                },
+                name: 'Stripe',
+                setup_intent: {
+                    client_secret: 'seti_1FPP8LLYJSL3bx2pYCVKf1LW_secret_FvFdZtWr5tCe1EZ9jMfygeYj8ihkUmU',
+                    id: 'seti_1FPP8LLYJSL3bx2pYCVKf1LW',
+                    status: 'requires_payment_method',
+                },
+                user: {
+                    $oid: '5d9218f71fad44000b0fb80a',
+                },
+            },
+            {
+                _cls: 'PaymentMethod.StripePaymentMethod',
+                _id: {
+                    $oid: '5d95ea0f30fea9000d45c643',
+                },
+                active: true,
+                card: {},
+                company: {
+                    $oid: '5d36fd7ea2802f0010b1477b',
+                },
+                created: {
+                    $date: 1570105870911,
+                },
+                customer_id: 'cus_Fuxlir3E5Y3Pnp',
+                deleted: false,
+                is_sca_compatible: true,
+                method: 'stripe',
+                modified: {
+                    $date: 1570105871256,
+                },
+                name: 'Stripe',
+                setup_intent: {
+                    client_secret: 'seti_1FPTSdLYJSL3bx2phkSPPIit_secret_FvK6FvBJDxM28etLMjE1hsK2hcdKdJE',
+                    id: 'seti_1FPTSdLYJSL3bx2phkSPPIit',
+                    status: 'requires_payment_method',
+                },
+                user: {
+                    $oid: '5d9218f71fad44000b0fb80a',
+                },
+            },
+        ],
+    },
+}
